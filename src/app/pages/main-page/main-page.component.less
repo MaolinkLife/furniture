@@ -8,11 +8,16 @@
 @project-color-default-text: #e9e9e8;
 
 @project-font-primary-black: "MuseoSansCyrl-Black";
+@project-font-primary-regular: "MuseoSansCyrl-Regular";
+
 @project-font-secondary-regular: "BerlingskeSerif-Regular";
 
 .frame {
     display: flex;
     height: inherit;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
@@ -37,7 +42,6 @@
 
 .sidebar {
     max-width: 360px;
-    margin-left: 240px;
     height: 100%;
 
     &__title {
@@ -59,7 +63,9 @@
 .header {
     display: flex;
     align-items: center;
-    padding-left: 36px;
+    justify-content: space-between;
+    padding: 0 32px;
+    margin-bottom: 53px;
 
     &__description {
         color: #d9dbdc;
@@ -74,6 +80,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    &__logo-content {
+        display: flex;
+        align-items: center;
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -135,4 +151,70 @@
         transition: 0.2s ease-in-out;
         color: @project-color-primary;
     }
+}
+
+.navbar {
+    padding: 24px 32px;
+    white-space: nowrap;
+    position: relative;
+
+    &__link {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: @project-color-default-text;
+        font-family: @project-font-primary-black;
+        font-size: 12pt;
+        margin-right: 70px;
+        line-height: 128%;
+        transition: 0.2s ease-in-out;
+        padding-bottom: 24px;
+        cursor: pointer;
+    }
+
+    &__link:hover,
+    &__link.active {
+        transition: 0.2s ease-in-out;
+        color: @project-color-primary;
+        border-bottom: 2px solid #fcd977;
+    }
+}
+
+.long-underline {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #404244 0%, rgba(64, 66, 68, 0) 100%);
+    border-radius: 0 2px 2px 0;
+}
+
+.phone {
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "BerlingskeSerif-SemiBold";
+    font-size: 20pt;
+    color: @project-color-default-text;
+}
+
+.icon-pin {
+    color: #ecb85a;
+    width: 24px;
+    height: 24px;
+    max-height: 24px;
+    max-width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(252, 217, 119, 0.13);
+    margin-right: 8px;
+}
+
+.address-icon {
+    display: flex;
+    align-items: center;
+}
+
+.address-description {
+    font-size: 16pt;
+    font-family: @project-font-primary-regular;
+    color: @project-color-primary;
 }

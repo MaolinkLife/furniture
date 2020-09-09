@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'app-main-page',
     templateUrl: './main-page.component.html',
-    styleUrls: ['./main-page.component.less']
+    styleUrls: ['./main-page.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainPageComponent implements OnInit {
-
     sidebarItems = [
         {
             name: 'Петеряжка мягкой мебели',
@@ -58,9 +58,29 @@ export class MainPageComponent implements OnInit {
         },
     ];
 
-    menuitems = [
+    menuItems = [
         {
-            name: 'Вопрос - ответ',
+            name: 'Главная',
+            active: false,
+        },
+        {
+            name: 'Расчитать стоимость',
+            active: true,
+        },
+        {
+            name: 'Примеры работ',
+            active: false,
+        },
+        {
+            name: 'Гарантии',
+            active: false,
+        },
+        {
+            name: 'Отзывы',
+            active: false,
+        },
+        {
+            name: 'Контакты',
             active: false,
         },
     ];
@@ -70,8 +90,8 @@ export class MainPageComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    toggleActive(index: number) {
-        this.sidebarItems.forEach(el => el.active = false);
-        this.sidebarItems[index].active = true;
+    toggleActive(index: number, array: Record<string, string | boolean>[]) {
+        array.forEach(el => el.active = false);
+        array[index].active = true;
     }
 }

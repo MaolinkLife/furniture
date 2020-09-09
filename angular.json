@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "furniture"
+    }
+  },
+  "defaultProject": "furniture",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -3,13 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { MainPageRoutingModule } from './main-page-routing.module';
 import { MainPageComponent } from './main-page.component';
+import { FabricCatalogPageComponent } from '../fabric-catalog-page/fabric-catalog-page.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
-    declarations: [MainPageComponent],
+    declarations: [
+        MainPageComponent,
+        FabricCatalogPageComponent,
+    ],
     imports: [
         CommonModule,
-        MainPageRoutingModule
-    ]
+        SharedModule,
+        MainPageRoutingModule,
+    ],
 })
 export class MainPageModule { }

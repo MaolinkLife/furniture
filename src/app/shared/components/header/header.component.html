@@ -1,0 +1,104 @@
+<div class="container">
+    <div class="left-column">
+        <div class="first-block">
+            <app-company-logo class="logo"></app-company-logo>
+            <div class="title-logo">Мебель у нас</div>
+        </div>
+
+        <div class="second-block">
+            <div class="underline-gradient"></div>
+
+            <div class="flex menu-container">
+                <app-icon name="iconLeftMenuBurger" class="icon"></app-icon>
+                <div>Меню</div>
+            </div>
+
+            <div class="underline-gradient"></div>
+        </div>
+
+        <div class="menu-list">
+            <div
+                *ngFor="let menuItem of menuItems; index as itemIndex"
+                class="menu-item"
+            >
+                <div
+                    class="menu-list__link"
+                    [ngClass]="{ active: menuItem.active }"
+                    (click)="toggleActive(itemIndex, menuItems)"
+                >
+                    <div
+                        *ngIf="menuItem.active"
+                        class="menu-list__link--item"
+                    ></div>
+
+                    <a [routerLink]="[menuItem.routerPath]" class="link">
+                        {{ menuItem.caption }}
+                    </a>
+                </div>
+
+                <ng-container *ngIf="menuItem.active && menuItem.children">
+                    <div
+                        id="menu"
+                        *ngIf="menuItem.children?.length"
+                        class="menu-subitem-list"
+                    >
+                        <div
+                            *ngFor="
+                                let menuSubItem of menuItem.children;
+                                index as subItemIndex
+                            "
+                            class="menu-subitem-list__item"
+                            [ngClass]="{ active: menuSubItem.active }"
+                            (click)="
+                                toggleActive(subItemIndex, menuItem.children)
+                            "
+                        >
+                            <a
+                                [routerLink]="[menuSubItem.routerPath]"
+                                class="link"
+                            >
+                                {{ menuSubItem.caption }}
+                            </a>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-column">
+        <div class="header-panel">
+            <div class="header-panel__left">
+                Фабрика №2 по ремонту и рестоврации в России
+            </div>
+
+            <div class="header-panel__right">
+                <a href="tel:+74957491493" class="mobile">8 (495) 749 14 93</a>
+
+                <div class="address">
+                    <div class="address__icon">
+                        <app-icon name="iconPinAddress"></app-icon>
+                    </div>
+                    <div class="address__description">по Москве и МО</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="underline-gradient-left"></div>
+
+        <div class="menu-panel">
+            <a
+                *ngFor="let homePageMenuItem of homePageMenuItems"
+                class="homepage__menuItem"
+            >
+                {{ homePageMenuItem.caption }}
+            </a>
+        </div>
+
+        <div class="activeUnderline"></div>
+
+        <div class="underline-gradient-left"></div>
+
+        <app-general-preview-component class="content"></app-general-preview-component>
+    </div>
+</div>

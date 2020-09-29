@@ -2,6 +2,8 @@
 
 @import "./assets/fonts/MuseoSansCyrl/MuseoSansCyrl.less";
 @import "./assets/fonts/BerlingskeSerif/BerlingskeSerif.less";
+@import "./assets/styles/global.less";
+@import "./assets/styles/flex-spaces.less";
 
 html {
     height: 100%;
@@ -14,7 +16,11 @@ body {
 
 body {
     height: inherit;
-    background: linear-gradient(to right, #0b0c0f 100%, #15181a 0%);
+    background: linear-gradient(90deg, #111316 0%, #1a1b1f 100%);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {

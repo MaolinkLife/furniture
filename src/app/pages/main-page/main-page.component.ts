@@ -1,4 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, OnChanges } from '@angular/core';
+
+import { SidebarMenuItem } from '../../shared/interfaces/sidebar-menu-item';
+import { SIDEBAR_MENU_ITEMS } from '../../shared/mock/sidebar-menu-items';
 
 @Component({
     selector: 'app-main-page',
@@ -6,81 +9,40 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
     styleUrls: ['./main-page.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainPageComponent implements OnInit {
-    sidebarItems = [
-        {
-            name: 'Петеряжка мягкой мебели',
-            active: false,
-        },
-        {
-            name: 'Работа с натуральной кожей',
-            active: false,
-        },
-        {
-            name: 'Портфолио работ',
-            active: false,
-        },
-        {
-            name: 'Каталог тканей',
-            active: true,
-        },
-        {
-            name: 'Бары, кафе, рестораны, офисы',
-            active: false,
-        },
-        {
-            name: 'Доставка и оплата',
-            active: false,
-        },
-        {
-            name: 'Как мы работаем',
-            active: false,
-        },
-        {
-            name: 'О компании',
-            active: false,
-        },
-        {
-            name: 'Отзывы',
-            active: false,
-        },
-        {
-            name: 'Как заказать',
-            active: false,
-        },
-        {
-            name: 'Уход за мебелью',
-            active: false,
-        },
-        {
-            name: 'Вопрос - ответ',
-            active: false,
-        },
-    ];
+export class MainPageComponent implements OnInit, OnChanges {
+    sidebarItems: SidebarMenuItem[] = SIDEBAR_MENU_ITEMS;
 
-    menuItems = [
+    isHomePage: boolean = true;
+
+    menuItems: { caption: string; routerPath: string; active: boolean }[] = [
         {
-            name: 'Главная',
+            caption: 'Главная',
+            routerPath: '',
             active: false,
         },
         {
-            name: 'Расчитать стоимость',
+            caption: 'Расчитать стоимость',
+            routerPath: '',
             active: true,
         },
         {
-            name: 'Примеры работ',
+            caption: 'Примеры работ',
+            routerPath: '',
             active: false,
         },
         {
-            name: 'Гарантии',
+            caption: 'Гарантии',
+            routerPath: '',
             active: false,
         },
         {
-            name: 'Отзывы',
+            caption: 'Отзывы',
+            routerPath: '',
             active: false,
         },
         {
-            name: 'Контакты',
+            caption: 'Контакты',
+            routerPath: '',
             active: false,
         },
     ];
@@ -90,7 +52,11 @@ export class MainPageComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    toggleActive(index: number, array: Record<string, string | boolean>[]) {
+    ngOnChanges(): void {
+        console.log('hello')
+    }
+
+    toggleActive(index: number, array: { name: string; active: boolean }[]) {
         array.forEach(el => el.active = false);
         array[index].active = true;
     }

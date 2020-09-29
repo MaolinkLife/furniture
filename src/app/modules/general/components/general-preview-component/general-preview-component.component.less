@@ -1,0 +1,140 @@
+.frame {
+    display: flex;
+    flex-direction: column;
+    padding-left: 70px;
+    padding-top: 100px;
+    height: 100%;
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        max-width: 571px;
+
+        .subtitle {
+            display: inline-flex;
+            align-items: center;
+            font-family: "MuseoSansCyrl-100";
+            font-size: 16px;
+            line-height: 19px;
+            color: #ffffff;
+        }
+
+        .title {
+            font-family: "BerlingskeSerif-BoldItalic";
+            font-size: 42px;
+            line-height: 50px;
+            margin-bottom: 30px;
+        }
+
+        .text {
+            font-family: "MuseoSansCyrl-100";
+            font-size: 16px;
+            line-height: 19px;
+            max-width: 274px;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .button {
+            width: 270px;
+            height: 64px;
+            border: none;
+            outline: none;
+            background: linear-gradient(180deg, #fbdb74 3.65%, #e2ac48 97.92%);
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 6px;
+            cursor: pointer;
+            color: #000000;
+            /* Жёлтое свечение */
+            filter: drop-shadow(0px 4px 22px rgba(252, 217, 119, 0.15));
+            transition: 0.2s ease-in-out;
+            font-family: "MuseoSansCyrl-700";
+            font-size: 12px;
+            line-height: 16px;
+            /* or 133% */
+
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .button:hover {
+            transition: 0.2s ease-in-out;
+            background: linear-gradient(
+                180deg,
+                darken(#fbdb74, 8%) 0%,
+                darken(#e2ac48, 8%) 100%
+            );
+        }
+    }
+
+    &__image {
+        position: absolute;
+        right: 0;
+    }
+}
+
+.shine {
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        #202425 0%,
+        rgba(32, 36, 37, 0) 100%
+    );
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    right: -180px;
+    top: 0;
+}
+
+.footer {
+    display: flex;
+    height: 150px;
+    width: 100%;
+
+    .block {
+        width: 100%;
+        height: 100%;
+        padding: 38px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+
+        &__title {
+            font-family: "BerlingskeSerif-DemiBold";
+            font-style: normal;
+            font-size: 14px;
+            line-height: 17px;
+            /* identical to box height */
+
+            text-transform: uppercase;
+
+            /* yellow */
+
+            color: #fad875;
+            margin-bottom: 20px;
+        }
+
+        &__description {
+            font-family: "MuseoSansCyrl-300";
+            font-style: normal;
+            font-size: 16px;
+            line-height: 19px;
+
+            color: #ffffff;
+        }
+    }
+
+    .block:nth-child(odd) {
+        background: linear-gradient(180deg, #131418 0%, #0c0d0f 50%);
+    }
+    .block:nth-child(even) {
+        background: linear-gradient(0, #131418 0%, #0c0d0f 50%);
+    }
+}
+
+.f-icon {
+    position: absolute;
+    left: 70px;
+}

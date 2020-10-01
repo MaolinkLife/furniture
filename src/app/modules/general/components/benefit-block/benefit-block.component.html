@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="title-page">
+        Не хотите выкидывать любимую мебель и тратить большие деньги на новую?
+    </div>
+    <div class="subtitle-page">
+        От вас только нужно позвонить нам и выбрать материал, всю остальную
+        работу мы сделаем сами
+    </div>
+
+    <div class="underline-text">
+        9 простых шагов к вашей любимой обновленной мебели
+    </div>
+
+    <div class="circular">
+        <div
+            *ngFor="let circularItem of circularItems; index as itemIndex"
+            class="circular-element"
+            [style]="circularItem.positionStyle"
+        >
+            <div class="image-container">
+                <img class="image" [src]="circularItem.image" alt="" />
+                <div class="number" [style]="circularItem.numberPosition">
+                    0{{ itemIndex + 1 }}
+                </div>
+            </div>
+            <div class="description">{{ circularItem.caption }}</div>
+        </div>
+    </div>
+</div>

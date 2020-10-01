@@ -5,63 +5,17 @@
         </div>
 
         <div class="block__elements">
-            <div class="element">
+            <div
+                *ngFor="let element of elements; index as index"
+                class="element"
+            >
                 <div class="element__content">
-                    <div class="number mui-space_bottom-5">1</div>
-
-                    <div class="second">
-                        <div class="line"></div>
-
-                        <div class="text">ремонт каркаса мебели</div>
-
-                        <div class="line"></div>
+                    <div class="number mui-space_bottom-5">
+                        {{ index + 1 }}
                     </div>
-                </div>
-            </div>
-
-            <div class="element">
-                <div class="element__content">
-                    <div class="number">2</div>
-
                     <div class="second">
                         <div class="line"></div>
-
-                        <div class="text">
-                            Полностью меняем наполнение мебели на новое и
-                            качественное. Именно благодаря наполнению, изделие
-                            не меняет своей формы со временем
-                        </div>
-
-                        <div class="line"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="element">
-                <div class="element__content">
-                    <div class="number">3</div>
-
-                    <div class="second">
-                        <div class="line"></div>
-
-                        <div class="text">Перетяжка новой тканью или кожей</div>
-
-                        <div class="line"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="element">
-                <div class="element__content">
-                    <div class="number">4</div>
-
-                    <div class="second">
-                        <div class="line"></div>
-
-                        <div class="text">
-                            Упаковка и доставка мебели обратно
-                        </div>
-
+                        <div class="text">{{ element.caption }}</div>
                         <div class="line"></div>
                     </div>
                 </div>

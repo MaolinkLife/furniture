@@ -8,6 +8,14 @@ import { ProgressWorkBlockComponent } from './components/progress-work-block/pro
 import { ResponsibilityBlockComponent } from './components/responsibility-block/responsibility-block.component';
 import { ProductionBlockComponent } from './components/production-block/production-block.component';
 import { ExamplesBlockComponent } from './components/examples-block/examples-block.component';
+import { SocialBlockComponent } from './components/social-block/social-block.component';
+import { QualityBlockComponent } from './components/quality-block/quality-block.component';
+import { RecomendedBlockComponent } from './components/recomended-block/recomended-block.component';
+import { HaulingFurnitureBlockComponent } from './components/hauling-furniture-block/hauling-furniture-block.component';
+import { BenefitBlockComponent } from './components/benefit-block/benefit-block.component';
+import { BonusBlockComponent } from './components/bonus-block/bonus-block.component';
+import { MapBlockComponent } from './components/map-block/map-block.component';
+import { CompanyLogoModule } from 'src/app/shared/components/company-logo/company-logo.module';
 
 @NgModule({
     declarations: [
@@ -18,10 +26,18 @@ import { ExamplesBlockComponent } from './components/examples-block/examples-blo
         ResponsibilityBlockComponent,
         ProductionBlockComponent,
         ExamplesBlockComponent,
+        SocialBlockComponent,
+        QualityBlockComponent,
+        RecomendedBlockComponent,
+        HaulingFurnitureBlockComponent,
+        BenefitBlockComponent,
+        BonusBlockComponent,
+        MapBlockComponent,
     ],
     imports: [
         CommonModule,
         IconsModule,
+        CompanyLogoModule,
     ],
     exports: [
         GeneralPreviewComponentComponent,
@@ -31,6 +47,13 @@ import { ExamplesBlockComponent } from './components/examples-block/examples-blo
         ResponsibilityBlockComponent,
         ProductionBlockComponent,
         ExamplesBlockComponent,
+        SocialBlockComponent,
+        QualityBlockComponent,
+        RecomendedBlockComponent,
+        HaulingFurnitureBlockComponent,
+        BenefitBlockComponent,
+        BonusBlockComponent,
+        MapBlockComponent,
     ],
 })
 export class GeneralContentModule { }

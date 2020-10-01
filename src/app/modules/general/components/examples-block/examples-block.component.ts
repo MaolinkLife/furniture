@@ -9,7 +9,6 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 export class ExamplesBlockComponent implements OnInit {
 
     slideIndex = [1, 1];
-    slideId = ["mySlides1", "mySlides2"]
 
     constructor() { }
 
@@ -22,13 +21,13 @@ export class ExamplesBlockComponent implements OnInit {
     }
 
     showSlides(n, no) {
-        var i;
-        var x = document.getElementsByClassName(this.slideId[no]);
-        if (n > x.length) { this.slideIndex[no] = 1 }
-        if (n < 1) { this.slideIndex[no] = x.length }
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        x[this.slideIndex[no] - 1].style.display = "block";
+        // var i;
+        // var x = document.getElementsByClassName(this.slideId[no]);
+        // if (n > x.length) { this.slideIndex[no] = 1 }
+        // if (n < 1) { this.slideIndex[no] = x.length }
+        // for (i = 0; i < x.length; i++) {
+        //     x[i].style.display = "none";
+        // }
+        // x[this.slideIndex[no] - 1].style.display = "block";
     }
 }

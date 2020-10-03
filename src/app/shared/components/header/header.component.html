@@ -45,7 +45,11 @@
         <div class="underline-gradient-left"></div>
 
         <div class="menu-panel">
-            <a *ngFor="let menuItem of menuItems" class="homepage__menuItem">
+            <a
+                *ngFor="let menuItem of menuItems"
+                class="menu-item"
+                [routerLink]="menuItem.routerLink"
+            >
                 {{ menuItem.caption }}
             </a>
         </div>

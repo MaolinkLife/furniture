@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
     menuItems: HeaderMenuItemInterface[] = [
         {
             caption: 'Главная',
-            routerLink: '#customId',
+            routerLink: '',
             active: false,
         },
         {

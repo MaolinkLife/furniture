@@ -1,4 +1,6 @@
+
 import { SidebarMenuItem } from '../interfaces/sidebar-menu-item';
+import { PaddingFurniturePreviewComponent } from 'src/app/modules/padding-furniture/components/padding-furniture-preview/padding-furniture-preview.component';
 
 export const SIDEBAR_MENU_ITEMS: SidebarMenuItem[] = [
     {
@@ -8,8 +10,9 @@ export const SIDEBAR_MENU_ITEMS: SidebarMenuItem[] = [
         children: [
             {
                 caption: 'Перетяжка прямых диванов',
-                routerPath: '',
+                routerPath: 'padding-furniture',
                 active: false,
+                previewComponent: PaddingFurniturePreviewComponent,
             },
             {
                 caption: 'Перетяжка угловых диванов',

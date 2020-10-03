@@ -1,3 +1,11 @@
+:host {
+    height: calc(100% - 173px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
 .frame {
     display: flex;
     flex-direction: column;
@@ -35,43 +43,16 @@
             margin-bottom: 30px;
             text-align: left;
         }
-
-        .button {
-            width: 270px;
-            height: 64px;
-            border: none;
-            outline: none;
-            background: linear-gradient(180deg, #fbdb74 3.65%, #e2ac48 97.92%);
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 6px;
-            cursor: pointer;
-            color: #000000;
-            /* Жёлтое свечение */
-            filter: drop-shadow(0px 4px 22px rgba(252, 217, 119, 0.15));
-            transition: 0.2s ease-in-out;
-            font-family: "MuseoSansCyrl-700";
-            font-size: 12px;
-            line-height: 16px;
-            /* or 133% */
-
-            text-align: center;
-            text-transform: uppercase;
-        }
-
-        .button:hover {
-            transition: 0.2s ease-in-out;
-            background: linear-gradient(
-                180deg,
-                darken(#fbdb74, 8%) 0%,
-                darken(#e2ac48, 8%) 100%
-            );
-        }
     }
 
     &__image {
         position: absolute;
         right: 0;
     }
+}
+
+.button-element {
+    max-width: 270px;
 }
 
 .shine {

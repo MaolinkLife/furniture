@@ -1,0 +1,57 @@
+:host {
+    display: block;
+    height: 610px;
+    background-color: #0d0e10;
+    padding-top: 120px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-page {
+    font-family: Berlingske Serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 43px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.element-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.element {
+    position: relative;
+    width: 200px;
+    height: 300px;
+
+    &__image {
+        z-index: 1;
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    &__number {
+        font-family: Berlingske Serif;
+        font-style: italic;
+        font-weight: 800;
+        font-size: 92px;
+        line-height: 110px;
+        text-align: center;
+        position: absolute;
+        color: #313131;
+        top: 60px;
+        right: 0;
+    }
+}

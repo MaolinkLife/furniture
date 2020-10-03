@@ -1,7 +1,9 @@
 <div class="container">
     <div class="left-column">
         <div class="first-block">
-            <app-company-logo class="logo"></app-company-logo>
+            <a [routerLink]="['/']">
+                <app-company-logo class="logo"></app-company-logo>
+            </a>
             <div class="title-logo">Мебель у нас</div>
         </div>
 
@@ -16,60 +18,16 @@
             <div class="underline-gradient"></div>
         </div>
 
-        <div class="menu-list">
-            <div
-                *ngFor="let menuItem of menuItems; index as itemIndex"
-                class="menu-item"
-            >
-                <div
-                    class="menu-list__link"
-                    [ngClass]="{ active: menuItem.active }"
-                    (click)="toggleActive(itemIndex, menuItems)"
-                >
-                    <div
-                        *ngIf="menuItem.active"
-                        class="menu-list__link--item"
-                    ></div>
-
-                    <a [routerLink]="[menuItem.routerPath]" class="link">
-                        {{ menuItem.caption }}
-                    </a>
-                </div>
-
-                <ng-container *ngIf="menuItem.active && menuItem.children">
-                    <div
-                        id="menu"
-                        *ngIf="menuItem.children?.length"
-                        class="menu-subitem-list"
-                    >
-                        <div
-                            *ngFor="
-                                let menuSubItem of menuItem.children;
-                                index as subItemIndex
-                            "
-                            class="menu-subitem-list__item"
-                            [ngClass]="{ active: menuSubItem.active }"
-                            (click)="
-                                toggleActive(subItemIndex, menuItem.children)
-                            "
-                        >
-                            <a
-                                [routerLink]="[menuSubItem.routerPath]"
-                                class="link"
-                            >
-                                {{ menuSubItem.caption }}
-                            </a>
-                        </div>
-                    </div>
-                </ng-container>
-            </div>
-        </div>
+        <obbey-sidebar-menu></obbey-sidebar-menu>
     </div>
 
     <div class="right-column">
         <div class="header-panel">
             <div class="header-panel__left">
-                Фабрика №2 по ремонту и рестоврации в России
+                <div class="title">
+                    Фабрика №2 по ремонту и рестоврации в России
+                </div>
+                <div class="icon"></div>
             </div>
 
             <div class="header-panel__right">
@@ -87,11 +45,8 @@
         <div class="underline-gradient-left"></div>
 
         <div class="menu-panel">
-            <a
-                *ngFor="let homePageMenuItem of homePageMenuItems"
-                class="homepage__menuItem"
-            >
-                {{ homePageMenuItem.caption }}
+            <a *ngFor="let menuItem of menuItems" class="homepage__menuItem">
+                {{ menuItem.caption }}
             </a>
         </div>
 
@@ -99,6 +54,8 @@
 
         <div class="underline-gradient-left"></div>
 
-        <app-general-preview-component class="content"></app-general-preview-component>
+        <obbey-dynamic-header-preview
+            [component]="previewComponent"
+        ></obbey-dynamic-header-preview>
     </div>
 </div>

@@ -12,5 +12,4 @@ export class WorkingWithGenuineLeatherPageComponent implements OnInit {
 
     ngOnInit(): void {
     }
-
 }

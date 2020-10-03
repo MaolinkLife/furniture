@@ -1,4 +1,4 @@
-import { GeneralContentModule } from './../../../modules/general/general-content.module';
+import { DynamicHeaderPreviewModule } from './../dynamic-header-preview/dynamic-header-preview.module';
 /*
  * angular default modules
 */
@@ -14,6 +14,8 @@ import { HeaderComponent } from './header.component';
 */
 import { CompanyLogoModule } from '../company-logo/company-logo.module';
 import { IconsModule } from './../icons/icons.module';
+import { SidebarMenuModule } from './../sidebar-menu/sidebar-menu.module';
+import { GeneralContentModule } from './../../../modules/general/general-content.module';
 
 @NgModule({
     declarations: [
@@ -25,6 +27,8 @@ import { IconsModule } from './../icons/icons.module';
         CompanyLogoModule,
         IconsModule,
         GeneralContentModule,
+        SidebarMenuModule,
+        DynamicHeaderPreviewModule,
     ],
     exports: [
         HeaderComponent,

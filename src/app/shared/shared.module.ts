@@ -9,13 +9,16 @@ const MODULES = [
 ];
 
 @NgModule({
-    declarations: [],
+    declarations: [
+
+    ],
     imports: [
         CommonModule,
         MODULES,
     ],
     exports: [
         MODULES,
+
     ]
 })
 export class SharedModule { }

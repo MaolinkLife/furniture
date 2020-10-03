@@ -1,0 +1,15 @@
+<div class="item-container">
+    <div *ngIf="hasIcon" class="mui-space_right-5">
+        <app-icon name="iconShield"></app-icon>
+    </div>
+
+    <div class="item-container__content">
+        <div *ngIf="title" class="title mui-space_bottom-1">
+            {{ title }}
+        </div>
+
+        <div class="description">
+            {{ description }}
+        </div>
+    </div>
+</div>

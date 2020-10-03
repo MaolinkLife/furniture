@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="content">
+        <div class="title-page">Пригласите дизайнера-технолога бесплатно</div>
+        <div class="element-list">
+            <div *ngFor="let element of elements" class="element">
+                <div class="element__image" [style]="element.imageConfig">
+                    <img [src]="element.image" />
+                </div>
+                <div class="element__description">
+                    {{ element.caption }}
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <obbey-button size="m" color="primary" uppercase>
+                пригласить дизайнера-технолога
+            </obbey-button>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,11 @@
+import { PreviewComponentClass } from './../../types/preview-component-class.type';
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { SidebarMenuItem } from '../../interfaces/sidebar-menu-item';
+
+interface HeaderMenuItemInterface {
+    caption: string;
+    routerLink: string;
+    active: boolean;
+}
 
 @Component({
     selector: 'app-header',
@@ -12,37 +18,37 @@ export class HeaderComponent implements OnInit {
     showMenu: boolean;
 
     @Input()
-    menuItems: SidebarMenuItem[];
+    previewComponent: PreviewComponentClass<Component>;
 
-    homePageMenuItems: { caption: string; routerPath: string; active: boolean }[] = [
+    menuItems: HeaderMenuItemInterface[] = [
         {
             caption: 'Главная',
-            routerPath: '',
+            routerLink: '#customId',
             active: false,
         },
         {
             caption: 'Расчитать стоимость',
-            routerPath: '',
+            routerLink: '',
             active: true,
         },
         {
             caption: 'Примеры работ',
-            routerPath: '',
+            routerLink: '',
             active: false,
         },
         {
             caption: 'Гарантии',
-            routerPath: '',
+            routerLink: '',
             active: false,
         },
         {
             caption: 'Отзывы',
-            routerPath: '',
+            routerLink: '',
             active: false,
         },
         {
             caption: 'Контакты',
-            routerPath: '',
+            routerLink: '',
             active: false,
         },
     ];
@@ -51,11 +57,4 @@ export class HeaderComponent implements OnInit {
 
     ngOnInit(): void {
     }
-
-
-    toggleActive(index: number, array: { active: boolean }[]) {
-        array.forEach(el => el.active = false);
-        array[index].active = true;
-    }
-
 }

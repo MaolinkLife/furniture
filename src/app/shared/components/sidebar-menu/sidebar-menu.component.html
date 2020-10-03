@@ -1,0 +1,40 @@
+<div class="menu-list" *ngIf="menuItems$ | async as menuItems">
+    <div
+        *ngFor="let menuItem of menuItems; index as itemIndex"
+        class="menu-item"
+    >
+        <div
+            class="menu-list__link"
+            routerLinkActive="active"
+            (click)="menuItemClick(menuItems, menuItem)"
+        >
+            <div *ngIf="menuItem.active" class="menu-list__link--item"></div>
+
+            <a class="link" [routerLink]="[menuItem.routerPath]">
+                {{ menuItem.caption }}
+            </a>
+        </div>
+
+        <ng-container *ngIf="menuItem.active && menuItem.children">
+            <div
+                id="menu"
+                *ngIf="menuItem.children?.length"
+                class="menu-subitem-list"
+            >
+                <div
+                    *ngFor="
+                        let menuSubItem of menuItem.children;
+                        index as subItemIndex
+                    "
+                    class="menu-subitem-list__item"
+                    [ngClass]="{ active: menuSubItem.active }"
+                    (click)="menuItemClick(menuItem.children, menuSubItem)"
+                >
+                    <a class="link" [routerLink]="[menuSubItem.routerPath]">
+                        {{ menuSubItem.caption }}
+                    </a>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

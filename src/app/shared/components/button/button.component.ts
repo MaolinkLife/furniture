@@ -1,16 +1,41 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, HostBinding, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    // tslint:disable-next-line: component-selector
+    selector: 'obbey-button',
+    templateUrl: './button.component.html',
+    styleUrls: ['./button.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ButtonComponent implements OnInit {
+export class ObbeyButtonComponent implements OnInit {
 
-  constructor() { }
+    @HostBinding('attr.data-host-size')
+    @Input()
+    size: 's' | 'l' | 'm';
 
-  ngOnInit(): void {
-  }
+    @HostBinding('attr.data-host-color')
+    @Input()
+    color: 'primary' | 'secondary';
+
+    @HostBinding('attr.data-host-polygon')
+    @Input()
+    hasPolygon: boolean;
+
+    @Input()
+    hasIcon: boolean;
+
+    @Input()
+    uppercase: boolean;
+
+    @Input()
+    disabled: boolean;
+
+    @Input()
+    iconName: string;
+
+    constructor() { }
+
+    ngOnInit(): void {
+    }
 
 }

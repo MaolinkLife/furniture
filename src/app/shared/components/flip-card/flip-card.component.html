@@ -1,0 +1,24 @@
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-back">
+            <img *ngIf="image" [src]="image" class="image" />
+        </div>
+
+        <div class="flip-card-front">
+            <img
+                class="number-image"
+                src="../../../../assets/images/numberIcon.png"
+                alt=""
+            />
+            <div class="number mui-space_bottom-5">
+                {{ number }}
+            </div>
+
+            <div class="contnet">
+                <div class="line"></div>
+                <div class="caption">{{ caption }}</div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+</div>

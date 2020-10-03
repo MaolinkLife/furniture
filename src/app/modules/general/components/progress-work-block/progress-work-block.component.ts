@@ -14,7 +14,7 @@ export class ProgressWorkBlockComponent implements OnInit {
         },
         {
             caption: 'Полностью меняем наполнение мебели на новое и качественное.Именно благодаря наполнению, изделие не меняет своей формы со временем',
-            image: '',
+            image: '../../../../../assets/images/Rectangle46.png',
         },
         {
             caption: 'Перетяжка новой тканью или кожей',

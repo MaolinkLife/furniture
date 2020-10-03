@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="title-page">Как заказать перетяжку мебели?</div>
+    <div class="element-list">
+        <div
+            *ngFor="let element of elements; index as itemIndex"
+            class="element"
+        >
+            <div class="element__image" [style]="element.imageConfig">
+                <img [src]="element.image" />
+            </div>
+            <div class="element__number">0{{ itemIndex + 1 }}</div>
+            <div class="element__description">
+                {{ element.caption }}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,13 +1,19 @@
+import { IconsModule } from './../icons/icons.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent } from './button.component';
-
+import { ObbeyButtonComponent } from './button.component';
 
 
 @NgModule({
-  declarations: [ButtonComponent],
-  imports: [
-    CommonModule
-  ]
+    declarations: [
+        ObbeyButtonComponent
+    ],
+    imports: [
+        CommonModule,
+        IconsModule,
+    ],
+    exports: [
+        ObbeyButtonComponent,
+    ]
 })
-export class ButtonModule { }
+export class ObbeyButtonModule { }

@@ -1,0 +1,19 @@
+<div class="block">
+    <div class="block__content">
+        <div class="title-page">
+            Мы берем на себя
+            <span class="primary-text-color">
+                полную материальную ответственность
+            </span>
+            и прописываем гарантии
+        </div>
+
+        <div class="grid-panel">
+            <obbey-shield-item
+                *ngFor="let item of items"
+                [title]="item.title"
+                [description]="item.description"
+            ></obbey-shield-item>
+        </div>
+    </div>
+</div>

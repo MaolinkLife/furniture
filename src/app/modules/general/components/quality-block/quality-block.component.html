@@ -6,54 +6,66 @@
 
     <div class="subtitle">Основатели компании Obbey</div>
 
-    <div class="form">
-        <div class="form__content">
-            <div class="form__title">Отправьте нам фотографию мебели</div>
-            <div class="text-lighter">
-                и мы рассчитаем стоимость вашего ремонта
-            </div>
-            <div class="text-upper">напишите нам удобным способом</div>
-            <div class="messagers mui-space_bottom-2">
-                <div class="messager">
+    <obbey-form class="form">
+        <div class="form-title">Отправьте нам фотографию мебели</div>
+        <div class="text-lighter">и мы рассчитаем стоимость вашего ремонта</div>
+        <div class="text-upper">напишите нам удобным способом</div>
+
+        <div class="messagers mui-space_bottom-2">
+            <div class="messager">
+                <a href="https://telegram.me/share/+79267491493">
                     <app-icon name="iconTelegrammMessager"></app-icon>
-                </div>
-                <div class="messager">
+                </a>
+            </div>
+            <div class="messager">
+                <a href="viber://">
                     <app-icon name="iconViberMessager"></app-icon>
-                </div>
-                <div class="messager">
+                </a>
+            </div>
+            <div class="messager">
+                <a href="whatsapp://phone=+79267491493">
                     <app-icon name="iconWhatsupMessager"></app-icon>
-                </div>
-            </div>
-            <div class="text mui-space_bottom-2">
-                Задайте нам интересующие вас вопросы
-            </div>
-
-            <form class="form-action">
-                <input
-                    class="input mui-space_bottom-1"
-                    type="text"
-                    placeholder="Введите ваше имя"
-                />
-                <input class="input mui-space_bottom-1" type="number" />
-
-                <div class="add-image">
-                    <div class="add-image__icon">
-                        <app-icon name="iconAddImage"></app-icon>
-                    </div>
-                    <label class="add-image__label">Загрузить фотографии</label>
-                    <input
-                        style="display: none"
-                        type="file"
-                        class="mui-space_bottom-2"
-                    />
-                </div>
-
-                <button class="button">Получить ответы</button>
-            </form>
-            <div class="underline-text">
-                Нажимая на кнопку, вы принимаете условия
-                <span class="primary-text-color">передачи данных</span>
+                </a>
             </div>
         </div>
-    </div>
+        <div class="text mui-space_bottom-2">
+            Задайте нам интересующие вас вопросы
+        </div>
+
+        <div [formGroup]="formGroup" class="form-action">
+            <obbey-input
+                type="text"
+                placeholder="Введите ваше имя"
+                class="mui-space_bottom-1"
+            ></obbey-input>
+
+            <obbey-input
+                type="tel"
+                placeholder="+7(___) ___-__-__"
+                class="mui-space_bottom-1"
+            ></obbey-input>
+
+            <div class="add-image">
+                <div class="add-image__icon">
+                    <app-icon name="iconAddImage"></app-icon>
+                </div>
+                <label class="add-image__label">Загрузить фотографии</label>
+                <input
+                    style="display: none"
+                    type="file"
+                    class="mui-space_bottom-2"
+                />
+            </div>
+
+            <div class="button-contaier">
+                <obbey-button color="primary" size="s" uppercase>
+                    Получить ответы
+                </obbey-button>
+            </div>
+        </div>
+        <div class="underline-text">
+            Нажимая на кнопку, вы принимаете условия
+            <span class="primary-text-color">передачи данных</span>
+        </div>
+    </obbey-form>
 </div>

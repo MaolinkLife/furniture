@@ -1,1 +1,8 @@
-<p>button works!</p>
+<button [attr.uppercase]="uppercase" class="button" [attr.disabled]="disabled">
+    <div class="button__content">
+        <ng-content></ng-content>
+    </div>
+    <div *ngIf="hasIcon" class="button__icon">
+        <app-icon [name]="iconName"></app-icon>
+    </div>
+</button>

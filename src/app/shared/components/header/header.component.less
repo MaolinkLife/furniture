@@ -60,6 +60,17 @@
     margin-bottom: 8px;
 }
 
+.title-logo {
+    font-family: Berlingske Serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+
+    color: #fffffe;
+}
+
 .address {
     display: flex;
     align-items: center;
@@ -123,7 +134,6 @@
 
 .underline-gradient {
     background: linear-gradient(270deg, #404244 0%, rgba(64, 66, 68, 0) 100%);
-
     height: 1px;
 }
 
@@ -180,86 +190,6 @@
     text-decoration: none;
 }
 
-.menu-list {
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-    padding-left: 42px;
-
-    &__link {
-        padding: 20px 20px 20px 0;
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        color: @project-color-default-text;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: 0.2s ease-in-out;
-        font-family: "MuseoSansCyrl-900";
-        font-style: normal;
-        font-weight: bold;
-        font-size: 12px;
-        line-height: 14px;
-        text-transform: uppercase;
-
-        &--item {
-            width: 26px;
-            height: 2px;
-            background-color: @project-color-primary;
-            display: inline-flex;
-            width: 26px;
-            height: 3px;
-            max-height: 3px;
-            margin-right: 8px;
-            min-width: 26px;
-            border-radius: 4px;
-            white-space: nowrap;
-        }
-    }
-
-    &__link:hover,
-    &__link.active {
-        transition: 0.2s ease-in-out;
-        color: @project-color-primary;
-    }
-}
-
-.menu-subitem {
-    font-family: "MuseoSansCyrl-100";
-    font-style: normal;
-    font-weight: 250;
-    font-size: 14px;
-    line-height: 17px;
-    /* identical to box height */
-
-    color: #ffffff;
-}
-
-.menu-subitem-list {
-    transition: 0.2s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    padding-left: 20px;
-
-    &__item {
-        font-family: "MuseoSansCyrl-100";
-        font-style: normal;
-        font-weight: 250;
-        font-size: 14px;
-        line-height: 17px;
-        /* identical to box height */
-
-        color: #ffffff;
-        margin-bottom: 10px;
-    }
-
-    &__item.active {
-        font-family: "MuseoSansCyrl-500";
-        color: @project-color-primary;
-    }
-}
-
 .menu-panel {
     padding: 16px 0 16px 35px;
     height: 56px;
@@ -286,12 +216,4 @@
     &__menuItem:not(:first-child) {
         margin-left: 70px;
     }
-}
-
-.content {
-    height: calc(100% - 173px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
 }

@@ -1,5 +1,8 @@
+import { NavigationsService } from './../../modules/navigations/navigations.service';
+import { BehaviorSubject } from 'rxjs';
 import { PreviewComponentClass } from './../../types/preview-component-class.type';
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { GeneralPreviewComponentComponent } from 'src/app/modules/general/components/general-preview-component/general-preview-component.component';
 
 interface HeaderMenuItemInterface {
     caption: string;
@@ -17,8 +20,8 @@ export class HeaderComponent implements OnInit {
     @Input()
     showMenu: boolean;
 
-    @Input()
-    previewComponent: PreviewComponentClass<Component>;
+    component$: BehaviorSubject<PreviewComponentClass<Component>> | any =
+        new BehaviorSubject<PreviewComponentClass<Component>>(null);
 
     menuItems: HeaderMenuItemInterface[] = [
         {
@@ -53,8 +56,15 @@ export class HeaderComponent implements OnInit {
         },
     ];
 
-    constructor() { }
+    constructor(private navigationsService: NavigationsService) { }
 
     ngOnInit(): void {
+        this.component$ = this.navigationsService.dynamicComponentView$;
+
+    }
+
+    menuClick(element: any) {
+        element.classList.toggle('active');
+        this.component$.next(GeneralPreviewComponentComponent);
     }
 }

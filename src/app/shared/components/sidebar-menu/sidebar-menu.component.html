@@ -8,33 +8,27 @@
             routerLinkActive="active"
             (click)="menuItemClick(menuItems, menuItem)"
         >
-            <div *ngIf="menuItem.active" class="menu-list__link--item"></div>
+            <div class="item"></div>
 
             <a class="link" [routerLink]="[menuItem.routerPath]">
                 {{ menuItem.caption }}
             </a>
         </div>
 
-        <ng-container *ngIf="menuItem.active && menuItem.children">
+        <div *ngIf="menuItem.children?.length" class="menu-subitem-list">
             <div
-                id="menu"
-                *ngIf="menuItem.children?.length"
-                class="menu-subitem-list"
+                *ngFor="
+                    let menuSubItem of menuItem.children;
+                    index as subItemIndex
+                "
+                class="menu-subitem-list__item"
+                routerLinkActive="active"
+                (click)="menuItemClick(menuItem.children, menuSubItem)"
             >
-                <div
-                    *ngFor="
-                        let menuSubItem of menuItem.children;
-                        index as subItemIndex
-                    "
-                    class="menu-subitem-list__item"
-                    [ngClass]="{ active: menuSubItem.active }"
-                    (click)="menuItemClick(menuItem.children, menuSubItem)"
-                >
-                    <a class="link" [routerLink]="[menuSubItem.routerPath]">
-                        {{ menuSubItem.caption }}
-                    </a>
-                </div>
+                <a class="link" [routerLink]="[menuSubItem.routerPath]">
+                    {{ menuSubItem.caption }}
+                </a>
             </div>
-        </ng-container>
+        </div>
     </div>
 </div>

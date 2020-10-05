@@ -1,0 +1,124 @@
+:host {
+    height: calc(100% - 173px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.frame {
+    display: flex;
+    flex-direction: column;
+    padding-left: 70px;
+    padding-top: 30px;
+    height: 100%;
+    justify-content: space-between;
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .title {
+            font-family: "BerlingskeSerif";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 36px;
+            line-height: 52px;
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        right: 0;
+        bottom: 25%;
+    }
+
+    &__footer {
+        height: 114px;
+    }
+}
+
+.button-element {
+    max-width: 348px;
+    width: 100%;
+}
+
+.shine {
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        #202425 0%,
+        rgba(32, 36, 37, 0) 100%
+    );
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+
+.footer {
+    display: flex;
+    height: 150px;
+    width: 100%;
+
+    .block {
+        width: 100%;
+        height: 100%;
+        padding: 38px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+
+        &__title {
+            font-family: "BerlingskeSerif-DemiBold";
+            font-style: normal;
+            font-size: 14px;
+            line-height: 17px;
+            /* identical to box height */
+
+            text-transform: uppercase;
+
+            /* yellow */
+
+            color: #fad875;
+            margin-bottom: 20px;
+        }
+
+        &__description {
+            font-family: "MuseoSansCyrl-300";
+            font-style: normal;
+            font-size: 16px;
+            line-height: 19px;
+
+            color: #ffffff;
+        }
+    }
+
+    .block:nth-child(odd) {
+        background: linear-gradient(180deg, #131418 0%, #0c0d0f 50%);
+    }
+    .block:nth-child(even) {
+        background: linear-gradient(0, #131418 0%, #0c0d0f 50%);
+    }
+}
+
+.f-icon {
+    position: absolute;
+    right: -40px;
+    top: -40px;
+}
+
+.element-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.element {
+    max-width: 224px;
+}

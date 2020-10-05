@@ -28,11 +28,12 @@
         line-height: 14px;
         text-transform: uppercase;
 
-        &--item {
+        > .item {
+            display: none;
             width: 26px;
             height: 2px;
             background-color: @project-color-primary;
-            display: inline-flex;
+
             width: 26px;
             height: 3px;
             max-height: 3px;
@@ -48,6 +49,18 @@
         transition: 0.2s ease-in-out;
         color: @project-color-primary;
     }
+
+    &__link.active {
+        > .item {
+            display: block;
+        }
+    }
+
+    &__link.active {
+        + .menu-subitem-list {
+            display: flex;
+        }
+    }
 }
 
 .menu-subitem {
@@ -61,7 +74,7 @@
 
 .menu-subitem-list {
     transition: 0.2s ease-in-out;
-    display: flex;
+    display: none;
     flex-direction: column;
     overflow: hidden;
     padding-left: 20px;
@@ -72,8 +85,6 @@
         font-weight: 250;
         font-size: 14px;
         line-height: 17px;
-        /* identical to box height */
-
         color: #ffffff;
         margin-bottom: 10px;
     }

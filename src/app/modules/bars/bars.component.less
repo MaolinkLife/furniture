@@ -3,20 +3,35 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
 }
 
 .frame {
     display: flex;
     flex-direction: column;
     padding-left: 70px;
-    padding-top: 30px;
+    padding-top: 100px;
     height: 100%;
+    position: relative;
+
+    &__background {
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("../../../assets/images/bars-background.png");
+        mask-image: linear-gradient(to left, transparent 2%, black);
+        top: 0;
+        position: absolute;
+        left: 0;
+    }
 
     &__description {
         display: flex;
         flex-direction: column;
-        max-width: 571px;
+        align-items: center;
+        position: relative;
+        z-index: 1;
 
         .subtitle {
             display: inline-flex;
@@ -28,32 +43,34 @@
         }
 
         .title {
-            font-family: "BerlingskeSerif-BoldItalic";
+            font-family: "BerlingskeSerif-Regular";
             font-size: 42px;
             line-height: 50px;
             margin-bottom: 30px;
+            text-align: center;
         }
 
         .text {
             font-family: "MuseoSansCyrl-100";
             font-size: 16px;
-            line-height: 19px;
+            line-height: 24px;
             max-width: 274px;
             color: #ffffff;
             margin-bottom: 30px;
-            text-align: left;
+            text-align: center;
+            max-width: 550px;
         }
     }
 
     &__image {
         position: absolute;
-        right: -140px;
-        top: 30%;
+        right: 0;
     }
 }
 
 .button-element {
-    max-width: 270px;
+    max-width: 320px;
+    width: 100%;
 }
 
 .shine {
@@ -116,7 +133,27 @@
     }
 }
 
-.f-icon {
-    position: absolute;
-    left: 70px;
+.underline-gradient {
+    background: linear-gradient(to right, #404244 0%, rgba(64, 66, 68, 0) 100%);
+    height: 1px;
+    width: 100%;
+}
+
+.block-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.label {
+    max-width: 450px;
+    font-family: "MuseoSansCyrl-100";
+    font-style: normal;
+    font-weight: 250;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
 }

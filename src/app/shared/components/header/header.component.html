@@ -1,7 +1,7 @@
 <div class="container">
     <div class="left-column">
         <div class="first-block">
-            <a [routerLink]="['/']">
+            <a [routerLink]="['/']" (click)="menuClick($event.currentTarget)">
                 <app-company-logo class="logo"></app-company-logo>
             </a>
             <div class="title-logo">Мебель у нас</div>
@@ -48,18 +48,21 @@
             <a
                 *ngFor="let menuItem of menuItems"
                 class="menu-item"
-                [routerLink]="menuItem.routerLink"
+                (click)="menuClick($event.currentTarget)"
+                [attr.href]="'/#/#customId'"
             >
                 {{ menuItem.caption }}
             </a>
-        </div>
 
-        <div class="activeUnderline"></div>
+            <div class="activeUnderline"></div>
+        </div>
 
         <div class="underline-gradient-left"></div>
 
-        <obbey-dynamic-header-preview
-            [component]="previewComponent"
-        ></obbey-dynamic-header-preview>
+        <ng-container *ngIf="component$ | async as component">
+            <obbey-dynamic-header-preview
+                [component]="component"
+            ></obbey-dynamic-header-preview>
+        </ng-container>
     </div>
 </div>

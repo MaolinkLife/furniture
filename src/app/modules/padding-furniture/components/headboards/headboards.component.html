@@ -1,1 +1,70 @@
-<p>headboards works!</p>
+<div class="frame">
+    <div class="frame__description">
+        <div class="subtitle">Не тратьте деньги на покупку новой кровати</div>
+
+        <div class="title">
+            Вернем кровати былой шарм за 16 дней - ваша мебель в новом дизайне и
+            превосходном качестве
+        </div>
+
+        <div class="text">
+            Закажите бесплатный выезд дизайнера-технолога для выбора материала и
+            точной оценки стоимости
+        </div>
+        <div class="button-element">
+            <obbey-button size="m" color="primary" uppercase>
+                заказать дизайнера-технолога
+            </obbey-button>
+        </div>
+
+        <div class="block">
+            <div class="block__content">
+                <div class="block__title">Расчитаем стоимость по фото</div>
+                <div class="messagers">
+                    <div class="messager">
+                        <app-icon name="iconTelegrammMessager"></app-icon>
+                    </div>
+
+                    <div class="messager">
+                        <app-icon name="iconViberMessager"></app-icon>
+                    </div>
+
+                    <div class="messager">
+                        <app-icon name="iconWhatsupMessager"></app-icon>
+                    </div>
+
+                    <div class="messagers__description">
+                        Отправьте нам фотографию вашей мебели удобным для вас
+                        способом
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="frame__body">
+        <div class="shine"></div>
+
+        <div class="frame__image">
+            <div class="image-content">
+                <div class="f-icon">
+                    <img src="../../../../assets/images/Frame.png" alt="" />
+                </div>
+                <img
+                    src="../../../../assets/images/header-block/padding-furniture-bed.png"
+                    alt=""
+                />
+            </div>
+        </div>
+    </div>
+
+    <div class="frame__footer">
+        <div class="element-list">
+            <obbey-shield-item
+                *ngFor="let element of elements"
+                class="element"
+                [description]="element.description"
+            ></obbey-shield-item>
+        </div>
+    </div>
+</div>

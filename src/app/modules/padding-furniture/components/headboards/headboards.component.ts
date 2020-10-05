@@ -1,16 +1,30 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-headboards',
-  templateUrl: './headboards.component.html',
-  styleUrls: ['./headboards.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-headboards',
+    templateUrl: './headboards.component.html',
+    styleUrls: ['./headboards.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeadboardsComponent implements OnInit {
+    elements = [
+        {
+            description: 'Без переплат и посредников',
+        },
+        {
+            description: 'Сами заберем и доставим обратно',
+        },
+        {
+            description: 'Цвет и материал на любой вкус',
+        },
+        {
+            description: 'Своё собственное производство с 2009 года',
+        },
+    ];
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
 }

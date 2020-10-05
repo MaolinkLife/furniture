@@ -198,6 +198,7 @@
     align-items: center;
     justify-content: space-around;
     white-space: nowrap;
+    position: relative;
 }
 
 .menu-item {
@@ -210,8 +211,24 @@
     cursor: pointer;
     text-decoration: none;
     color: #fffffe;
+    transition: 0.2s ease-in-out;
+}
+.menu-item.active,
+.menu-item:hover {
+    color: #fad875;
+    transition: 0.2s ease-in-out;
 }
 
 .menu-item:not(:first-child) {
     margin-left: 70px;
+}
+
+.activeUnderline {
+    width: 134px;
+    height: 2px;
+    background: #fad875;
+    border-radius: 6px;
+    position: absolute;
+    bottom: 0;
+    left: 0px;
 }

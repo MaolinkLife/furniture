@@ -1,9 +1,8 @@
-import { BehaviorSubject, from } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { NavigationsService } from './../../modules/navigations/navigations.service';
 import { Router } from '@angular/router';
-import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { SidebarMenuItem } from '../../interfaces/sidebar-menu-item';
-import { tap } from 'rxjs/operators';
 
 @Component({
     // tslint:disable-next-line: component-selector
@@ -27,9 +26,6 @@ export class SidebarMenuComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.navigationsService.sidebarMenuItems$.subscribe(e => {
-            console.log(e);
-        });
     }
 
     /**

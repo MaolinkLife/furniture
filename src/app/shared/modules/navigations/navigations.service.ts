@@ -1,18 +1,23 @@
+import { PreviewComponentInterface } from './../../interfaces/preview-component.interface';
 import { Router, ActivatedRoute, RouterEvent, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { Injectable, Inject } from '@angular/core';
+import { Injectable, Inject, Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ROUTES_INJECTION_TOKEN } from '../../tokens/preview-route';
 import { PreviewRouteInterface } from '../../interfaces/preview-route.interface';
 import { MarkRouteInterface } from './interfaces/mark-route.interface';
 import { SidebarMenuItem } from '../../interfaces/sidebar-menu-item';
+import { PreviewComponentClass } from '../../types/preview-component-class.type';
+import { GeneralPreviewComponentComponent } from 'src/app/modules/general/components/general-preview-component/general-preview-component.component';
 
 @Injectable({
     providedIn: 'root'
 })
 export class NavigationsService {
-
     public readonly sidebarMenuItems$: BehaviorSubject<SidebarMenuItem[]> = new BehaviorSubject([]);
+
+    // tslint:disable-next-line: max-line-length
+    public dynamicComponentView$: BehaviorSubject<PreviewComponentClass<Component>> | any = new BehaviorSubject<PreviewComponentClass<Component>>(null);
 
     private markRoutes: MarkRouteInterface[];
 
@@ -38,16 +43,22 @@ export class NavigationsService {
                 let routerTitle = '';
                 let route: ActivatedRoute = this.activatedRoute;
 
-                console.log(route);
-
                 while (route && route.snapshot) {
                     if (route.snapshot.data) {
                         if (route.snapshot.data.title) {
                             routerTitle = route.snapshot.data.title;
+
+                            this.dynamicComponentView$.next(route.snapshot.data.previewComponent);
                         }
                     }
                     route = route.children[0];
                 }
+
+                this.dynamicComponentView$.subscribe(component => {
+                    if (!component) {
+                        this.dynamicComponentView$.next(GeneralPreviewComponentComponent);
+                    }
+                });
 
                 const title = `Obbey ${routerTitle}`;
                 this.titleService.setTitle(title);

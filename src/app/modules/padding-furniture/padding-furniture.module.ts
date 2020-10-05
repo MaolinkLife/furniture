@@ -1,7 +1,8 @@
+import { IconsModule } from './../../shared/components/icons/icons.module';
+import { ShieldItemModule } from './../../shared/components/shield-item/shield-item.module';
 import { ObbeyButtonModule } from './../../shared/components/button/button.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PaddingFurniturePreviewComponent } from './components/padding-furniture-preview/padding-furniture-preview.component';
 import { CornerSofasComponent } from './components/corner-sofas/corner-sofas.component';
 import { StraightSofasComponent } from './components/straight-sofas/straight-sofas.component';
 import { ArmchairsComponent } from './components/armchairs/armchairs.component';
@@ -11,7 +12,7 @@ import { PoufsAndBanquetsComponent } from './components/poufs-and-banquets/poufs
 
 @NgModule({
     declarations: [
-        PaddingFurniturePreviewComponent,
+
         StraightSofasComponent,
         CornerSofasComponent,
         ArmchairsComponent,
@@ -22,6 +23,8 @@ import { PoufsAndBanquetsComponent } from './components/poufs-and-banquets/poufs
     imports: [
         CommonModule,
         ObbeyButtonModule,
+        ShieldItemModule,
+        IconsModule,
     ]
 })
 export class PaddingFurnitureModule { }

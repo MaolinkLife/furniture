@@ -18,6 +18,7 @@ import { ProductionBlockComponent } from './components/production-block/producti
 import { CompanyLogoModule } from 'src/app/shared/components/company-logo/company-logo.module';
 import { ResponsibilityBlockComponent } from './components/responsibility-block/responsibility-block.component';
 import { ShieldItemModule } from 'src/app/shared/components/shield-item/shield-item.module';
+import { FurnitureProtectionComponent } from './components/furniture-protection/furniture-protection.component';
 
 @NgModule({
     declarations: [
@@ -30,6 +31,7 @@ import { ShieldItemModule } from 'src/app/shared/components/shield-item/shield-i
         BonusBlockComponent,
         ProductionBlockComponent,
         ResponsibilityBlockComponent,
+        FurnitureProtectionComponent,
     ],
     imports: [
         CommonModule,
@@ -50,6 +52,7 @@ import { ShieldItemModule } from 'src/app/shared/components/shield-item/shield-i
         BonusBlockComponent,
         ProductionBlockComponent,
         ResponsibilityBlockComponent,
+        FurnitureProtectionComponent,
     ]
 })
 export class BlocksModule { }

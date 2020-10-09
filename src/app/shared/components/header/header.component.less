@@ -4,6 +4,10 @@
 :host {
     display: flex;
     min-height: 938px;
+
+    > * {
+        color: #000;
+    }
 }
 
 .container {
@@ -47,11 +51,9 @@
             font-weight: 300;
             font-size: 16px;
             line-height: 22px;
-            /* or 137% */
-
             text-align: justify;
 
-            color: #ffffff;
+            color: #000;
         }
     }
 }
@@ -61,14 +63,12 @@
 }
 
 .title-logo {
-    font-family: Berlingske Serif;
-    font-style: normal;
-    font-weight: 500;
+    font-family: "BerlingskeSerif";
     font-size: 18px;
     line-height: 22px;
     text-transform: uppercase;
 
-    color: #fffffe;
+    color: #000;
 }
 
 .address {
@@ -93,21 +93,19 @@
     &__description {
         font-size: 16px;
         font-family: @project-font-primary-regular;
-        color: @project-color-primary;
+        color: #000;
     }
 }
 
 .mobile {
     font-size: 18px;
     line-height: 22px;
-    /* identical to box height */
-
     letter-spacing: 0.055em;
     margin-bottom: 12px;
     text-decoration: none;
     cursor: pointer;
     font-family: "BerlingskeSerif-SemiBold";
-    color: @project-color-default-text;
+    color: #000;
 }
 
 .left-column {
@@ -118,7 +116,8 @@
 }
 
 .right-column {
-    background: linear-gradient(90deg, #181d21 0%, rgba(24, 29, 33, 0) 100%);
+    // background: linear-gradient(90deg, #181d21 0%, rgba(24, 29, 33, 0) 100%);
+    background: linear-gradient(90deg, #fff 0%, rgba(24, 29, 33, 0) 100%);
     width: 100%;
 }
 
@@ -159,6 +158,11 @@
     display: flex;
     align-items: center;
     height: 56px;
+    font-family: "BerlingskeSerif";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
 }
 
 .flex {
@@ -210,12 +214,12 @@
     text-transform: uppercase;
     cursor: pointer;
     text-decoration: none;
-    color: #fffffe;
+    color: #000;
     transition: 0.2s ease-in-out;
 }
-.menu-item.active,
+
 .menu-item:hover {
-    color: #fad875;
+    color: #f4ab2c;
     transition: 0.2s ease-in-out;
 }
 

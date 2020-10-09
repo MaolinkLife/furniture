@@ -4,6 +4,10 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+
+    > * {
+        color: #000;
+    }
 }
 
 .frame {
@@ -39,7 +43,7 @@
             font-family: "BerlingskeSerif-Italic";
             font-size: 34px;
             line-height: 52px;
-            color: #ffffff;
+            color: #000;
             margin-bottom: 30px;
         }
 
@@ -47,7 +51,6 @@
             font-family: "MuseoSansCyrl-100";
             font-size: 16px;
             line-height: 22px;
-            color: #ffffff;
             margin-bottom: 40px;
             max-width: 384px;
         }
@@ -67,19 +70,6 @@
 .button-element {
     max-width: 348px;
     margin-bottom: 50px;
-}
-
-.shine {
-    background: radial-gradient(
-        50% 50% at 50% 50%,
-        #202425 0%,
-        rgba(32, 36, 37, 0) 100%
-    );
-    width: 600px;
-    height: 600px;
-    position: absolute;
-    right: -180px;
-    top: 0;
 }
 
 .f-icon {
@@ -103,7 +93,7 @@
     min-height: 150px;
     left: 732px;
     top: 613px;
-    border: 1px solid #f3f3f3;
+    border: 1px solid #000;
     box-sizing: border-box;
     border-radius: 6px;
     padding: 10px;
@@ -116,11 +106,11 @@
         align-items: center;
         display: flex;
         flex-direction: column;
-        color: #fff;
+        color: #000;
     }
 
     &__title {
-        font-family: Berlingske Serif;
+        font-family: "BerlingskeSerif";
         font-style: normal;
         font-weight: 600;
         font-size: 14px;
@@ -132,7 +122,7 @@
         text-align: center;
         text-transform: uppercase;
         margin-bottom: 8px;
-        color: #fad875;
+        color: #f4ab2c;
     }
 }
 
@@ -156,7 +146,7 @@
         font-weight: 250;
         font-size: 14px;
         line-height: 22px;
-        color: #fff;
+        color: #000;
         max-width: 184px;
     }
 }

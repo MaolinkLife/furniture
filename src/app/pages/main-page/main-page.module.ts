@@ -1,3 +1,4 @@
+import { PortfolioOfWorksModule } from './../../modules/portfolio-of-works/portfolio-of-works.module';
 import { FabricCatalogModule } from './../../modules/fabric-catalog/fabric-catalog.module';
 import { BarsModule } from './../../modules/bars/bars.module';
 import { ROUTES } from './../../shared/routes/routes';
@@ -23,6 +24,7 @@ import { AboutCompanyModule } from 'src/app/modules/about-company/about-company.
         FurnitureCareModule,
         ShippingAndPaymentModule,
         AboutCompanyModule,
+        PortfolioOfWorksModule,
     ],
 })
 export class MainPageModule { }

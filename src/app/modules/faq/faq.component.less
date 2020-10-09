@@ -2,6 +2,10 @@
     display: block;
     padding-top: 70px;
     padding-left: 30px;
+
+    > * {
+        color: #000;
+    }
 }
 
 .container {
@@ -9,7 +13,7 @@
     flex-direction: column;
 
     &__title-page {
-        font-family: Berlingske Serif;
+        font-family: "BerlingskeSerif";
         font-style: normal;
         font-weight: normal;
         font-size: 38px;
@@ -20,13 +24,11 @@
         align-items: center;
         text-align: center;
 
-        color: #ffffff;
         margin-bottom: 40px;
     }
 }
 
 .accordion {
-    color: #444;
     cursor: pointer;
     padding: 18px 40px;
     width: 100%;
@@ -34,51 +36,30 @@
     text-align: left;
     outline: none;
     transition: 0.4s ease-in-out;
-
     font-family: "MuseoSansCyrl-700";
     font-size: 12px;
     line-height: 14px;
     text-transform: uppercase;
-
-    color: #fad875;
-
     border: 1px solid #34383b;
     box-sizing: border-box;
-    background: radial-gradient(
-        80.41% 79.03% at 80.41% 29.01%,
-        #232426 21.88%,
-        rgba(32, 36, 37, 0) 68.75%
-    );
 }
 
 .active,
 .accordion:hover {
-    background: radial-gradient(
-        80.41% 79.03% at 80.41% 29.01%,
-        #232426 21.88%,
-        rgba(32, 36, 37, 0) 68.75%
-    );
-    border-left: 2px solid #fad875;
+    color: #f4ab2c;
+    border-left: 2px solid #f4ab2c;
 }
 
 .panel {
     padding: 0 40px;
-    background: radial-gradient(
-        80.41% 79.03% at 80.41% 29.01%,
-        #232426 21.88%,
-        rgba(32, 36, 37, 0) 68.75%
-    );
     max-height: 0;
     overflow: hidden;
     transition: 0.2s ease-out;
-
     font-family: "MuseoSansCyrl-100";
     font-style: normal;
     font-weight: 250;
     font-size: 16px;
     line-height: 19px;
-
-    color: #ffffff;
 }
 
 .accordion.active + .panel {

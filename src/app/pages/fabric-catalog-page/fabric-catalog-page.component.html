@@ -1,1 +1,58 @@
-<p>fabric-catalog-page works!</p>
+<div class="container">
+    <div class="form-container">
+        <obbey-form>
+            <div class="form-title">
+                Вышлем вам полный каталог материалов и их цветов
+            </div>
+
+            <div class="text-upper">напишите нам удобным способом</div>
+
+            <div class="messagers mui-space_bottom-2">
+                <div class="messager">
+                    <a href="https://telegram.me/share/+79267491493">
+                        <app-icon name="iconTelegrammMessager"></app-icon>
+                    </a>
+                </div>
+                <div class="messager">
+                    <a href="viber://">
+                        <app-icon name="iconViberMessager"></app-icon>
+                    </a>
+                </div>
+                <div class="messager">
+                    <a href="whatsapp://phone=+79267491493">
+                        <app-icon name="iconWhatsupMessager"></app-icon>
+                    </a>
+                </div>
+            </div>
+
+            <div class="text mui-space_bottom-2">
+                Задайте нам интересующие вас вопросы
+            </div>
+
+            <div [formGroup]="formGroup" class="form-action">
+                <obbey-input
+                    type="text"
+                    placeholder="Введите ваше имя"
+                    class="mui-space_bottom-1"
+                ></obbey-input>
+
+                <obbey-input
+                    type="text"
+                    placeholder="Введите вашу почту"
+                    class="mui-space_bottom-1"
+                ></obbey-input>
+
+                <div class="button-contaier">
+                    <obbey-button color="primary" size="s" uppercase>
+                        Получить каталог
+                    </obbey-button>
+                </div>
+            </div>
+
+            <div class="underline-text">
+                Так же можем порекомендовать вам подходящий материал, исходя из
+                ваших пожеланий
+            </div>
+        </obbey-form>
+    </div>
+</div>

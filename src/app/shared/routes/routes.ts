@@ -123,7 +123,7 @@ const WORKING_WITH_GENUINE_LEATHER_ROUTES = {
             component: PaddingFurniturePageComponent,
             data: {
                 mark: 'armchairs',
-                title: 'Перетяжка угловых диванов',
+                title: 'Перетяжка кресел',
                 previewComponent: ArmchairsComponent,
             }
         },
@@ -189,7 +189,8 @@ export const ROUTES: PreviewRouteInterface[] = [
             },
             {
                 path: 'fabric-catalog',
-                component: FabricCatalogPageComponent,
+                loadChildren: () => import('../../pages/fabric-catalog-page/fabric-catalog-page.module')
+                    .then(m => m.FabricCatalogPageModule),
                 data: {
                     mark: 'fabric-catalog',
                     title: 'Каталог тканей',

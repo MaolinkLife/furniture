@@ -4,6 +4,26 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+
+    > * {
+        color: #000;
+    }
+}
+
+.project-text-body_m() {
+    font-family: "MuseoSansCyrl-100";
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.project-text-body_m {
+    .project-text-body_m();
+}
+
+.project-text-body_s {
+    font-family: "MuseoSansCyrl-100";
+    font-size: 14px;
+    line-height: 22px;
 }
 
 .frame {
@@ -26,15 +46,14 @@
             font-size: 36px;
             line-height: 52px;
             text-align: center;
-            color: #ffffff;
             margin-bottom: 30px;
         }
     }
 
     &__image {
         position: absolute;
-        right: 0;
-        bottom: 25%;
+        left: 0;
+        bottom: 23%;
     }
 
     &__footer {
@@ -51,25 +70,13 @@
 .button-element {
     max-width: 348px;
     width: 100%;
-}
-
-.shine {
-    background: radial-gradient(
-        50% 50% at 50% 50%,
-        #202425 0%,
-        rgba(32, 36, 37, 0) 100%
-    );
-    width: 600px;
-    height: 600px;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
+    margin-right: 100px;
 }
 
 .f-icon {
     position: absolute;
-    right: -60px;
-    top: 60px;
+    right: -242px;
+    top: 98px;
     z-index: 101;
 }
 
@@ -90,14 +97,9 @@
 }
 
 .subtitle {
-    font-family: Museo Sans Cyrl;
-    font-style: normal;
-    font-weight: 250;
+    font-family: "MuseoSansCyrl-100";
     font-size: 16px;
     line-height: 22px;
-    /* or 137% */
-
-    color: #ffffff;
     width: 380px;
     align-items: center;
 }
@@ -115,8 +117,10 @@
     bottom: 60px;
 
     &__content {
+        .project-text-body_m();
+
         background: #ffffff;
-        border: 1px solid #f3f3f3;
+        border: 1px solid #000;
         box-sizing: border-box;
         border-radius: 6px;
         padding: 25px;
@@ -134,7 +138,7 @@
     }
 
     &__title {
-        font-family: Berlingske Serif;
+        font-family: "BerlingskeSerif";
         font-style: normal;
         font-weight: 600;
         font-size: 12px;
@@ -145,7 +149,7 @@
         text-transform: uppercase;
         max-width: 150px;
 
-        color: #000000;
+        color: #f4ab2c;
         margin-bottom: 20px;
     }
 

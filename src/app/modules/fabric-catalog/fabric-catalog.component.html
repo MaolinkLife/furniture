@@ -1,3 +1,203 @@
 <div class="container">
     <div class="title-page">Каталог тканей</div>
+
+    <ng-container *ngIf="(viewMode$ | async) === 'default'; else popupTemplate">
+        <div class="gallery">
+            <div
+                class="gallery__item gallery__item--1"
+                (click)="itemClick('Жаккард')"
+            >
+                <img
+                    src="../../../assets/images/fabric-catalog/fc8.png"
+                    class="gallery__img"
+                />
+                <div class="image-caption text-black">Жаккард</div>
+            </div>
+            <div
+                class="gallery__item gallery__item--2"
+                (click)="itemClick('Велюр')"
+            >
+                <img
+                    src="../../../assets/images/fabric-catalog/fc5.png"
+                    class="gallery__img"
+                />
+                <div class="image-caption text-white">Велюр</div>
+            </div>
+            <div
+                class="gallery__item gallery__item--3"
+                (click)="itemClick('Шенилл')"
+            >
+                <img
+                    src="../../../assets/images/fabric-catalog/fc1.png"
+                    class="gallery__img"
+                />
+                <div class="image-caption text-white">Шенилл</div>
+            </div>
+            <div
+                class="gallery__item gallery__item--4"
+                (click)="itemClick('Тканный нубук')"
+            >
+                <img
+                    src="../../../assets/images/fabric-catalog/fc10.png"
+                    class="gallery__img"
+                />
+                <div class="image-caption text-white">Тканный нубук</div>
+            </div>
+            <div
+                class="gallery__item gallery__item--5"
+                (click)="itemClick('Микрофибра')"
+            >
+                <img
+                    src="../../../assets/images/fabric-catalog/fc9.png"
+                    class="gallery__img"
+                />
+                <div class="image-caption text-white">Микрофибра</div>
+            </div>
+            <div
+                class="gallery__item gallery__item--6"
+                (click)="itemClick('Натуральная кожа')"
+            >
+                <img
+                    src="../../../assets/images/fabric-catalog/fc7.png"
+                    class="gallery__img"
+                />
+                <div class="image-caption text-black">Натуральная кожа</div>
+            </div>
+
+            <div
+                class="gallery__item gallery__item--7"
+                (click)="itemClick('Искусственная кожа')"
+            >
+                <img
+                    src="../../../assets/images/fabric-catalog/fc6.png"
+                    class="gallery__img"
+                />
+                <div class="image-caption text-black">Искусственная кожа</div>
+            </div>
+
+            <div
+                class="gallery__item gallery__item--8"
+                (click)="itemClick('Гобелен')"
+            >
+                <img
+                    src="../../../assets/images/fabric-catalog/fc2.png"
+                    class="gallery__img"
+                />
+                <div class="image-caption text-black">Гобелен</div>
+            </div>
+
+            <div
+                class="gallery__item gallery__item--9"
+                (click)="itemClick('Флок на флоке')"
+            >
+                <img
+                    src="../../../assets/images/fabric-catalog/fc3.png"
+                    class="gallery__img"
+                />
+                <div class="image-caption text-black">Флок на флоке</div>
+            </div>
+
+            <div
+                class="gallery__item gallery__item--10"
+                (click)="itemClick('Флок')"
+            >
+                <img
+                    src="../../../assets/images/fabric-catalog/fc11.png"
+                    class="gallery__img"
+                />
+                <div class="image-caption text-black">Флок</div>
+            </div>
+
+            <div
+                class="gallery__item gallery__item--11"
+                (click)="itemClick('Бархат')"
+            >
+                <img
+                    src="../../../assets/images/fabric-catalog/fc4.png"
+                    class="gallery__img"
+                />
+                <div class="image-caption text-white">Бархат</div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-template #popupTemplate>
+        <div *ngIf="currentFabric$ | async as fabric" class="popup">
+            <div class="icon" (click)="closePopup()">
+                <app-icon name="iconClosePopup"></app-icon>
+            </div>
+            <div class="popup__body">
+                <div class="carousel">
+                    <obbey-carousel [arrowPositionConfig]="{ top: '30%' }">
+                        <ng-template carouselItem>
+                            <div class="elements">
+                                <div class="element"></div>
+                                <div class="element"></div>
+                                <div class="element"></div>
+                                <div class="element"></div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselItem>
+                            <div class="elements">
+                                <div class="element"></div>
+                                <div class="element"></div>
+                                <div class="element"></div>
+                                <div class="element"></div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselItem>
+                            <div class="elements">
+                                <div class="element"></div>
+                                <div class="element"></div>
+                                <div class="element"></div>
+                                <div class="element"></div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselItem>
+                            <div class="elements">
+                                <div class="element"></div>
+                                <div class="element"></div>
+                                <div class="element"></div>
+                                <div class="element"></div>
+                            </div>
+                        </ng-template>
+                    </obbey-carousel>
+                </div>
+                <div class="popup-title">{{ fabric.name }}</div>
+
+                <div class="popup-description">
+                    <div
+                        *ngFor="let description of fabric.description"
+                        class="description"
+                    >
+                        {{ description }}
+                    </div>
+                </div>
+                <div class="popup-list">
+                    <div *ngIf="fabric.benefits.length" class="left-column">
+                        <div class="list-title">Преимущества:</div>
+                        <div
+                            class="list-item"
+                            *ngFor="let benefit of fabric.benefits"
+                        >
+                            - {{ benefit }}
+                        </div>
+                    </div>
+
+                    <div
+                        *ngIf="fabric.disadvantages.length"
+                        class="right-column"
+                    >
+                        <div class="list-title">Недостатки:</div>
+                        <div
+                            class="list-item"
+                            *ngFor="let disadvantage of fabric.disadvantages"
+                        >
+                            - {{ disadvantage }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
 </div>

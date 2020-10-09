@@ -1,3 +1,4 @@
+import { CarouselModule } from './../../shared/components/carousel/carousel.module';
 import { BlocksModule } from './../blocks/blocks.module';
 import { ObbeyButtonModule } from './../../shared/components/button/button.module';
 import { IconsModule } from './../../shared/components/icons/icons.module';
@@ -42,6 +43,7 @@ import { ObbeyFlipCardModule } from 'src/app/shared/components/flip-card/flip-ca
         ShieldItemModule,
         ObbeyFlipCardModule,
         BlocksModule,
+        CarouselModule,
     ],
     exports: [
         GeneralPreviewComponentComponent,

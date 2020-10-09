@@ -1,0 +1,32 @@
+<div class="container">
+    <div
+        *ngFor="let itemConnector of itemConnectors; index as itemIndex"
+        class="slide"
+        [ngClass]="{ active: itemIndex === activeItemIndex }"
+    >
+        <ng-container
+            *ngTemplateOutlet="itemConnector.templateRef"
+        ></ng-container>
+    </div>
+</div>
+
+<a class="arrow-prev" (click)="clickPrev()" [ngStyle]="arrowPositionConfig">
+    <div class="icon__prev">
+        <app-icon name="iconSliderArrowRight"></app-icon>
+    </div>
+</a>
+
+<a class="arrow-next" (click)="clickNext()" [ngStyle]="arrowPositionConfig">
+    <div class="icon__next">
+        <app-icon name="iconSliderArrowRight"></app-icon>
+    </div>
+</a>
+
+<div class="dots">
+    <span
+        *ngFor="let item of itemConnectors; index as itemIndex"
+        class="dot"
+        [ngClass]="{ active: itemIndex === activeItemIndex }"
+        (click)="previewSlide(itemIndex)"
+    ></span>
+</div>

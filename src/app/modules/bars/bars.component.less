@@ -3,6 +3,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    > * {
+        color: #000;
+    }
 }
 
 .frame {
@@ -16,11 +20,11 @@
     &__background {
         height: 100%;
         width: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image: url("../../../assets/images/bars-background.png");
-        mask-image: linear-gradient(to left, transparent 2%, black);
+        // background-position: center;
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        // background-image: url("../../../assets/images/bars-background.png");
+        // mask-image: linear-gradient(to left, transparent 2%, black);
         top: 0;
         position: absolute;
         left: 0;
@@ -39,7 +43,6 @@
             font-family: "MuseoSansCyrl-100";
             font-size: 16px;
             line-height: 19px;
-            color: #ffffff;
         }
 
         .title {
@@ -55,7 +58,6 @@
             font-size: 16px;
             line-height: 24px;
             max-width: 274px;
-            color: #ffffff;
             margin-bottom: 30px;
             text-align: center;
             max-width: 550px;
@@ -71,19 +73,6 @@
 .button-element {
     max-width: 320px;
     width: 100%;
-}
-
-.shine {
-    background: radial-gradient(
-        50% 50% at 50% 50%,
-        #202425 0%,
-        rgba(32, 36, 37, 0) 100%
-    );
-    width: 600px;
-    height: 600px;
-    position: absolute;
-    right: -180px;
-    top: 0;
 }
 
 .footer {
@@ -105,13 +94,8 @@
             font-style: normal;
             font-size: 14px;
             line-height: 17px;
-            /* identical to box height */
-
             text-transform: uppercase;
-
-            /* yellow */
-
-            color: #fad875;
+            color: #f4ab2c;
             margin-bottom: 20px;
         }
 
@@ -120,17 +104,15 @@
             font-style: normal;
             font-size: 16px;
             line-height: 19px;
-
-            color: #ffffff;
         }
     }
 
-    .block:nth-child(odd) {
-        background: linear-gradient(180deg, #131418 0%, #0c0d0f 50%);
-    }
-    .block:nth-child(even) {
-        background: linear-gradient(0, #131418 0%, #0c0d0f 50%);
-    }
+    // .block:nth-child(odd) {
+    //     background: linear-gradient(180deg, #131418 0%, #0c0d0f 50%);
+    // }
+    // .block:nth-child(even) {
+    //     background: linear-gradient(0, #131418 0%, #0c0d0f 50%);
+    // }
 }
 
 .underline-gradient {
@@ -155,5 +137,4 @@
     line-height: 24px;
     display: flex;
     align-items: center;
-    color: #ffffff;
 }

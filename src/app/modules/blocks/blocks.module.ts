@@ -19,6 +19,7 @@ import { CompanyLogoModule } from 'src/app/shared/components/company-logo/compan
 import { ResponsibilityBlockComponent } from './components/responsibility-block/responsibility-block.component';
 import { ShieldItemModule } from 'src/app/shared/components/shield-item/shield-item.module';
 import { FurnitureProtectionComponent } from './components/furniture-protection/furniture-protection.component';
+import { CalculateModule } from 'src/app/shared/components/calculate/calculate.module';
 
 @NgModule({
     declarations: [
@@ -41,6 +42,7 @@ import { FurnitureProtectionComponent } from './components/furniture-protection/
         ObbeyFormModule,
         CompanyLogoModule,
         ShieldItemModule,
+        CalculateModule,
     ],
     exports: [
         ExamplesRefurbishedFurnitureComponent,

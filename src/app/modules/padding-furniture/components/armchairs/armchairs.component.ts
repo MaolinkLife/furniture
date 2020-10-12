@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
@@ -25,7 +26,7 @@ export class ArmchairsComponent implements OnInit {
     ];
 
 
-    constructor() { }
+    constructor(private activatedRoute: ActivatedRoute) { }
 
     ngOnInit(): void {
     }

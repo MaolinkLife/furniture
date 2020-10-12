@@ -10,6 +10,9 @@ export class IconsComponent implements OnInit {
     @Input()
     name: string;
 
+    @Input()
+    disabled: boolean;
+
     constructor() { }
 
     ngOnInit(): void {

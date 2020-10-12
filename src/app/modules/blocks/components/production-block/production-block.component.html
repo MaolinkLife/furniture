@@ -5,59 +5,22 @@
     </div>
 
     <div class="right-column">
-        <div class="video mui-space_right-5">
-            <div class="play">
-                <svg
-                    width="10"
-                    height="10"
-                    viewBox="0 0 10 10"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M2.333 0.867012C1.48 0.426012 0.789001 0.787012 0.789001 1.66901V8.19501C0.789001 9.07801 1.48 9.43801 2.333 9.00001L8.675 5.72901C9.529 5.28901 9.529 4.57501 8.675 4.13601L2.333 0.867012Z"
-                        fill="#111416"
-                    />
-                </svg>
+        <div
+            *ngFor="let video of videoList"
+            class="video-container mui-space_right-5"
+        >
+            <div class="video-blank">
+                <div class="play" (click)="clickPlay($event)">
+                    <app-icon name="iconPlay"></app-icon>
+                </div>
             </div>
-        </div>
-        <div class="video mui-space_right-5">
-            <div class="play">
-                <svg
-                    width="10"
-                    height="10"
-                    viewBox="0 0 10 10"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M2.333 0.867012C1.48 0.426012 0.789001 0.787012 0.789001 1.66901V8.19501C0.789001 9.07801 1.48 9.43801 2.333 9.00001L8.675 5.72901C9.529 5.28901 9.529 4.57501 8.675 4.13601L2.333 0.867012Z"
-                        fill="#111416"
-                    />
-                </svg>
-            </div>
-        </div>
-        <div class="video">
-            <div class="play">
-                <svg
-                    width="10"
-                    height="10"
-                    viewBox="0 0 10 10"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M2.333 0.867012C1.48 0.426012 0.789001 0.787012 0.789001 1.66901V8.19501C0.789001 9.07801 1.48 9.43801 2.333 9.00001L8.675 5.72901C9.529 5.28901 9.529 4.57501 8.675 4.13601L2.333 0.867012Z"
-                        fill="#111416"
-                    />
-                </svg>
-            </div>
+
+            <video class="video-content" controls>
+                <source
+                    src="../../../../../assets/video/video1.MOV"
+                    type="video/mp4"
+                />
+            </video>
         </div>
     </div>
 
@@ -66,52 +29,11 @@
             Осуществляем постгарантийное обслуживание и сотрудничаем с фабриками
         </div>
         <div class="overflow-block__icon-list">
-            <div class="icon-element">
+            <div *ngFor="let company of companyList" class="icon-element">
                 <div class="icon-element__border">
-                    <img
-                        src="../../../../../assets/images/logo/logo-company5.png"
-                        alt=""
-                    />
+                    <img [src]="company.icon" />
                 </div>
-                <div class="icon-element__description">Фабрика 8 Марта</div>
-            </div>
-            <div class="icon-element">
-                <div class="icon-element__border">
-                    <img
-                        src="../../../../../assets/images/logo/logo-company4.png"
-                        alt=""
-                    />
-                </div>
-                <div class="icon-element__description">Albert & Shtein</div>
-            </div>
-            <div class="icon-element">
-                <div class="icon-element__border">
-                    <img
-                        src="../../../../../assets/images/logo/logo-company1.png"
-                        alt=""
-                    />
-                </div>
-                <div class="icon-element__description">Britannica</div>
-            </div>
-            <div class="icon-element">
-                <div class="icon-element__border">
-                    <img
-                        src="../../../../../assets/images/logo/logo-company2.png"
-                        alt=""
-                    />
-                </div>
-                <div class="icon-element__description">
-                    UNICO INTERIORS DECORATION
-                </div>
-            </div>
-            <div class="icon-element">
-                <div class="icon-element__border">
-                    <img
-                        src="../../../../../assets/images/logo/logo-company3.png"
-                        alt=""
-                    />
-                </div>
-                <div class="icon-element__description">MÖBEL&ZEIT</div>
+                <div class="icon-element__description">{{ company.name }}</div>
             </div>
         </div>
     </div>

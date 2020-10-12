@@ -1,12 +1,22 @@
+import { SelectModule } from './../select/select.module';
+import { IconsModule } from './../icons/icons.module';
+import { ObbeyButtonModule } from './../button/button.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-
+import { CalculateComponent } from './calculate.component';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+    declarations: [
+        CalculateComponent
+    ],
+    imports: [
+        CommonModule,
+        ObbeyButtonModule,
+        IconsModule,
+        SelectModule,
+    ],
+    exports: [
+        CalculateComponent,
+    ]
 })
 export class CalculateModule { }

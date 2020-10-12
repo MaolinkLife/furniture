@@ -17,6 +17,11 @@ import { ShippingAndPaymentComponent } from 'src/app/modules/shipping-and-paymen
 import { BarsComponent } from 'src/app/modules/bars/bars.component';
 import { PortfolioOfWorksComponent } from 'src/app/modules/portfolio-of-works/portfolio-of-works.component';
 import { FabricCatalogComponent } from 'src/app/modules/fabric-catalog/fabric-catalog.component';
+import { LeatherArmchairComponent } from 'src/app/modules/leaher-furniture/components/leather-armchair/leather-armchair.component';
+import { LeatherCornerSofasComponent } from 'src/app/modules/leaher-furniture/components/leather-corner-sofas/leather-corner-sofas.component';
+import { LeatherStraightSofasComponent } from 'src/app/modules/leaher-furniture/components/leather-straight-sofas/leather-straight-sofas.component';
+import { LeahterChairsComponent } from 'src/app/modules/leaher-furniture/components/leahter-chairs/leahter-chairs.component';
+import { LeatherPoufsAndBanquetsComponent } from 'src/app/modules/leaher-furniture/components/leather-poufs-and-banquets/leather-poufs-and-banquets.component';
 
 const PADDING_FURNITURE_ROUTES = {
     path: 'padding-furniture',
@@ -106,7 +111,7 @@ const WORKING_WITH_GENUINE_LEATHER_ROUTES = {
             data: {
                 mark: 'straigth-sofas',
                 title: 'Перетяжка прямых диванов',
-                previewComponent: StraightSofasComponent,
+                previewComponent: LeatherStraightSofasComponent,
             }
         },
         {
@@ -115,7 +120,7 @@ const WORKING_WITH_GENUINE_LEATHER_ROUTES = {
             data: {
                 mark: 'corner-sofas',
                 title: 'Перетяжка угловых диванов',
-                previewComponent: CornerSofasComponent,
+                previewComponent: LeatherCornerSofasComponent,
             }
         },
         {
@@ -124,7 +129,7 @@ const WORKING_WITH_GENUINE_LEATHER_ROUTES = {
             data: {
                 mark: 'armchairs',
                 title: 'Перетяжка кресел',
-                previewComponent: ArmchairsComponent,
+                previewComponent: LeatherArmchairComponent,
             }
         },
         {
@@ -133,16 +138,7 @@ const WORKING_WITH_GENUINE_LEATHER_ROUTES = {
             data: {
                 mark: 'chairs',
                 title: 'Перетяжка стульев',
-                previewComponent: ChairsComponent,
-            }
-        },
-        {
-            path: 'headboards',
-            component: PaddingFurniturePageComponent,
-            data: {
-                mark: 'headboards',
-                title: 'Перетяжка изголовья кроватей',
-                previewComponent: HeadboardsComponent,
+                previewComponent: LeahterChairsComponent,
             }
         },
         {
@@ -151,7 +147,7 @@ const WORKING_WITH_GENUINE_LEATHER_ROUTES = {
             data: {
                 mark: 'poufs-and-banquets',
                 title: 'Пуфы и банкетки',
-                previewComponent: PoufsAndBanquetsComponent,
+                previewComponent: LeatherPoufsAndBanquetsComponent,
             }
         },
         {

@@ -1,0 +1,202 @@
+<div class="calculate">
+    <div class="calculate__border">
+        <div class="calculate__title mui-space_bottom-5">
+            {{ currentIndex + 1 }} вопрос из 5
+        </div>
+
+        <div class="progress-empty mui-space_bottom-10">
+            <div
+                class="progress"
+                [style]="{ width: 20 * (currentIndex + 1) + '%' }"
+            ></div>
+        </div>
+
+        <div class="step calculate__content">
+            <ng-container [ngSwitch]="currentIndex">
+                <ng-container *ngSwitchCase="0">
+                    <ng-container *ngTemplateOutlet="firstQuestionTemplate"></ng-container>
+                </ng-container>
+
+                <ng-container *ngSwitchCase="1">
+                    <ng-container *ngTemplateOutlet="secondQuestionTemplate">
+                    </ng-container>
+                </ng-container>
+
+                <ng-container *ngSwitchCase="2">
+                    <ng-container *ngTemplateOutlet="thirdQuestionTemplate">
+                    </ng-container>
+                </ng-container>
+                <ng-container *ngSwitchCase="3">
+                    <div class="information-block">
+                        <div class="info-element">
+                            Вы выбрали:
+                            <span class="info-element-dynamic">{{
+                                object.type
+                            }}</span>
+                        </div>
+                        <div class="info-element">
+                            За работу:
+                            <span class="info-element-dynamic">
+                                6000 рублей
+                            </span>
+                        </div>
+                        <div class="info-element">
+                            Материалы:
+                            <span class="info-element-dynamic">
+                                2800 рублей
+                            </span>
+                        </div>
+                        <div class="info-element">
+                            Итого:
+                            <span class="info-element-dynamic">
+                                8800 рублей
+                            </span>
+                        </div>
+                        <div class="info-element">
+                            Данные расчеты приблизительны. Конечная сумма может
+                            отличаться как в меньшею, так и большую сторону.
+                            Точная стоимость определяется мастером-замерщиком
+                            при осмотре мебели на месте
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-container *ngSwitchCase="4">
+                    <div class="block-title mui-space_bottom-5">
+                        Куда требуется доставка:
+                    </div>
+
+                    <div class="button-list mui-space_bottom-10">
+                        <button class="button">Москва</button>
+                        <button class="button">Область</button>
+                    </div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" />
+                        <div class="checkbox-label">
+                            Требуются услуги грузчиков
+                        </div>
+                    </div>
+
+                    <div class="payment">
+                        Итоговая стоимоть погрузки и доставки
+                        <span class="target-text">
+                            {{ object.deliveryPrice }}
+                        </span>
+                    </div>
+                </ng-container>
+            </ng-container>
+        </div>
+
+        <div class="button-container">
+            <div class="icon__prev" [ngClass]="{ disabled: !canClickPrev }">
+                <app-icon
+                    name="iconSliderArrowRight"
+                    (click)="clickBack()"
+                    [disabled]="!canClickPrev"
+                ></app-icon>
+            </div>
+
+            <div class="icon__next" [ngClass]="{ disabled: !canClickNext }">
+                <app-icon
+                    name="iconSliderArrowRight"
+                    (click)="clickNext()"
+                    [disabled]="!canClickNext"
+                ></app-icon>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #firstQuestionTemplate>
+    <div class="block-title mui-space_bottom-10">Выберите тип мебели:</div>
+
+    <div class="grid-panel">
+        <div
+            *ngFor="
+                let furniture of firstQuestion.furnitureTypesList;
+                index as itemIndex
+            "
+            class="element"
+            [ngClass]="{ active: furniture.active }"
+        >
+            <app-icon
+                [name]="furniture.iconName"
+                (click)="selectFurnitureType(itemIndex)"
+            ></app-icon>
+
+            <div class="element-caption">
+                {{ furniture.caption }}
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #secondQuestionTemplate>
+    <div class="block-title mui-space_bottom-5">Размер мебели:</div>
+
+    <div class="select">
+        <obbey-select
+            (valueChange)="clickSizeSelect($event)"
+            [items]="sizeList$ | async"
+        ></obbey-select>
+    </div>
+
+    <div class="block-title mui-space_bottom-5">Пышность мебели:</div>
+
+    <div class="button-list">
+        <button
+            *ngFor="let pompButton of pompButtons; index as pompIndex"
+            class="button"
+            (click)="pompSelect(pompIndex)"
+            [ngClass]="{ active: pompButton.active }"
+        >
+            {{ pompButton.caption }}
+        </button>
+    </div>
+
+    <div class="mui-space_bottom-5">Восстановления наполнителя:</div>
+
+    <div class="button-list">
+        <button
+            *ngFor="let fillerRecovery of fillerRecoveryList; index as index"
+            class="button"
+            (click)="fillerRecoverySelect(index)"
+            [ngClass]="{ active: fillerRecovery.active }"
+        >
+            {{ fillerRecovery.caption }}
+        </button>
+    </div>
+
+    <ng-container *ngTemplateOutlet="resultBlockTemplate"></ng-container>
+</ng-template>
+
+<ng-template #thirdQuestionTemplate>
+    <div class="block-title mui-space_bottom-5">Тип материала:</div>
+
+    <div class="button-list">
+        <button class="button">Ткань</button>
+        <button class="button">Натуральная кожа</button>
+        <button class="button">Экокожа</button>
+        <button class="button">Кожзам</button>
+    </div>
+    <div class="mui-space_bottom-5">Ценовая категория:</div>
+
+    <div class="select">
+        <obbey-select [items]="items$ | async"></obbey-select>
+    </div>
+
+    <ng-container *ngTemplateOutlet="resultBlockTemplate"></ng-container>
+</ng-template>
+
+<ng-template #resultBlockTemplate>
+    <div class="result-block">
+        <div class="result-element">
+            Вы выбрали:
+            <span class="target-text">{{ object.type }}</span>
+        </div>
+        <div class="result-element">
+            Стоимость работы и материала:
+            <span class="target-text"> 8800 р</span>
+        </div>
+    </div>
+</ng-template>

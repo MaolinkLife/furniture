@@ -1,0 +1,70 @@
+<div class="frame">
+    <div class="frame__description">
+        <div class="subtitle">
+            Никто не сможет отличить вашу старую мебель от новой
+        </div>
+        <div class="title">
+            Восстановим и перетянем диван натуральной кожей, сохраним
+            уникальность и стиль вашей мебели
+        </div>
+        <div class="subtitle-block">
+            <div class="button-element">
+                <obbey-button size="m" color="primary" uppercase>
+                    Заказать дизайнера-технолога
+                </obbey-button>
+            </div>
+
+            <div class="text">
+                Закажите бесплатный выезд дизайнера-технолога для выбора
+                материала и точной оценки стоимости
+            </div>
+        </div>
+    </div>
+
+    <div class="frame__body">
+        <div class="frame__image">
+            <div class="image-content">
+                <div class="f-icon">
+                    <img src="../../../../assets/images/Frame.png" alt="" />
+                </div>
+                <img
+                    src="../../../../../assets/images/leather-furniture/leatherStraightSofas.png"
+                    alt=""
+                />
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="block__content">
+                <div class="block__title">Расчитаем стоимость по фото</div>
+
+                <div class="block__description">
+                    Отправьте нам фотографию вашей мебели удобным для вас
+                    способом
+                </div>
+
+                <div class="messagers">
+                    <div class="messager">
+                        <app-icon name="iconTelegrammMessager"></app-icon>
+                    </div>
+                    <div class="messager">
+                        <app-icon name="iconViberMessager"></app-icon>
+                    </div>
+                    <div class="messager">
+                        <app-icon name="iconWhatsupMessager"></app-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="frame__footer">
+        <div class="element-list">
+            <obbey-shield-item
+                *ngFor="let element of elements"
+                class="element"
+                [description]="element.description"
+            ></obbey-shield-item>
+        </div>
+    </div>
+</div>

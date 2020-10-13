@@ -1,5 +1,7 @@
+import { BehaviorSubject } from 'rxjs';
 import { GeneralPreviewComponentComponent } from './../../modules/general/components/general-preview-component/general-preview-component.component';
 import { Component, OnInit, ChangeDetectionStrategy, OnChanges } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
 
 @Component({
     selector: 'app-main-page',
@@ -12,12 +14,21 @@ export class MainPageComponent implements OnInit, OnChanges {
 
     component = GeneralPreviewComponentComponent;
 
-    constructor(
 
-    ) { }
+    popupOpened$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
+    constructor() { }
 
     ngOnInit(): void {
-        console.log('start');
+    }
+
+
+    openPopup() {
+        this.popupOpened$.next(true);
+    }
+
+    closePopup() {
+        this.popupOpened$.next(false);
     }
 
     ngOnChanges(): void {

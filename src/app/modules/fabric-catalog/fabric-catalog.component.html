@@ -131,34 +131,20 @@
                     <obbey-carousel [arrowPositionConfig]="{ top: '30%' }">
                         <ng-template carouselItem>
                             <div class="elements">
-                                <div class="element"></div>
-                                <div class="element"></div>
-                                <div class="element"></div>
-                                <div class="element"></div>
-                            </div>
-                        </ng-template>
-                        <ng-template carouselItem>
-                            <div class="elements">
-                                <div class="element"></div>
-                                <div class="element"></div>
-                                <div class="element"></div>
-                                <div class="element"></div>
-                            </div>
-                        </ng-template>
-                        <ng-template carouselItem>
-                            <div class="elements">
-                                <div class="element"></div>
-                                <div class="element"></div>
-                                <div class="element"></div>
-                                <div class="element"></div>
-                            </div>
-                        </ng-template>
-                        <ng-template carouselItem>
-                            <div class="elements">
-                                <div class="element"></div>
-                                <div class="element"></div>
-                                <div class="element"></div>
-                                <div class="element"></div>
+                                <div
+                                    *ngFor="let example of examples$ | async"
+                                    class="element"
+                                    [ngStyle]="example.config"
+                                >
+                                    <!-- <div
+                                        class="example-image"
+                                        [ngStyle]="{
+                                            'background-image':
+                                                'url(' + example.image + ')'
+                                        }"
+                                    ></div> -->
+                                    <img [src]="example.image" alt="" />
+                                </div>
                             </div>
                         </ng-template>
                     </obbey-carousel>

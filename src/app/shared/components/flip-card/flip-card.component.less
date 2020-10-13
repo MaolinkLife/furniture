@@ -42,6 +42,7 @@
     background: linear-gradient(180deg, #262b32 0%, #15171a 100%);
     color: #fff;
     transform: rotateY(180deg);
+    overflow: hidden;
 }
 
 .line {
@@ -65,8 +66,8 @@
 
 .caption {
     font-family: "BerlingskeSerif";
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 20px;
+    line-height: 24px;
     text-align: center;
     text-transform: uppercase;
 
@@ -81,4 +82,31 @@
 
 .number-image {
     position: absolute;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.outer-flip {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 70px 50px;
+    color: #fff;
+    height: 100%;
+}
+
+.outside-text {
+    font-family: "BerlingskeSerif";
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #ffffff;
+    padding: 30px 0;
 }

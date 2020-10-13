@@ -2,7 +2,7 @@
     height: 830px;
     background-color: #fcfcff;
     padding-top: 150px;
-    background-image: url("../../../../../assets/images/general-page/social-background.png");
+    background-image: url("../../../../../assets/images/blocks/social-block-background.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -10,14 +10,24 @@
 }
 
 .title-page {
-    font-family: Berlingske Serif;
-    font-style: italic;
-    font-weight: 600;
+    font-family: "BerlingskeSerif-BoldItalic";
     font-size: 36px;
     line-height: 43px;
     padding-left: 110px;
     margin-bottom: 70px;
     color: #000000;
+    position: relative;
+
+    > .icon {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: -70px;
+        left: 360px;
+    }
 }
 
 .container {
@@ -35,6 +45,12 @@
     background-size: cover;
     background-repeat: no-repeat;
     padding: 80px 50px 50px;
+
+    &__content {
+        font-family: "MuseoSansCyrl-300";
+        font-size: 16px;
+        line-height: 19px;
+    }
 }
 
 .avatar {

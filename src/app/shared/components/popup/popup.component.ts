@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Component({
-    selector: 'app-popup',
+    selector: 'obbey-popup',
     templateUrl: './popup.component.html',
     styleUrls: ['./popup.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush

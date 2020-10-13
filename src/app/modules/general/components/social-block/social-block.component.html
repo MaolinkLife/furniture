@@ -1,76 +1,24 @@
 <div class="container">
-    <div class="title-page">Отзывы из социальных сетей</div>
+    <div class="title-page">
+        Отзывы из социальных сетей
+        <div class="icon">
+            <app-icon name="iconQuotes"></app-icon>
+        </div>
+    </div>
 
     <obbey-carousel>
-        <ng-template carouselItem>
+        <ng-template *ngFor="let social of socialList" carouselItem>
             <div class="social-block">
                 <div class="avatar mui-space_bottom-5">
                     <div class="avatar-image"></div>
 
                     <div class="user-info">
-                        <div class="name">Ольга Ольгина</div>
-                        <div class="link">@instagramm</div>
+                        <div class="name"></div>
+                        <div class="link">{{ social.instagramm }}</div>
                     </div>
                 </div>
                 <div class="social-block__content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla quam velit, vulputate eu pharetra nec, mattis ac
-                    neque. Duis vulputate commodo lectus, ac blandit elit
-                    tincidunt id. Sed rhoncus, tortor sed eleifend tristique,
-                    tortor mauris molestie elit, et lacinia. Lorem ipsum dolor
-                    sit amet, consectetur adipiscing elit. Nulla quam velit,
-                    vulputate eu pharetra nec, mattis ac neque. Duis vulputate
-                    commodo lectus, ac blandit elit tincidunt id. Sed rhoncus,
-                    tortor sed eleifend tristique, tortor mauris molestie elit,
-                    et lacinia
-                </div>
-            </div>
-        </ng-template>
-        <ng-template carouselItem>
-            <div class="social-block">
-                <div class="avatar mui-space_bottom-5">
-                    <div class="avatar-image"></div>
-
-                    <div class="user-info">
-                        <div class="name">Сергеев Сергей</div>
-                        <div class="link">@instagramm</div>
-                    </div>
-                </div>
-                <div class="social-block__content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla quam velit, vulputate eu pharetra nec, mattis ac
-                    neque. Duis vulputate commodo lectus, ac blandit elit
-                    tincidunt id. Sed rhoncus, tortor sed eleifend tristique,
-                    tortor mauris molestie elit, et lacinia. Lorem ipsum dolor
-                    sit amet, consectetur adipiscing elit. Nulla quam velit,
-                    vulputate eu pharetra nec, mattis ac neque. Duis vulputate
-                    commodo lectus, ac blandit elit tincidunt id. Sed rhoncus,
-                    tortor sed eleifend tristique, tortor mauris molestie elit,
-                    et lacinia
-                </div>
-            </div>
-        </ng-template>
-        <ng-template carouselItem>
-            <div class="social-block">
-                <div class="avatar mui-space_bottom-5">
-                    <div class="avatar-image"></div>
-
-                    <div class="user-info">
-                        <div class="name">Иванов Иван</div>
-                        <div class="link">@instagramm</div>
-                    </div>
-                </div>
-                <div class="social-block__content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla quam velit, vulputate eu pharetra nec, mattis ac
-                    neque. Duis vulputate commodo lectus, ac blandit elit
-                    tincidunt id. Sed rhoncus, tortor sed eleifend tristique,
-                    tortor mauris molestie elit, et lacinia. Lorem ipsum dolor
-                    sit amet, consectetur adipiscing elit. Nulla quam velit,
-                    vulputate eu pharetra nec, mattis ac neque. Duis vulputate
-                    commodo lectus, ac blandit elit tincidunt id. Sed rhoncus,
-                    tortor sed eleifend tristique, tortor mauris molestie elit,
-                    et lacinia
+                    {{ social.description }}
                 </div>
             </div>
         </ng-template>

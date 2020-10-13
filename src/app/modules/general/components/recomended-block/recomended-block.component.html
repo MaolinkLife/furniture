@@ -7,8 +7,11 @@
         Отзывы наших клиентов - лучший показатель нашей работы
     </div>
 
-    <obbey-carousel>
-        <ng-template carouselItem>
+    <obbey-carousel [(activeItemIndex)]="activeItemIndex">
+        <ng-template
+            *ngFor="let slide of slides; index as itemIndex"
+            carouselItem
+        >
             <div class="slide__left-column">
                 <div class="galery">
                     <div
@@ -26,116 +29,69 @@
                     </div>
                 </div>
             </div>
+
             <div class="slide__right-column">
                 <div class="right-group">
-                    <div class="icon">1</div>
+                    <img
+                        class="number-image"
+                        src="../../../../assets/images/numberIcon.png"
+                        alt=""
+                    />
+                    <div class="icon">
+                        {{ activeItemIndex + 1 }}
+                    </div>
                     <div class="slider-title">
-                        Перетяжка трёх местного дивана с каретной стяжкой
+                        {{ slide.information.title }}
                     </div>
 
                     <div class="group">
                         <div class="line"></div>
                         <div class="tab-group">
-                            <div class="tab">задача</div>
-                            <div class="tab">что сделали</div>
-                            <div class="tab">результат</div>
+                            <div
+                                (click)="tabClick($event.currentTarget)"
+                                class="tab"
+                            >
+                                задача
+                            </div>
+                            <div
+                                (click)="tabClick($event.currentTarget)"
+                                class="tab"
+                            >
+                                что сделали
+                            </div>
+                            <div
+                                (click)="tabClick($event.currentTarget)"
+                                class="tab"
+                            >
+                                результат
+                            </div>
                         </div>
                         <div class="line"></div>
                     </div>
 
                     <div class="description">
-                        Частично заменили корпус, покрыли защитной средством для
-                        долговечной службы, заменили наполнение дивана
-                        качественным ОПС и подобрали нужную ткань
+                        {{ currentText$ | async }}
                     </div>
                 </div>
 
-                <div class="button">
-                    <div>посмотреть видео отзыв</div>
-
-                    <div class="button-icon">
-                        <svg
-                            width="11"
-                            height="11"
-                            viewBox="0 0 11 11"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M1.99701 0.243999C0.897012 -0.325001 0.00601196 0.140999 0.00601196 1.283V9.708C0.00601196 10.85 0.897012 11.316 1.99701 10.748L10.169 6.525C11.269 5.957 11.269 5.036 10.169 4.468L1.99701 0.243999Z"
-                                fill="#111416"
-                            />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </ng-template>
-
-        <ng-template carouselItem>
-            <div class="slide__left-column">
-                <div class="galery">
-                    <div
-                        class="main-image"
-                        [ngStyle]="{
-                            'background-image': 'url(' + slide.main.image + ')'
-                        }"
-                    ></div>
-                    <div class="subimages">
-                        <div
-                            *ngFor="let sub of slide.sub"
-                            class="subimage"
-                            [style]="sub.style"
-                        ></div>
-                    </div>
-                </div>
-            </div>
-            <div class="slide__right-column">
-                <div class="right-group">
-                    <div class="icon">1</div>
-                    <div class="slider-title">
-                        Перетяжка трёх местного дивана с каретной стяжкой
-                    </div>
-
-                    <div class="group">
-                        <div class="line"></div>
-                        <div class="tab-group">
-                            <div class="tab">задача</div>
-                            <div class="tab">что сделали</div>
-                            <div class="tab">результат</div>
-                        </div>
-                        <div class="line"></div>
-                    </div>
-
-                    <div class="description">
-                        Частично заменили корпус, покрыли защитной средством для
-                        долговечной службы, заменили наполнение дивана
-                        качественным ОПС и подобрали нужную ткань
-                    </div>
-                </div>
-
-                <div class="button">
-                    <div>посмотреть видео отзыв</div>
-
-                    <div class="button-icon">
-                        <svg
-                            width="11"
-                            height="11"
-                            viewBox="0 0 11 11"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M1.99701 0.243999C0.897012 -0.325001 0.00601196 0.140999 0.00601196 1.283V9.708C0.00601196 10.85 0.897012 11.316 1.99701 10.748L10.169 6.525C11.269 5.957 11.269 5.036 10.169 4.468L1.99701 0.243999Z"
-                                fill="#111416"
-                            />
-                        </svg>
-                    </div>
-                </div>
+                <obbey-button
+                    [hasIcon]="true"
+                    color="primary"
+                    size="m"
+                    class="button"
+                    iconName="iconPlayLarge"
+                    (click)="openPopup()"
+                    uppercase
+                >
+                    посмотреть видео отзыв
+                </obbey-button>
             </div>
         </ng-template>
     </obbey-carousel>
 </div>
+
+<obbey-popup *ngIf="popupOpened$ | async" (closed)="closePopup()" class="popup">
+    <video width="100%" height="100%" controls>
+        <source [src]="slides[activeItemIndex].video.path" />
+    </video>
+</obbey-popup>

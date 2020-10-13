@@ -5,14 +5,14 @@
     </div>
 
     <obbey-carousel>
-        <ng-template carouselItem>
+        <ng-template *ngFor="let item of items" carouselItem>
             <div class="slide__left-column">
                 <div class="caption">До</div>
                 <div class="image">
                     <img
                         width="100%"
                         height="100%"
-                        src="../../../../../assets/images/IMG1.png"
+                        [src]="item.firstBlock.image"
                         alt=""
                     />
                 </div>
@@ -23,7 +23,7 @@
                     <img
                         width="100%"
                         height="100%"
-                        src="../../../../../assets/images/IMG2.png"
+                        [src]="item.secondBlock.image"
                         alt=""
                     />
                 </div>

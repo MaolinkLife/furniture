@@ -18,6 +18,10 @@ export class ObbeyFlipCardComponent implements OnInit {
     @Input()
     caption: string;
 
+
+    @Input()
+    outsideText: string;
+
     constructor() { }
 
     ngOnInit(): void {

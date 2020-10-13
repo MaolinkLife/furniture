@@ -14,7 +14,9 @@
         <div class="step calculate__content">
             <ng-container [ngSwitch]="currentIndex">
                 <ng-container *ngSwitchCase="0">
-                    <ng-container *ngTemplateOutlet="firstQuestionTemplate"></ng-container>
+                    <ng-container
+                        *ngTemplateOutlet="firstQuestionTemplate"
+                    ></ng-container>
                 </ng-container>
 
                 <ng-container *ngSwitchCase="1">
@@ -118,11 +120,9 @@
             "
             class="element"
             [ngClass]="{ active: furniture.active }"
+            (click)="selectFurnitureType(itemIndex)"
         >
-            <app-icon
-                [name]="furniture.iconName"
-                (click)="selectFurnitureType(itemIndex)"
-            ></app-icon>
+            <app-icon [name]="furniture.iconName"></app-icon>
 
             <div class="element-caption">
                 {{ furniture.caption }}
@@ -179,7 +179,7 @@
         <button class="button">Экокожа</button>
         <button class="button">Кожзам</button>
     </div>
-    <div class="mui-space_bottom-5">Ценовая категория:</div>
+    <div class="block-title mui-space_bottom-5">Ценовая категория:</div>
 
     <div class="select">
         <obbey-select [items]="items$ | async"></obbey-select>

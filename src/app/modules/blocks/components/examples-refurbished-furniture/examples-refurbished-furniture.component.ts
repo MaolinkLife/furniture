@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
     // tslint:disable-next-line: component-selector
@@ -7,11 +7,28 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
     styleUrls: ['./examples-refurbished-furniture.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExamplesRefurbishedFurnitureComponent implements OnInit {
+export class ExamplesRefurbishedFurnitureComponent implements OnInit, OnChanges {
+
+
+    @Input()
+    examples: {
+        first: {
+            image: string;
+        },
+        second: {
+            image: string;
+        }
+    }[];
 
     constructor() { }
 
     ngOnInit(): void {
+
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        console.log(this.examples);
+        console.log(changes);
     }
 
 }

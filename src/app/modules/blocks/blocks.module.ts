@@ -1,3 +1,4 @@
+import { CarouselModule } from './../../shared/components/carousel/carousel.module';
 import { ObbeyFormModule } from './../../shared/components/form/from.module';
 
 import { ObbeyFlipCardModule } from './../../shared/components/flip-card/flip-card.module';
@@ -43,6 +44,7 @@ import { CalculateModule } from 'src/app/shared/components/calculate/calculate.m
         CompanyLogoModule,
         ShieldItemModule,
         CalculateModule,
+        CarouselModule,
     ],
     exports: [
         ExamplesRefurbishedFurnitureComponent,

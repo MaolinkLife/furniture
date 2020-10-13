@@ -8,6 +8,7 @@ import { HeaderModule } from './components/header/header.module';
 import { CompanyLogoModule } from './components/company-logo/company-logo.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PopupModule } from './components/popup/popup.module';
 
 const MODULES = [
     CompanyLogoModule,
@@ -18,6 +19,7 @@ const MODULES = [
     CarouselModule,
     IconsModule,
     HeaderModule,
+    PopupModule,
 ];
 
 @NgModule({

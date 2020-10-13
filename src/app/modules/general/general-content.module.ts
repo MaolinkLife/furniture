@@ -19,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ObbeyInputModule } from 'src/app/shared/components/input/input.module';
 import { ShieldItemModule } from 'src/app/shared/components/shield-item/shield-item.module';
 import { ObbeyFlipCardModule } from 'src/app/shared/components/flip-card/flip-card.module';
+import { PopupModule } from 'src/app/shared/components/popup/popup.module';
 
 @NgModule({
     declarations: [
@@ -44,6 +45,7 @@ import { ObbeyFlipCardModule } from 'src/app/shared/components/flip-card/flip-ca
         ObbeyFlipCardModule,
         BlocksModule,
         CarouselModule,
+        PopupModule,
     ],
     exports: [
         GeneralPreviewComponentComponent,

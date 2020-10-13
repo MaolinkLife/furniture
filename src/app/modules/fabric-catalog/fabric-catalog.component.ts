@@ -1,11 +1,18 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+interface FabricExampleInterface {
+    image: string;
+    config?: object;
+    slot?: string;
+}
+
 interface FabricInterface {
     name: string;
     description: string[];
     benefits: string[];
     disadvantages: string[];
+    examples: FabricExampleInterface[];
 }
 
 const FABRICS: FabricInterface[] = [
@@ -22,6 +29,20 @@ const FABRICS: FabricInterface[] = [
             'Возможна только сухая чистка',
             'Цена',
         ],
+        examples: [
+            {
+                image: '../../../assets/images/fabric-catalog/jackard/jackard1.jpg',
+                config: {
+                    'grid-column': '1 / span 2',
+                }
+            },
+            {
+                image: '../../../assets/images/fabric-catalog/jackard/jackard2.jpg',
+                config: {
+                    'grid-column': '3 / span 2',
+                }
+            },
+        ],
     },
     {
         name: 'Велюр',
@@ -36,6 +57,20 @@ const FABRICS: FabricInterface[] = [
             'Требует бережного отношения, поскольку жирные пятна очень сложно удалить с поверхности',
             'Качественный материал значительно дороже аналогов',
         ],
+        examples: [
+            {
+                image: '../../../assets/images/fabric-catalog/velur/velur1.jpg',
+                config: {
+                    'grid-column': '1 / span 2',
+                }
+            },
+            {
+                image: '../../../assets/images/fabric-catalog/velur/velur2.jpg',
+                config: {
+                    'grid-column': '3 / span 2',
+                }
+            },
+        ],
     },
     {
         name: 'Шенилл',
@@ -45,6 +80,14 @@ const FABRICS: FabricInterface[] = [
         benefits: [
         ],
         disadvantages: [
+        ],
+        examples: [
+            {
+                image: '../../../assets/images/fabric-catalog/shenshil/shenshil1.jpg',
+                config: {
+                    'grid-column': '2 / span 2',
+                }
+            },
         ],
     },
     {
@@ -64,6 +107,20 @@ const FABRICS: FabricInterface[] = [
             'Необходим специальный уход',
             'Загрязнения трудно удаляются с поверхности',
         ],
+        examples: [
+            {
+                image: '../../../assets/images/fabric-catalog/nubuk/nubuk1.jpg',
+                config: {
+                    'grid-column': '1 / span 2',
+                }
+            },
+            {
+                image: '../../../assets/images/fabric-catalog/nubuk/nubuk2.jpg',
+                config: {
+                    'grid-column': '3 / span 2',
+                }
+            },
+        ],
     },
     {
         name: 'Микрофибра',
@@ -77,6 +134,14 @@ const FABRICS: FabricInterface[] = [
         disadvantages: [
             'К недостаткам можно отнести лишь опасность контакта с нагревательными элементами, что может привести к утрате материалом его эксплуатационных характеристик',
         ],
+        examples: [
+            {
+                image: '../../../assets/images/fabric-catalog/microfibra/microfibra1.jpg',
+                config: {
+                    'grid-column': '2 / span 2',
+                }
+            },
+        ],
     },
     {
         name: 'Натуральная кожа',
@@ -85,6 +150,14 @@ const FABRICS: FabricInterface[] = [
         ],
         disadvantages: [
             'Боится повреждений',
+        ],
+        examples: [
+            {
+                image: '../../../assets/images/fabric-catalog/nature-leather/nature-leather1.jpg',
+                config: {
+                    'grid-column': '2 / span 2',
+                }
+            },
         ],
     },
     {
@@ -104,6 +177,14 @@ const FABRICS: FabricInterface[] = [
         ],
         disadvantages: [
         ],
+        examples: [
+            {
+                image: '../../../assets/images/fabric-catalog/artificial-leather/artificial-leather1.jpg',
+                config: {
+                    'grid-column': '2 / span 2',
+                }
+            },
+        ],
     },
     {
         name: 'Гобелен',
@@ -118,6 +199,14 @@ const FABRICS: FabricInterface[] = [
             'Тяжеловесность',
             'Жесткость',
         ],
+        examples: [
+            {
+                image: '../../../assets/images/fabric-catalog/gobelen/gobelen1.jpg',
+                config: {
+                    'grid-column': '2 / span 2',
+                }
+            },
+        ],
     },
     {
         name: 'Флок',
@@ -129,6 +218,11 @@ const FABRICS: FabricInterface[] = [
 
         ],
         disadvantages: [
+        ],
+        examples: [
+            {
+                image: '',
+            },
         ],
     },
     {
@@ -142,6 +236,14 @@ const FABRICS: FabricInterface[] = [
         ],
         disadvantages: [
         ],
+        examples: [
+            {
+                image: '../../../assets/images/fabric-catalog/flock-on-flock/flock-on-flock1.jpg',
+                config: {
+                    'grid-column': '2 / span 2',
+                }
+            },
+        ],
     },
     {
         name: 'Бархат',
@@ -153,6 +255,20 @@ const FABRICS: FabricInterface[] = [
         disadvantages: [
             'Нуждается в тщательном уходе',
             'Цена'
+        ],
+        examples: [
+            {
+                image: '../../../assets/images/fabric-catalog/barhat/barhat1.jpg',
+                config: {
+                    'grid-column': '1 / span 2',
+                }
+            },
+            {
+                image: '../../../assets/images/fabric-catalog/barhat/barhat2.jpg',
+                config: {
+                    'grid-column': '3 / span 2',
+                }
+            },
         ],
     },
 ];
@@ -171,6 +287,8 @@ export class FabricCatalogComponent implements OnInit {
 
     currentFabric$: BehaviorSubject<FabricInterface> = new BehaviorSubject<FabricInterface>(null);
 
+    examples$: BehaviorSubject<FabricExampleInterface[]> = new BehaviorSubject<FabricExampleInterface[]>(null);
+
     constructor() { }
 
     ngOnInit(): void {
@@ -188,6 +306,8 @@ export class FabricCatalogComponent implements OnInit {
         }
 
         console.log(targetFabric);
+
+        this.examples$.next(targetFabric.examples);
     }
 
     closePopup(): void {

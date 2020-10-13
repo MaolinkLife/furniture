@@ -8,6 +8,42 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class ExamplesBlockComponent implements OnInit {
 
+
+    items = [
+        {
+            firstBlock: {
+                image: '../../../../../assets/images/examples/sofas/example-before1.jpg',
+            },
+            secondBlock: {
+                image: '../../../../../assets/images/examples/sofas/example-after1.jpg',
+            },
+        },
+        {
+            firstBlock: {
+                image: '../../../../../assets/images/examples/sofas/example-before2.jpg',
+            },
+            secondBlock: {
+                image: '../../../../../assets/images/examples/sofas/example-after2.jpg',
+            },
+        },
+        {
+            firstBlock: {
+                image: '../../../../../assets/images/examples/sofas/example-before3.jpg',
+            },
+            secondBlock: {
+                image: '../../../../../assets/images/examples/sofas/example-after3.jpg',
+            },
+        },
+        {
+            firstBlock: {
+                image: '../../../../../assets/images/examples/sofas/example-before4.jpg',
+            },
+            secondBlock: {
+                image: '../../../../../assets/images/examples/sofas/example-after4.jpg',
+            },
+        },
+    ];
+
     slideIndex = [1, 1];
 
     constructor() { }

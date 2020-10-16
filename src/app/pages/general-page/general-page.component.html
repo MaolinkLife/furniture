@@ -1,12 +1,12 @@
-<block-calculate></block-calculate>
+<block-calculate id="payment"></block-calculate>
 <app-designer-order-block></app-designer-order-block>
 <app-progress-work-block></app-progress-work-block>
-<app-responsibility-block></app-responsibility-block>
+<app-responsibility-block id="garant"></app-responsibility-block>
 <app-production-block></app-production-block>
-<app-examples-block></app-examples-block>
+<app-examples-block id="examples"></app-examples-block>
 <app-quality-block></app-quality-block>
 <app-recomended-block></app-recomended-block>
-<app-social-block></app-social-block>
-<app-benefit-block id="customId"></app-benefit-block>
+<app-social-block id="social"></app-social-block>
+<app-benefit-block [blockIsVisible]="scroll$ | async" id="benefit"></app-benefit-block>
 <app-bonus-block></app-bonus-block>
-<app-map-block></app-map-block>
+<app-map-block id="contact"></app-map-block>

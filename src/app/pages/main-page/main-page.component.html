@@ -1,3 +1,14 @@
 <app-header class="header-block"></app-header>
-<router-outlet></router-outlet>
-<obbey-popup *ngIf="popupOpened$ | async" class="popup"></obbey-popup>
+<div>
+    <router-outlet></router-outlet>
+</div>
+
+<div *ngIf="popupOpened$ | async" class="popup-container">
+    <obbey-popup class="popup" (closed)="closePopup()"></obbey-popup>
+</div>
+
+<div *ngIf="showButton" class="button-container">
+    <obbey-button (click)="scrollToTop()" uppercase color="primary" size="s">
+        Наверх
+    </obbey-button>
+</div>

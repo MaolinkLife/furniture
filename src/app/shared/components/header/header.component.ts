@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { NavigationsService } from './../../modules/navigations/navigations.service';
 import { BehaviorSubject } from 'rxjs';
 import { PreviewComponentClass } from './../../types/preview-component-class.type';
@@ -8,6 +9,7 @@ interface HeaderMenuItemInterface {
     caption: string;
     routerLink: string;
     active: boolean;
+    id: string;
 }
 
 @Component({
@@ -28,43 +30,72 @@ export class HeaderComponent implements OnInit {
             caption: 'Главная',
             routerLink: '',
             active: false,
+            id: 'general',
         },
         {
             caption: 'Расчитать стоимость',
             routerLink: '',
             active: true,
+            id: 'payment',
         },
         {
             caption: 'Примеры работ',
             routerLink: '',
             active: false,
+            id: 'examples',
         },
         {
             caption: 'Гарантии',
             routerLink: '',
             active: false,
+            id: 'garant',
         },
         {
             caption: 'Отзывы',
             routerLink: '',
             active: false,
+            id: 'social',
         },
         {
             caption: 'Контакты',
             routerLink: '',
             active: false,
+            id: 'contact',
         },
     ];
 
-    constructor(private navigationsService: NavigationsService) { }
+    constructor(
+        private navigationsService: NavigationsService,
+        private router: Router,
+    ) {
+
+    }
 
     ngOnInit(): void {
         this.component$ = this.navigationsService.dynamicComponentView$;
 
     }
 
-    menuClick(element: any) {
+    menuClick(element: HTMLElement, id?: string) {
         element.classList.toggle('active');
         this.component$.next(GeneralPreviewComponentComponent);
+
+        this.router.navigateByUrl('');
+
+
+        if (id === 'general') {
+
+        }
+
+
+        setTimeout(() => {
+            if (id) {
+                if (document.getElementById(id)) {
+                    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }, 100);
+
+
     }
 }

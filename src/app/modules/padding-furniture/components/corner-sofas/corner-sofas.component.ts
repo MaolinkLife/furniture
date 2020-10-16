@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { PopupService } from 'src/app/shared/services/popup.service';
 
 @Component({
     selector: 'app-corner-sofas',
@@ -24,9 +25,15 @@ export class CornerSofasComponent implements OnInit {
         },
     ];
 
-    constructor() { }
+
+    constructor(private popupService: PopupService) { }
 
     ngOnInit(): void {
     }
+
+    openPopup(): void {
+        this.popupService.showPopup();
+    }
+
 
 }

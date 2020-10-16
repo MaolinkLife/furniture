@@ -1,4 +1,6 @@
+import { SHIELD_ITEMS_LEATHER_FURNITURE_V2 } from 'src/app/shared/mock/shield-items-leather-furniture';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { PopupService } from 'src/app/shared/services/popup.service';
 
 @Component({
     selector: 'app-leather-poufs-and-banquets',
@@ -8,28 +10,15 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class LeatherPoufsAndBanquetsComponent implements OnInit {
 
-    elements = [
-        {
-            description: 'Категории и цвета кожи под любой запрос',
-        },
-        {
-            description: 'Полная материальная ответственность за качество нашей работы',
-        },
-        {
-            description: 'Сами заберем мебель и доставим вам обратно',
-        },
-        {
-            description: 'Мастера с практическим опытом работы по перетяжке изделий свыше 8 лет',
-        },
-        {
-            description: 'Ценим ваше время - Ваше участие минимально',
-        },
-    ];
+    elements = SHIELD_ITEMS_LEATHER_FURNITURE_V2;
 
-
-    constructor() { }
+    constructor(private popupService: PopupService) { }
 
     ngOnInit(): void {
+    }
+
+    openPopup(): void {
+        this.popupService.showPopup();
     }
 
 }

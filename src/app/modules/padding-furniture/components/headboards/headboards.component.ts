@@ -1,3 +1,4 @@
+import { PopupService } from './../../../../shared/services/popup.service';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
@@ -22,9 +23,13 @@ export class HeadboardsComponent implements OnInit {
         },
     ];
 
-    constructor() { }
+    constructor(private popupService: PopupService) { }
 
     ngOnInit(): void {
+    }
+
+    openPopup(): void {
+        this.popupService.showPopup();
     }
 
 }

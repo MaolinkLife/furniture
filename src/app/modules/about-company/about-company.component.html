@@ -23,14 +23,20 @@
                 </div>
             </div>
             <div class="right-column">
-                <img src="../../../assets/images/Rectangle69.png" alt="" />
+                <img
+                    src="../../../assets/images/about-company/about-company-1.png"
+                    alt=""
+                />
             </div>
         </div>
     </div>
     <div class="block">
         <div class="block__content">
             <div class="left-column">
-                <img src="../../../assets/images/Rectangle70.png" alt="" />
+                <img
+                    src="../../../assets/images/about-company/about-company-2.png"
+                    alt=""
+                />
             </div>
             <div class="right-column">
                 <div class="block__description">
@@ -126,9 +132,14 @@
         </div>
     </div>
     <div class="container__footer">
-        <div class="">С уважением коллектив компании OBBEY</div>
+        <div class="signature">С уважением коллектив компании OBBEY</div>
         <div class="button-container">
-            <obbey-button size="m" color="primary" uppercase>
+            <obbey-button
+                size="m"
+                color="primary"
+                uppercase
+                (click)="openPopup()"
+            >
                 оставить заявку на расчет стоимости
             </obbey-button>
         </div>

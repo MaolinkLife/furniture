@@ -1,5 +1,5 @@
-import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { PopupService } from 'src/app/shared/services/popup.service';
 
 @Component({
     selector: 'app-armchairs',
@@ -25,10 +25,13 @@ export class ArmchairsComponent implements OnInit {
         },
     ];
 
-
-    constructor(private activatedRoute: ActivatedRoute) { }
+    constructor(private popupService: PopupService) { }
 
     ngOnInit(): void {
+    }
+
+    openPopup(): void {
+        this.popupService.showPopup();
     }
 
 }

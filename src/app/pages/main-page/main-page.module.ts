@@ -10,6 +10,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { FurnitureCareModule } from 'src/app/modules/furniture-care/furniture-care.module';
 import { ShippingAndPaymentModule } from 'src/app/modules/shipping-and-payment/shipping-and-payment.module';
 import { AboutCompanyModule } from 'src/app/modules/about-company/about-company.module';
+import { FaqModule } from 'src/app/modules/faq/faq.module';
 
 @NgModule({
     declarations: [
@@ -25,6 +26,7 @@ import { AboutCompanyModule } from 'src/app/modules/about-company/about-company.
         ShippingAndPaymentModule,
         AboutCompanyModule,
         PortfolioOfWorksModule,
+        FaqModule,
     ],
 })
 export class MainPageModule { }

@@ -209,9 +209,6 @@ export class PaddingFurniturePageComponent implements OnInit {
 
     ngOnInit(): void {
         const id = this.activatedRoute.snapshot.data.mark;
-        console.log(id);
-
-        console.log(this.activatedRoute.snapshot.data);
 
         this.examples$
             .next(EXAMPLES_LIST

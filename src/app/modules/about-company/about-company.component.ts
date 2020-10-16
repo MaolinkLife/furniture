@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { PopupService } from 'src/app/shared/services/popup.service';
 
 @Component({
     selector: 'app-about-company',
@@ -6,11 +7,11 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
     styleUrls: ['./about-company.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AboutCompanyComponent implements OnInit {
+export class AboutCompanyComponent {
 
-    constructor() { }
+    constructor(private popupService: PopupService) { }
 
-    ngOnInit(): void {
+    openPopup(): void {
+        this.popupService.showPopup();
     }
-
 }

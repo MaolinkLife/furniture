@@ -20,6 +20,7 @@
         </div>
 
         <div
+            #circularItem
             *ngFor="let circularItem of circularItems; index as itemIndex"
             class="circular-element"
             [style]="circularItem.positionStyle"

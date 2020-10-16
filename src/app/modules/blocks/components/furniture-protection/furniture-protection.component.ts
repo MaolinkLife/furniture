@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { PopupService } from './../../../../shared/services/popup.service';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     // tslint:disable-next-line: component-selector
@@ -7,11 +8,11 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
     styleUrls: ['./furniture-protection.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FurnitureProtectionComponent implements OnInit {
+export class FurnitureProtectionComponent {
 
-    constructor() { }
+    constructor(private popupService: PopupService) { }
 
-    ngOnInit(): void {
+    openPopup(): void {
+        this.popupService.showPopup();
     }
-
 }

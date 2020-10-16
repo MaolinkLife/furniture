@@ -1,3 +1,4 @@
+import { PopupService } from './../../../../shared/services/popup.service';
 import { element } from 'protractor';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
     styleUrls: ['./designer-order.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DesignerOrderComponent implements OnInit {
+export class DesignerOrderComponent {
 
     elements = [
         {
@@ -35,9 +36,10 @@ export class DesignerOrderComponent implements OnInit {
         },
     ];
 
-    constructor() { }
+    constructor(private popupService: PopupService) { }
 
-    ngOnInit(): void {
+    openPopup(): void {
+        this.popupService.showPopup();
     }
 
 }

@@ -1,5 +1,7 @@
-import { ThrowStmt } from '@angular/compiler';
-import { Component, OnInit, ChangeDetectionStrategy, Input, ContentChildren, QueryList, Output, EventEmitter, Inject } from '@angular/core';
+import {
+    Component, OnInit, ChangeDetectionStrategy,
+    Input, ContentChildren, QueryList, Output, EventEmitter, OnChanges, SimpleChanges
+} from '@angular/core';
 import { ItemConnectorDirective } from './item-connector.directive';
 
 @Component({
@@ -9,7 +11,7 @@ import { ItemConnectorDirective } from './item-connector.directive';
     styleUrls: ['./carousel.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CarouselComponent implements OnInit {
+export class CarouselComponent implements OnInit, OnChanges {
 
     @Input()
     arrowPositionConfig: object;
@@ -26,6 +28,9 @@ export class CarouselComponent implements OnInit {
     constructor() { }
 
     ngOnInit(): void {
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
     }
 
     previewSlide(index: number): void {

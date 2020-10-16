@@ -8,8 +8,6 @@ import { LeatherCornerSofasComponent } from './components/leather-corner-sofas/l
 import { LeahterChairsComponent } from './components/leahter-chairs/leahter-chairs.component';
 import { LeatherStraightSofasComponent } from './components/leather-straight-sofas/leather-straight-sofas.component';
 import { LeatherPoufsAndBanquetsComponent } from './components/leather-poufs-and-banquets/leather-poufs-and-banquets.component';
-import { LeatherHeadboardsComponent } from './components/leather-headboards/leather-headboards.component';
-
 
 
 @NgModule({
@@ -19,7 +17,6 @@ import { LeatherHeadboardsComponent } from './components/leather-headboards/leat
         LeahterChairsComponent,
         LeatherStraightSofasComponent,
         LeatherPoufsAndBanquetsComponent,
-        LeatherHeadboardsComponent,
     ],
     imports: [
         CommonModule,

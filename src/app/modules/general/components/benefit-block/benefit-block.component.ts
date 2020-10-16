@@ -1,4 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+    Component, OnInit, ChangeDetectionStrategy, Input, QueryList, AfterViewInit, ViewChildren, ElementRef, SimpleChanges, OnChanges
+} from '@angular/core';
+import { timer } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 @Component({
     selector: 'app-benefit-block',
@@ -6,7 +10,15 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
     styleUrls: ['./benefit-block.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BenefitBlockComponent implements OnInit {
+export class BenefitBlockComponent implements OnInit, AfterViewInit, OnChanges {
+
+
+    @Input()
+    blockIsVisible: boolean;
+
+
+    @ViewChildren('circularItem')
+    circularItemsTemplate: QueryList<ElementRef<HTMLElement>>;
 
 
     circularItems = [
@@ -108,7 +120,21 @@ export class BenefitBlockComponent implements OnInit {
     constructor() { }
 
     ngOnInit(): void {
+    }
 
+    ngOnChanges(): void {
+        this.startTimer();
+    }
+
+    ngAfterViewInit(): void {
+    }
+
+    startTimer(): void {
+        const items = this.circularItemsTemplate.toArray();
+
+        const t = timer(0, 1000).pipe(take(items.length)).subscribe(i => {
+            items[i].nativeElement.style.opacity = '1';
+        });
     }
 
 }

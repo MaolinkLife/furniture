@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { PopupService } from 'src/app/shared/services/popup.service';
 
 @Component({
     selector: 'app-general-preview-component',
@@ -6,11 +7,12 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
     styleUrls: ['./general-preview-component.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GeneralPreviewComponentComponent implements OnInit {
+export class GeneralPreviewComponentComponent {
 
-    constructor() { }
+    constructor(private popupService: PopupService) { }
 
-    ngOnInit(): void {
+    openPopup(): void {
+        this.popupService.showPopup();
     }
 
 }

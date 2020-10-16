@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { PopupService } from 'src/app/shared/services/popup.service';
 
 @Component({
     selector: 'app-leather-armchair',
@@ -25,9 +26,15 @@ export class LeatherArmchairComponent implements OnInit {
             description: 'Ценим ваше время - Ваше участие минимально',
         },
     ];
-    constructor() { }
+
+    constructor(private popupService: PopupService) { }
 
     ngOnInit(): void {
     }
+
+    openPopup(): void {
+        this.popupService.showPopup();
+    }
+
 
 }

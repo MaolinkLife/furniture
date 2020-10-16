@@ -1,120 +1,46 @@
 <div class="container">
     <div class="title-page">Портфолио работ</div>
     <div class="tab-group">
-        <div class="tab">прямые диваны</div>
-        <div class="tab">угловые диваны</div>
-        <div class="tab">кресла</div>
-        <div class="tab">кровати</div>
-        <div class="tab">стулья</div>
-        <div class="tab">пуфы и банкетки</div>
+        <div
+            *ngFor="let tabItem of tabList; index as itemIndex"
+            class="tab"
+            [ngClass]="{ active: tabItem.active }"
+            (click)="tabClick(tabItem.id, itemIndex)"
+        >
+            {{ tabItem.caption }}
+        </div>
     </div>
 
     <div class="catalog">
         <obbey-carousel>
-            <ng-template carouselItem>
+            <ng-template *ngFor="let element of portfolioList" carouselItem>
                 <div class="grid-panel">
-                    <div class="grid-element">
+                    <div *ngIf="element.first" class="grid-element">
                         <img
                             width="100%"
                             height="100%"
-                            src="../../../../../assets/images/IMG1.png"
-                            alt=""
+                            [src]="element.first.image"
                         />
                     </div>
-                    <div class="grid-element">
+                    <div *ngIf="element.second" class="grid-element">
                         <img
                             width="100%"
                             height="100%"
-                            src="../../../../../assets/images/IMG2.png"
-                            alt=""
+                            [src]="element.second.image"
                         />
                     </div>
-                    <div class="grid-element">
+                    <div *ngIf="element.third" class="grid-element">
                         <img
                             width="100%"
                             height="100%"
-                            src="../../../../../assets/images/IMG1.png"
-                            alt=""
+                            [src]="element.third.image"
                         />
                     </div>
-                    <div class="grid-element">
+                    <div *ngIf="element.four" class="grid-element">
                         <img
                             width="100%"
                             height="100%"
-                            src="../../../../../assets/images/IMG2.png"
-                            alt=""
-                        />
-                    </div>
-                </div>
-            </ng-template>
-            <ng-template carouselItem>
-                <div class="grid-panel">
-                    <div class="grid-element">
-                        <img
-                            width="100%"
-                            height="100%"
-                            src="../../../../../assets/images/IMG1.png"
-                            alt=""
-                        />
-                    </div>
-                    <div class="grid-element">
-                        <img
-                            width="100%"
-                            height="100%"
-                            src="../../../../../assets/images/IMG2.png"
-                            alt=""
-                        />
-                    </div>
-                    <div class="grid-element">
-                        <img
-                            width="100%"
-                            height="100%"
-                            src="../../../../../assets/images/IMG1.png"
-                            alt=""
-                        />
-                    </div>
-                    <div class="grid-element">
-                        <img
-                            width="100%"
-                            height="100%"
-                            src="../../../../../assets/images/IMG2.png"
-                            alt=""
-                        />
-                    </div>
-                </div>
-            </ng-template>
-            <ng-template carouselItem>
-                <div class="grid-panel">
-                    <div class="grid-element">
-                        <img
-                            width="100%"
-                            height="100%"
-                            src="../../../../../assets/images/IMG1.png"
-                            alt=""
-                        />
-                    </div>
-                    <div class="grid-element">
-                        <img
-                            width="100%"
-                            height="100%"
-                            src="../../../../../assets/images/IMG2.png"
-                            alt=""
-                        />
-                    </div>
-                    <div class="grid-element">
-                        <img
-                            width="100%"
-                            height="100%"
-                            src="../../../../../assets/images/IMG1.png"
-                            alt=""
-                        />
-                    </div>
-                    <div class="grid-element">
-                        <img
-                            width="100%"
-                            height="100%"
-                            src="../../../../../assets/images/IMG2.png"
-                            alt=""
+                            [src]="element.four.image"
                         />
                     </div>
                 </div>

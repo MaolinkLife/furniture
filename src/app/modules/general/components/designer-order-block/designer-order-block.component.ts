@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { PopupService } from 'src/app/shared/services/popup.service';
 
 @Component({
     selector: 'app-designer-order-block',
@@ -6,7 +7,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
     styleUrls: ['./designer-order-block.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DesignerOrderBlockComponent implements OnInit {
+export class DesignerOrderBlockComponent {
 
     items = [
         {
@@ -23,9 +24,9 @@ export class DesignerOrderBlockComponent implements OnInit {
         },
     ];
 
-    constructor() { }
+    constructor(private popupService: PopupService) { }
 
-    ngOnInit(): void {
+    openPopup(): void {
+        this.popupService.showPopup();
     }
-
 }

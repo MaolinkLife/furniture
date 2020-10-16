@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, ElementRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ElementRef, ɵCompiler_compileModuleSync__POST_R3__ } from '@angular/core';
 
 @Component({
     selector: 'app-production-block',
@@ -35,13 +35,13 @@ export class ProductionBlockComponent implements OnInit {
 
     videoList = [
         {
-            source: '../../../../../assets/video/video1.MOV',
+            source: '../../../../../assets/video/production/video1.mp4',
         },
         {
-            source: '../../../../../assets/video/video1.MOV',
+            source: '../../../../../assets/video/production/video2.mp4',
         },
         {
-            source: '../../../../../assets/video/video1.MOV',
+            source: '../../../../../assets/video/production/video3.mp4',
         },
     ];
 
@@ -50,10 +50,14 @@ export class ProductionBlockComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    clickPlay(elementRef: any): void {
-        // console.log(elementRef.currentTarget.parentElement.style.opasity = '0')
+    clickPlay(elementRef: HTMLElement, index: number): void {
+        elementRef.classList.add('hidden');
+        const video: HTMLVideoElement = elementRef.nextSibling as HTMLVideoElement;
+        video.play();
+    }
 
-        elementRef.currentTarget.parentElement.style.opasity = '0';
+    videoPause(html: HTMLElement): void {
+        // html.classList.remove('hidden');
     }
 
 }

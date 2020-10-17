@@ -198,7 +198,9 @@ export class PortfolioOfWorksComponent implements OnInit {
 
     portfolioList = [];
 
-    constructor(private changeDetectorRef: ChangeDetectorRef) { }
+    portfolioList$: BehaviorSubject<any[]> = new BehaviorSubject([]);
+
+    constructor() { }
 
     ngOnInit(): void {
         this.tabClick('straightSofas', 0);
@@ -211,13 +213,9 @@ export class PortfolioOfWorksComponent implements OnInit {
 
         const list: [] = this.portfolioContent[id];
 
-        if (list) {
-            this.portfolioList = list;
-        } else {
-            this.portfolioList = list;
-        }
+        console.log(list);
 
-        this.changeDetectorRef.detectChanges();
+        this.portfolioList$.next(list);
     }
 
 }

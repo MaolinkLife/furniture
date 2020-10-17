@@ -144,6 +144,13 @@ export class RecomendedBlockComponent implements OnInit {
 
     popupOpened$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
+
+    popupConfig = {
+        height: '600px',
+        width: '800px',
+        background: '#000'
+    };
+
     constructor() { }
 
     ngOnInit(): void {

@@ -4,7 +4,56 @@
 </div>
 
 <div *ngIf="popupOpened$ | async" class="popup-container">
-    <obbey-popup class="popup" (closed)="closePopup()"></obbey-popup>
+    <obbey-popup
+        class="popup"
+        (closed)="closePopup()"
+        [backgroundConfig]="popupBackground"
+    >
+        <div class="content">
+            <obbey-form>
+                <div class="form-title">
+                    Отправить запрос на дизайнера-технолога
+                </div>
+                <div class="text-lighter">
+                    и он связжется с вами в ближайшее время
+                </div>
+
+                <div class="form-action">
+                    <obbey-input
+                        type="text"
+                        placeholder="Введите ваше имя"
+                        class="mui-space_bottom-1"
+                    ></obbey-input>
+                    <obbey-input
+                        type="text"
+                        placeholder="Введите ваш адрес"
+                        class="mui-space_bottom-1"
+                    ></obbey-input>
+
+                    <obbey-input
+                        type="tel"
+                        placeholder="Введите ваш номер телефона"
+                        class="mui-space_bottom-1"
+                    ></obbey-input>
+
+                    <div class="button-contaier">
+                        <obbey-button
+                            color="primary"
+                            size="s"
+                            uppercase
+                            (click)="closePopup()"
+                        >
+                            Отправить
+                        </obbey-button>
+                    </div>
+                </div>
+                <div class="underline-text">
+                    Нажимая на кнопку, вы принимаете условия
+                    <span class="primary-text-color">передачи данных</span>
+                </div>
+            </obbey-form>
+        </div>
+    </obbey-popup>
 </div>
 
 <div *ngIf="showButton" class="button-container">

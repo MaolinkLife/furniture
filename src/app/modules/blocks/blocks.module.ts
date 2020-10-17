@@ -1,3 +1,4 @@
+import { MessagersModule } from './../../shared/components/messagers/messagers.module';
 import { CarouselModule } from './../../shared/components/carousel/carousel.module';
 import { ObbeyFormModule } from './../../shared/components/form/from.module';
 
@@ -45,6 +46,7 @@ import { CalculateModule } from 'src/app/shared/components/calculate/calculate.m
         ShieldItemModule,
         CalculateModule,
         CarouselModule,
+        MessagersModule,
     ],
     exports: [
         ExamplesRefurbishedFurnitureComponent,

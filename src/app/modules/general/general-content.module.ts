@@ -1,3 +1,4 @@
+import { MessagersModule } from './../../shared/components/messagers/messagers.module';
 import { CarouselModule } from './../../shared/components/carousel/carousel.module';
 import { BlocksModule } from './../blocks/blocks.module';
 import { ObbeyButtonModule } from './../../shared/components/button/button.module';
@@ -46,6 +47,7 @@ import { PopupModule } from 'src/app/shared/components/popup/popup.module';
         BlocksModule,
         CarouselModule,
         PopupModule,
+        MessagersModule,
     ],
     exports: [
         GeneralPreviewComponentComponent,

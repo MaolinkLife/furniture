@@ -1,16 +1,18 @@
 import { IconsModule } from './../icons/icons.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PopupComponent } from './popup.component';
+import { MessagersComponent } from './messagers.component';
 
 
 
 @NgModule({
-    declarations: [PopupComponent],
+    declarations: [MessagersComponent],
     imports: [
         CommonModule,
         IconsModule,
     ],
-    exports: [PopupComponent]
+    exports: [
+        MessagersComponent,
+    ]
 })
-export class PopupModule { }
+export class MessagersModule { }

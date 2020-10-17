@@ -1,6 +1,6 @@
 import {
     Component, OnInit, ChangeDetectionStrategy,
-    Input, ContentChildren, QueryList, Output, EventEmitter, OnChanges, SimpleChanges
+    Input, ContentChildren, QueryList, Output, EventEmitter, OnChanges, SimpleChanges, TemplateRef
 } from '@angular/core';
 import { ItemConnectorDirective } from './item-connector.directive';
 
@@ -24,6 +24,10 @@ export class CarouselComponent implements OnInit, OnChanges {
 
     @ContentChildren(ItemConnectorDirective)
     readonly itemConnectors?: QueryList<ItemConnectorDirective>;
+
+
+    @Input()
+    templates: TemplateRef<HTMLElement>[];
 
     constructor() { }
 

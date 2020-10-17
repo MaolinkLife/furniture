@@ -32,57 +32,76 @@
                     <div class="information-block">
                         <div class="info-element">
                             Вы выбрали:
-                            <span class="info-element-dynamic">{{
-                                object.type
-                            }}</span>
+                            <span class="info-element-dynamic">
+                                {{ object.type }}
+                            </span>
                         </div>
                         <div class="info-element">
                             За работу:
                             <span class="info-element-dynamic">
-                                6000 рублей
+                                {{
+                                    object.workPrice +
+                                        object.fillerRecoveryPrice
+                                }}
                             </span>
                         </div>
                         <div class="info-element">
                             Материалы:
                             <span class="info-element-dynamic">
-                                2800 рублей
+                                {{ object.material.price }}
                             </span>
                         </div>
                         <div class="info-element">
                             Итого:
                             <span class="info-element-dynamic">
-                                8800 рублей
+                                {{ totalPrice }}
                             </span>
                         </div>
                         <div class="info-element">
                             Данные расчеты приблизительны. Конечная сумма может
-                            отличаться как в меньшею, так и большую сторону.
+                            отличаться как в меньшую, так и большую сторону.
                             Точная стоимость определяется мастером-замерщиком
                             при осмотре мебели на месте
                         </div>
                     </div>
                 </ng-container>
                 <ng-container *ngSwitchCase="4">
-                    <div class="block-title mui-space_bottom-5">
-                        Куда требуется доставка:
+                    <div>
+                        <div class="block-title mui-space_bottom-5">
+                            Куда требуется доставка:
+                        </div>
+
+                        <div class="button-list mui-space_bottom-10">
+                            <button
+                                *ngFor="
+                                    let deliveryItem of deliveryList;
+                                    index as itemIndex
+                                "
+                                (click)="
+                                    selectDelivery(
+                                        deliveryItem.price,
+                                        itemIndex
+                                    )
+                                "
+                                class="button"
+                                [ngClass]="{ active: deliveryItem.active }"
+                            >
+                                {{ deliveryItem.caption }}
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="button-list mui-space_bottom-10">
-                        <button class="button">Москва</button>
-                        <button class="button">Область</button>
-                    </div>
-
-                    <div class="checkbox">
+                    <!-- <div class="checkbox">
                         <input type="checkbox" />
                         <div class="checkbox-label">
                             Требуются услуги грузчиков
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="payment">
                         Итоговая стоимоть погрузки и доставки
                         <span class="target-text">
-                            {{ object.deliveryPrice }}
+                            {{ deliveryPrice$ | async }}
                         </span>
                     </div>
                 </ng-container>
@@ -136,31 +155,21 @@
 
     <div class="select">
         <obbey-select
-            (valueChange)="clickSizeSelect($event)"
-            [items]="sizeList$ | async"
+            [formControl]="selectSizeFormControl"
+            *ngIf="sizeList$ | async as sizeList"
+            [items]="sizeList"
+            [value]="selectSizeFormControl.value"
         ></obbey-select>
     </div>
 
-    <div class="block-title mui-space_bottom-5">Пышность мебели:</div>
-
-    <div class="button-list">
-        <button
-            *ngFor="let pompButton of pompButtons; index as pompIndex"
-            class="button"
-            (click)="pompSelect(pompIndex)"
-            [ngClass]="{ active: pompButton.active }"
-        >
-            {{ pompButton.caption }}
-        </button>
+    <div class="block-title mui-space_bottom-5">
+        Восстановления наполнителя:
     </div>
-
-    <div class="mui-space_bottom-5">Восстановления наполнителя:</div>
-
     <div class="button-list">
         <button
             *ngFor="let fillerRecovery of fillerRecoveryList; index as index"
             class="button"
-            (click)="fillerRecoverySelect(index)"
+            (click)="fillerRecoverySelect(index, fillerRecovery.price)"
             [ngClass]="{ active: fillerRecovery.active }"
         >
             {{ fillerRecovery.caption }}
@@ -171,18 +180,19 @@
 </ng-template>
 
 <ng-template #thirdQuestionTemplate>
-    <div class="block-title mui-space_bottom-5">Тип материала:</div>
+    <div class="block">
+        <div class="block-title mui-space_bottom-5">Тип материала:</div>
 
-    <div class="button-list">
-        <button class="button">Ткань</button>
-        <button class="button">Натуральная кожа</button>
-        <button class="button">Экокожа</button>
-        <button class="button">Кожзам</button>
-    </div>
-    <div class="block-title mui-space_bottom-5">Ценовая категория:</div>
-
-    <div class="select">
-        <obbey-select [items]="items$ | async"></obbey-select>
+        <div class="button-list">
+            <button
+                *ngFor="let material of materialList; index as itemIndex"
+                (click)="materialSelect(itemIndex, material.caption)"
+                class="button"
+                [ngClass]="{ active: material.active }"
+            >
+                {{ material.caption }}
+            </button>
+        </div>
     </div>
 
     <ng-container *ngTemplateOutlet="resultBlockTemplate"></ng-container>
@@ -196,7 +206,7 @@
         </div>
         <div class="result-element">
             Стоимость работы и материала:
-            <span class="target-text"> 8800 р</span>
+            <span class="target-text"> {{ totalPrice }}</span>
         </div>
     </div>
 </ng-template>

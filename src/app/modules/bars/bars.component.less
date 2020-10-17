@@ -73,6 +73,20 @@
 .button-element {
     max-width: 320px;
     width: 100%;
+    position: relative;
+
+    & > .icon {
+        height: 64px;
+        position: absolute;
+        top: 0;
+        right: -10px;
+        z-index: 1000;
+
+        > img {
+            height: 64px;
+            object-fit: cover;
+        }
+    }
 }
 
 .footer {
@@ -92,10 +106,11 @@
         &__title {
             font-family: "BerlingskeSerif-DemiBold";
             font-style: normal;
+            font-weight: 600;
             font-size: 14px;
             line-height: 17px;
             text-transform: uppercase;
-            color: #f4ab2c;
+            // color: #f4ab2c;
             margin-bottom: 20px;
         }
 

@@ -1,15 +1,26 @@
+import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import {
-    Component, OnInit, ChangeDetectionStrategy, HostBinding, ElementRef,
-    EventEmitter, HostListener, Inject, Input, Output, QueryList, ViewChild, ViewChildren
+    Component, ChangeDetectionStrategy, HostBinding, ElementRef,
+    EventEmitter, HostListener, Inject, Input, Output, QueryList, ViewChild, ViewChildren, OnInit, forwardRef
 } from '@angular/core';
+import { BehaviorSubject, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
+    // tslint:disable-next-line: component-selector
     selector: 'obbey-select',
     templateUrl: './select.component.html',
     styleUrls: ['./select.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => SelectComponent),
+            multi: true,
+        }
+    ],
 })
-export class SelectComponent {
+export class SelectComponent implements ControlValueAccessor, OnInit {
 
     @Input()
     items: string[];
@@ -22,6 +33,9 @@ export class SelectComponent {
 
     @HostBinding('class._opened')
     opened = false;
+
+    public readonly formControl: FormControl = new FormControl();
+    public readonly disabled$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
     readonly optionFilters = {
         // tslint:disable-next-line: object-literal-key-quotes
@@ -39,6 +53,8 @@ export class SelectComponent {
     @ViewChildren('option')
     private readonly options: QueryList<ElementRef>;
 
+    private readonly componentDestroyed$: Subject<void> = new Subject();
+
     constructor(
         @Inject(ElementRef) private readonly elementRef: ElementRef,
         // @Inject(EventFiltersService) service: EventFiltersService,
@@ -50,6 +66,40 @@ export class SelectComponent {
         // });
     }
 
+    ngOnInit(): void {
+        this.formControl.valueChanges.pipe(
+            takeUntil(this.componentDestroyed$),
+        ).subscribe(
+            (value: any) => this.onChange(value),
+        );
+    }
+
+    writeValue(value: any): void {
+        this.formControl.setValue(value, { emitEvent: false });
+    }
+
+    public registerOnChange(callback: (value: any) => void): void {
+        this.onChange = callback;
+    }
+
+    public registerOnTouched(callback: () => void): void {
+        this.onTouched = callback;
+    }
+
+    public setDisabledState(disabled: boolean): void {
+        if (disabled) {
+            this.formControl.disable({ emitEvent: false });
+        } else {
+            this.formControl.enable({ emitEvent: false });
+        }
+    }
+
+    private onChange = (value: any): void => { };
+    private onTouched = (): void => { };
+
+    onClick() {
+        this.opened = !this.opened;
+    }
 
     @HostBinding('class._focused')
     get focused(): boolean {
@@ -65,10 +115,6 @@ export class SelectComponent {
     @HostListener('focusout.filtered')
     onBlur() {
         this.opened = false;
-    }
-
-    onClick() {
-        this.opened = !this.opened;
     }
 
     onSelect(value: string, input: ElementRef) {

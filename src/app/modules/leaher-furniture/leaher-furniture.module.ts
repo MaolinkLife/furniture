@@ -1,3 +1,4 @@
+import { MessagersModule } from './../../shared/components/messagers/messagers.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LeatherArmchairComponent } from './components/leather-armchair/leather-armchair.component';
@@ -23,6 +24,7 @@ import { LeatherPoufsAndBanquetsComponent } from './components/leather-poufs-and
         ObbeyButtonModule,
         ShieldItemModule,
         IconsModule,
+        MessagersModule,
     ],
     exports: [
         LeatherArmchairComponent,

@@ -11,6 +11,9 @@ import { Component, OnInit, ChangeDetectionStrategy, OnChanges, HostListener } f
 })
 export class MainPageComponent implements OnInit, OnChanges {
 
+
+    constructor(private popupService: PopupService) { }
+
     isHomePage = true;
 
     component = GeneralPreviewComponentComponent;
@@ -19,21 +22,21 @@ export class MainPageComponent implements OnInit, OnChanges {
 
     popupOpened$: BehaviorSubject<boolean>;
 
+    popupBackground = {
+        'background-image': 'url(../../../../../assets/images/popup-background.png)',
+        'background-position': 'center',
+        'background-size': 'cover',
+        'background-repeat': 'no-repeat'
+    };
+
     @HostListener('window:scroll', ['$event'])
     toggleScroll(): void {
         this.showButton = window.pageYOffset > 100;
     }
 
-
-    constructor(private popupService: PopupService) { }
-
     ngOnInit(): void {
         this.popupOpened$ = this.popupService.popupOpened$;
-
-
-        this.popupService.popupOpened$.subscribe(e => console.log(e));
     }
-
 
     openPopup() {
         this.popupOpened$.next(true);
@@ -44,7 +47,6 @@ export class MainPageComponent implements OnInit, OnChanges {
     }
 
     ngOnChanges(): void {
-        console.log('changes');
     }
 
     toggleActive(index: number, array: { name: string; active: boolean }[]) {

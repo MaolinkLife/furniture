@@ -1,3 +1,9 @@
-<div class="content">
+<div class="content" [ngStyle]="backgroundConfig">
+    <div class="icon">
+        <app-icon
+            name="iconClosePopup"
+            (click)="closePopup(); $event.stopPropagation()"
+        ></app-icon>
+    </div>
     <ng-content></ng-content>
 </div>

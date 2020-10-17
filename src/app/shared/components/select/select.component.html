@@ -6,6 +6,7 @@
     placeholder="Select value"
     (click)="onClick()"
     (keydown.arrowDown.prevent)="onInputArrowDown()"
+    [formControl]="formControl"
 />
 <div *ngIf="opened" class="dropdown" (mouseleave)="input.focus()">
     <div

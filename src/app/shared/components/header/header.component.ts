@@ -82,12 +82,6 @@ export class HeaderComponent implements OnInit {
 
         this.router.navigateByUrl('');
 
-
-        if (id === 'general') {
-
-        }
-
-
         setTimeout(() => {
             if (id) {
                 if (document.getElementById(id)) {

@@ -1,3 +1,4 @@
+import { MessagersModule } from './../../shared/components/messagers/messagers.module';
 import { IconsModule } from './../../shared/components/icons/icons.module';
 import { ShieldItemModule } from './../../shared/components/shield-item/shield-item.module';
 import { ObbeyButtonModule } from './../../shared/components/button/button.module';
@@ -25,6 +26,7 @@ import { PoufsAndBanquetsComponent } from './components/poufs-and-banquets/poufs
         ObbeyButtonModule,
         ShieldItemModule,
         IconsModule,
+        MessagersModule,
     ]
 })
 export class PaddingFurnitureModule { }

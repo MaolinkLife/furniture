@@ -8,16 +8,36 @@
     </div>
 
     <div class="block__content">
-        <obbey-calculate>
-
-        </obbey-calculate>
+        <obbey-calculate> </obbey-calculate>
 
         <div class="right-content mui-space_left-5">
-            <div class="line-primary-color"></div>
-            <div class="right-content__description">
-                пройдите тест до конца и получите расчет стоимости на эл. почту
+            <div class="caption">
+                <div class="line-primary-color"></div>
+                <div class="right-content__description">
+                    Понравились наши цены ?
+                </div>
+                <div class="line-primary-color"></div>
             </div>
-            <div class="line-primary-color"></div>
+
+            <div class="mobile-container">
+                <div>Звоните по телефону:</div>
+
+                <a href="tel:+74957941493" class="phone">8 (495) 794 1493</a>
+            </div>
+
+            <div class="desc">
+                Или оставьте заявку, чтобы вызвать замерщика и узнать точную
+                стоимость
+            </div>
+
+            <obbey-button
+                color="primary"
+                size="m"
+                uppercase
+                (click)="openPopup()"
+            >
+                Оставить заявку
+            </obbey-button>
         </div>
     </div>
 </div>

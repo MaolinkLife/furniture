@@ -1,3 +1,4 @@
+import { PopupService } from './../../../../shared/services/popup.service';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
@@ -9,9 +10,13 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class CalculateBlockComponent implements OnInit {
 
-    constructor() { }
+    constructor(private popupService: PopupService) { }
 
     ngOnInit(): void {
+    }
+
+    openPopup(): void {
+        this.popupService.showPopup();
     }
 
 }

@@ -60,6 +60,7 @@
 
 .logo {
     margin-bottom: 8px;
+    cursor: pointer;
 }
 
 .title-logo {
@@ -123,8 +124,8 @@
 
 .icon {
     margin-right: 12px;
-    width: 24px;
-    height: 24px;
+    width: 58px;
+    height: 58px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,15 +178,16 @@
     box-sizing: border-box;
 
     &__left {
-        max-width: 210px;
+        max-width: 268px;
         font-family: "MuseoSansCyrl-300";
-        font-style: normal;
-        font-weight: 300;
         font-size: 16px;
         line-height: 22px;
-        /* or 137% */
+        display: flex;
+        align-items: center;
 
-        text-align: justify;
+        & > .title {
+            margin-right: 10px;
+        }
     }
 }
 

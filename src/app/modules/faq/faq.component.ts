@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ElementRef } from '@angular/core';
 
 @Component({
     selector: 'app-faq',
@@ -88,7 +88,7 @@ export class FaqComponent implements OnInit {
         if (panel.style.maxHeight) {
             panel.style.maxHeight = null;
         } else {
-            panel.style.maxHeight = panel.scrollHeight + 'px';
+            panel.style.maxHeight = panel.scrollHeight + 48 + 'px';
         }
     }
 

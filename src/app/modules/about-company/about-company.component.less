@@ -12,7 +12,8 @@
 .block {
     display: flex;
     flex-direction: column;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
+    align-items: center;
 
     &__title {
         font-family: "BerlingskeSerif-Regular";
@@ -40,12 +41,17 @@
         line-height: 24px;
     }
 
+    &__description:not(:only-of-type) {
+        max-width: 500px;
+    }
+
     &__description > .title {
         font-family: "BerlingskeSerif-Regular";
         font-size: 14px;
         line-height: 24px;
         text-transform: uppercase;
-        color: #f4ab2c;
+        font-weight: 600;
+        // color: #f4ab2c;
     }
 
     &__description > * {

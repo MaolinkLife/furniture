@@ -221,7 +221,10 @@ const FABRICS: FabricInterface[] = [
         ],
         examples: [
             {
-                image: '',
+                image: '../../../assets/images/fabric-catalog/flock/flock1.jpg',
+                config: {
+                    'grid-column': '2 / span 2',
+                },
             },
         ],
     },
@@ -240,7 +243,13 @@ const FABRICS: FabricInterface[] = [
             {
                 image: '../../../assets/images/fabric-catalog/flock-on-flock/flock-on-flock1.jpg',
                 config: {
-                    'grid-column': '2 / span 2',
+                    'grid-column': '1 / span 2',
+                }
+            },
+            {
+                image: '../../../assets/images/fabric-catalog/flock-on-flock/flock-on-flock2.jpg',
+                config: {
+                    'grid-column': '3 / span 2',
                 }
             },
         ],
@@ -277,7 +286,7 @@ const FABRICS: FabricInterface[] = [
     selector: 'app-fabric-catalog',
     templateUrl: './fabric-catalog.component.html',
     styleUrls: ['./fabric-catalog.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FabricCatalogComponent implements OnInit {
 

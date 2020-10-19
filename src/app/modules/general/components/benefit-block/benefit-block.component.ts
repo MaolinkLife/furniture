@@ -132,7 +132,7 @@ export class BenefitBlockComponent implements OnInit, AfterViewInit, OnChanges {
     startTimer(): void {
         const items = this.circularItemsTemplate.toArray();
 
-        const t = timer(0, 1000).pipe(take(items.length)).subscribe(i => {
+        const t = timer(0, 500).pipe(take(items.length)).subscribe(i => {
             items[i].nativeElement.style.opacity = '1';
         });
     }

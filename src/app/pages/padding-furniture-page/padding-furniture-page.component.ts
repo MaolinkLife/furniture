@@ -147,6 +147,23 @@ const EXAMPLES_LIST = [
         ],
     },
     {
+        id: 'headboards',
+        list: [
+
+            {
+                first: {
+                    caption: 'до',
+                    image: '../../../assets/images/examples/headboards/headboards-before1.jpg',
+                },
+                second: {
+                    image: '../../../assets/images/examples/headboards/headboards-after1.jpg',
+                    caption: 'после',
+                }
+            },
+
+        ],
+    },
+    {
         id: 'poufs-and-banquets',
         list: [
             // {

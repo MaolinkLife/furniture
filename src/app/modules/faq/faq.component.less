@@ -51,9 +51,13 @@
     border-left: 2px solid #f4ab2c;
 }
 
+.accordion.active + .panel {
+    padding: 24px;
+}
+
 .panel {
     white-space: pre-wrap;
-    padding: 0 40px;
+    padding: 0 24px;
     max-height: 0;
     overflow: hidden;
     transition: 0.2s ease-out;

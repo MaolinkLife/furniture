@@ -1,9 +1,15 @@
 import { BehaviorSubject } from 'rxjs';
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 
+@Component({
+    selector: 'app-portfolio-of-works',
+    templateUrl: './portfolio-of-works.component.html',
+    styleUrls: ['./portfolio-of-works.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class PortfolioOfWorksComponent implements OnInit {
 
-const PORTFOLIO = {
-    straightSofas: [
+    straightSofas = [
         {
             first: {
                 image: '../../../assets/images/examples/sofas/example-before1.jpg',
@@ -32,8 +38,9 @@ const PORTFOLIO = {
                 image: '../../../assets/images/examples/sofas/example-after4.jpg',
             },
         },
-    ],
-    cornerSofas: [
+    ];
+
+    cornerSofas = [
         {
             first: {
                 image: '../../../assets/images/examples/corner-sofas/example-before1.jpg',
@@ -48,8 +55,9 @@ const PORTFOLIO = {
                 image: '../../../assets/images/examples/corner-sofas/example-after2.jpg',
             },
         },
-    ],
-    armchairs: [
+    ];
+
+    armchairs = [
         {
             first: {
                 image: '../../../assets/images/examples/armchairs/example-before6.jpg',
@@ -86,8 +94,9 @@ const PORTFOLIO = {
                 image: '../../../assets/images/examples/armchairs/example-after5.jpg',
             },
         },
-    ],
-    chairs: [
+    ];
+
+    chairs = [
         {
             first: {
                 image: '../../../assets/images/examples/chairs/expl-b5.jpg',
@@ -116,16 +125,18 @@ const PORTFOLIO = {
                 image: '../../../assets/images/examples/chairs/expl-a4.jpg',
             },
         },
-    ],
-    headboards: [{
+    ];
+
+    headboards = [{
         first: {
             image: '../../../assets/images/examples/headboards/headboards-before1.jpg',
         },
         second: {
             image: '../../../assets/images/examples/headboards/headboards-after1.jpg',
         },
-    }],
-    poufsAndBanquets: [
+    }];
+
+    poufsAndBanquets = [
         {
             first: {
                 image: '../../../assets/images/examples/poufs/expl-b1.jpg',
@@ -148,25 +159,7 @@ const PORTFOLIO = {
                 image: '../../../assets/images/examples/poufs/expl-a3.jpg',
             },
         },
-    ],
-};
-
-
-interface PortfolioItemInterface {
-    straightSofas: {
-        first: {
-            image: string;
-        },
-    };
-}
-
-@Component({
-    selector: 'app-portfolio-of-works',
-    templateUrl: './portfolio-of-works.component.html',
-    styleUrls: ['./portfolio-of-works.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush
-})
-export class PortfolioOfWorksComponent implements OnInit {
+    ];
 
     tabList = [
         {
@@ -201,9 +194,7 @@ export class PortfolioOfWorksComponent implements OnInit {
         },
     ];
 
-    portfolioContent = PORTFOLIO;
-
-    portfolioList = [];
+    currentList$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
     portfolioList$: BehaviorSubject<any[]> = new BehaviorSubject([]);
 
@@ -217,12 +208,7 @@ export class PortfolioOfWorksComponent implements OnInit {
     tabClick(id: string, index: number): void {
         this.tabList.forEach(tab => tab.active = false);
         this.tabList[index].active = true;
-
-        const list: [] = this.portfolioContent[id];
-
-        console.log(list);
-
-        this.portfolioList$.next(list);
+        this.currentList$.next(id);
     }
 
 }

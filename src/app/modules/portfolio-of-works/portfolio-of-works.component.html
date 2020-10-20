@@ -11,8 +11,41 @@
         </div>
     </div>
 
-    <app-examples-catalog
-        class="catalog"
-        [list]="portfolioList$ | async"
-    ></app-examples-catalog>
+    <ng-container [ngSwitch]="currentList$ | async">
+        <app-examples-catalog
+            *ngSwitchCase="'poufsAndBanquets'"
+            class="catalog"
+            [list]="poufsAndBanquets"
+        ></app-examples-catalog>
+
+        <app-examples-catalog
+            *ngSwitchCase="'headboards'"
+            class="catalog"
+            [list]="headboards"
+        ></app-examples-catalog>
+
+        <app-examples-catalog
+            *ngSwitchCase="'chairs'"
+            class="catalog"
+            [list]="chairs"
+        ></app-examples-catalog>
+
+        <app-examples-catalog
+            *ngSwitchCase="'armchairs'"
+            class="catalog"
+            [list]="armchairs"
+        ></app-examples-catalog>
+
+        <app-examples-catalog
+            *ngSwitchCase="'cornerSofas'"
+            class="catalog"
+            [list]="cornerSofas"
+        ></app-examples-catalog>
+
+        <app-examples-catalog
+            *ngSwitchCase="'straightSofas'"
+            class="catalog"
+            [list]="straightSofas"
+        ></app-examples-catalog>
+    </ng-container>
 </div>

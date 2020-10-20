@@ -11,7 +11,7 @@ import { ItemConnectorDirective } from './item-connector.directive';
     styleUrls: ['./carousel.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CarouselComponent implements OnInit, OnChanges {
+export class CarouselComponent implements OnInit {
 
     @Input()
     arrowPositionConfig: object;
@@ -32,9 +32,6 @@ export class CarouselComponent implements OnInit, OnChanges {
     constructor() { }
 
     ngOnInit(): void {
-    }
-
-    ngOnChanges(changes: SimpleChanges): void {
     }
 
     previewSlide(index: number): void {

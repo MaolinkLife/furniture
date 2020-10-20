@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { PopupService } from './../../shared/services/popup.service';
 import { BehaviorSubject } from 'rxjs';
 import { GeneralPreviewComponentComponent } from './../../modules/general/components/general-preview-component/general-preview-component.component';
@@ -12,7 +13,10 @@ import { Component, OnInit, ChangeDetectionStrategy, OnChanges, HostListener } f
 export class MainPageComponent implements OnInit, OnChanges {
 
 
-    constructor(private popupService: PopupService) { }
+    constructor(
+        private popupService: PopupService,
+        private router: Router,
+    ) { }
 
     isHomePage = true;
 
@@ -42,8 +46,12 @@ export class MainPageComponent implements OnInit, OnChanges {
         this.popupOpened$.next(true);
     }
 
-    closePopup() {
+    closePopup(accept: boolean) {
         this.popupOpened$.next(false);
+
+        if (accept) {
+            this.router.navigateByUrl('complete');
+        }
     }
 
     ngOnChanges(): void {

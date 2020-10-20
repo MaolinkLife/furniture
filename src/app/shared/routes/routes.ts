@@ -1,3 +1,4 @@
+import { PaymentCompleteComponent } from './../../modules/payment-complete/payment-complete.component';
 import { PoufsAndBanquetsComponent } from './../../modules/padding-furniture/components/poufs-and-banquets/poufs-and-banquets.component';
 import { HeadboardsComponent } from './../../modules/padding-furniture/components/headboards/headboards.component';
 import { FabricCatalogPageComponent } from './../../pages/fabric-catalog-page/fabric-catalog-page.component';
@@ -233,6 +234,15 @@ export const ROUTES: PreviewRouteInterface[] = [
                     mark: 'question-answer',
                     title: 'вопрос - ответ',
                     previewComponent: FaqComponent,
+                }
+            },
+            {
+                path: 'complete',
+                data: {
+                    mark: 'complete',
+                    title: 'Спасибо',
+                    hide: true,
+                    previewComponent: PaymentCompleteComponent,
                 }
             },
         ]

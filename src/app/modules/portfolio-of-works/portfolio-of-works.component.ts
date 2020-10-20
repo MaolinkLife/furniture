@@ -117,7 +117,14 @@ const PORTFOLIO = {
             },
         },
     ],
-    headboards: [],
+    headboards: [{
+        first: {
+            image: '../../../assets/images/examples/headboards/headboards-before1.jpg',
+        },
+        second: {
+            image: '../../../assets/images/examples/headboards/headboards-after1.jpg',
+        },
+    }],
     poufsAndBanquets: [
         {
             first: {

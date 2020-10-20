@@ -104,6 +104,10 @@ export class NavigationsService {
                     active: false,
                 };
 
+                if (currentRoute.data.hide) {
+                    sidebarItem.hide = true;
+                }
+
                 if (currentRoute.children) {
                     sidebarItem.children = this.getMenuItems(currentRoute.children, path);
                 }

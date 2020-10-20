@@ -6,7 +6,7 @@
 <div *ngIf="popupOpened$ | async" class="popup-container">
     <obbey-popup
         class="popup"
-        (closed)="closePopup()"
+        (closed)="closePopup(false)"
         [backgroundConfig]="popupBackground"
     >
         <div class="content">
@@ -41,7 +41,7 @@
                             color="primary"
                             size="s"
                             uppercase
-                            (click)="closePopup()"
+                            (click)="closePopup(true)"
                         >
                             Отправить
                         </obbey-button>

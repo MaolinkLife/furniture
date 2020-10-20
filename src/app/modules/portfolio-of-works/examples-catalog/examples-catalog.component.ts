@@ -11,7 +11,7 @@ export class ExamplesCatalogComponent implements OnInit, OnChanges {
     activeItemIndex = 0;
 
     @Input()
-    list: [];
+    list: Record<string, Record<string, string>>[];
 
     constructor() { }
 

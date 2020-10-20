@@ -12,7 +12,7 @@ export class PopupComponent {
     backgroundConfig: object;
 
     @Output()
-    closed = new EventEmitter<void>();
+    closed = new EventEmitter<boolean>();
 
 
     @HostListener('window:keydown.esc')

@@ -22,21 +22,24 @@
             <obbey-input
                 type="text"
                 placeholder="Введите ваше имя"
-                class="mui-space_bottom-1"
+                class="mui-space_bottom-2"
             ></obbey-input>
 
             <obbey-input
                 type="tel"
                 placeholder="+7(___) ___-__-__"
-                class="mui-space_bottom-1"
+                class="mui-space_bottom-2"
             ></obbey-input>
 
-            <div class="add-image">
-                <div class="add-image__icon">
-                    <app-icon name="iconAddImage"></app-icon>
-                </div>
-                <label class="add-image__label">Загрузить фотографии</label>
+            <div class="add-image mui-space_bottom-2">
+                <label for="addImage" class="add-image__label">
+                    <div class="add-image__icon">
+                        <app-icon name="iconAddImage"></app-icon>
+                    </div>
+                    <span> Загрузить фотографии </span>
+                </label>
                 <input
+                    id="addImage"
                     style="display: none"
                     type="file"
                     class="mui-space_bottom-2"

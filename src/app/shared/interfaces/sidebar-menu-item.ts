@@ -5,6 +5,7 @@ export interface SidebarMenuItem {
     caption: string;
     routerPath: string;
     active: boolean;
+    hide?: boolean;
     children?: SidebarMenuItem[];
     previewComponent?: PreviewComponentClass<Component> | any;
 }

@@ -1,8 +1,8 @@
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NavigationsService } from './../../modules/navigations/navigations.service';
 import { BehaviorSubject } from 'rxjs';
 import { PreviewComponentClass } from './../../types/preview-component-class.type';
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { GeneralPreviewComponentComponent } from 'src/app/modules/general/components/general-preview-component/general-preview-component.component';
 
 interface HeaderMenuItemInterface {
@@ -18,7 +18,7 @@ interface HeaderMenuItemInterface {
     styleUrls: ['./header.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnChanges {
     @Input()
     showMenu: boolean;
 
@@ -67,13 +67,18 @@ export class HeaderComponent implements OnInit {
     constructor(
         private navigationsService: NavigationsService,
         private router: Router,
+        private activatedRoute: ActivatedRoute,
     ) {
 
     }
 
     ngOnInit(): void {
         this.component$ = this.navigationsService.dynamicComponentView$;
+        console.log(this.activatedRoute);
+    }
 
+    ngOnChanges(changes: SimpleChanges): void {
+        console.log(changes);
     }
 
     menuClick(element: HTMLElement, id?: string) {

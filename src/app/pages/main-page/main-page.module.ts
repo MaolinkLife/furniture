@@ -11,6 +11,7 @@ import { FurnitureCareModule } from 'src/app/modules/furniture-care/furniture-ca
 import { ShippingAndPaymentModule } from 'src/app/modules/shipping-and-payment/shipping-and-payment.module';
 import { AboutCompanyModule } from 'src/app/modules/about-company/about-company.module';
 import { FaqModule } from 'src/app/modules/faq/faq.module';
+import { PaymentCompleteModule } from 'src/app/modules/payment-complete/payment-complete.module';
 
 @NgModule({
     declarations: [
@@ -27,6 +28,7 @@ import { FaqModule } from 'src/app/modules/faq/faq.module';
         AboutCompanyModule,
         PortfolioOfWorksModule,
         FaqModule,
+        PaymentCompleteModule,
     ],
 })
 export class MainPageModule { }

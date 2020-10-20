@@ -1,34 +1,33 @@
 <div class="menu-list" *ngIf="menuItems$ | async as menuItems">
-    <div
-        *ngFor="let menuItem of menuItems; index as itemIndex"
-        class="menu-item"
-    >
-        <div
-            class="menu-list__link"
-            routerLinkActive="active"
-            (click)="menuItemClick(menuItems, menuItem)"
-        >
-            <div class="item"></div>
-
-            <a class="link" [routerLink]="[menuItem.routerPath]">
-                {{ menuItem.caption }}
-            </a>
-        </div>
-
-        <div *ngIf="menuItem.children?.length" class="menu-subitem-list">
+    <ng-container *ngFor="let menuItem of menuItems; index as itemIndex">
+        <div *ngIf="!menuItem.hide" class="menu-item">
             <div
-                *ngFor="
-                    let menuSubItem of menuItem.children;
-                    index as subItemIndex
-                "
-                class="menu-subitem-list__item"
+                class="menu-list__link"
                 routerLinkActive="active"
-                (click)="menuItemClick(menuItem.children, menuSubItem)"
+                (click)="menuItemClick(menuItems, menuItem)"
             >
-                <a class="link" [routerLink]="[menuSubItem.routerPath]">
-                    {{ menuSubItem.caption }}
+                <div class="item"></div>
+
+                <a class="link" [routerLink]="[menuItem.routerPath]">
+                    {{ menuItem.caption }}
                 </a>
             </div>
+
+            <div *ngIf="menuItem.children?.length" class="menu-subitem-list">
+                <div
+                    *ngFor="
+                        let menuSubItem of menuItem.children;
+                        index as subItemIndex
+                    "
+                    class="menu-subitem-list__item"
+                    routerLinkActive="active"
+                    (click)="menuItemClick(menuItem.children, menuSubItem)"
+                >
+                    <a class="link" [routerLink]="[menuSubItem.routerPath]">
+                        {{ menuSubItem.caption }}
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
+    </ng-container>
 </div>

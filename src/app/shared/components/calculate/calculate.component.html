@@ -33,22 +33,22 @@
                         <div class="info-element">
                             Вы выбрали:
                             <span class="info-element-dynamic">
-                                {{ object.type }}
+                                {{ calculatedPrice.furnitureType }}
                             </span>
                         </div>
                         <div class="info-element">
                             За работу:
                             <span class="info-element-dynamic">
                                 {{
-                                    object.workPrice +
-                                        object.fillerRecoveryPrice
+                                    calculatedPrice.workPrice +
+                                        calculatedPrice.fillerRecoveryPrice
                                 }}
                             </span>
                         </div>
                         <div class="info-element">
                             Материалы:
                             <span class="info-element-dynamic">
-                                {{ object.material.price }}
+                                {{ calculatedPrice.materialPrice }}
                             </span>
                         </div>
                         <div class="info-element">
@@ -133,10 +133,7 @@
 
     <div class="grid-panel">
         <div
-            *ngFor="
-                let furniture of firstQuestion.furnitureTypesList;
-                index as itemIndex
-            "
+            *ngFor="let furniture of furnitureTypesList; index as itemIndex"
             class="element"
             [ngClass]="{ active: furniture.active }"
             (click)="selectFurnitureType(itemIndex)"
@@ -202,7 +199,7 @@
     <div class="result-block">
         <div class="result-element">
             Вы выбрали:
-            <span class="target-text">{{ object.type }}</span>
+            <span class="target-text">{{ calculatedPrice.furnitureType }}</span>
         </div>
         <div class="result-element">
             Стоимость работы и материала:

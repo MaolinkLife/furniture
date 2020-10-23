@@ -10,7 +10,9 @@
         <ng-template *ngFor="let social of socialList" carouselItem>
             <div class="social-block">
                 <div class="avatar mui-space_bottom-5">
-                    <div class="avatar-image"></div>
+                    <div *ngIf="social.screen" class="avatar-image">
+                        <img [src]="social.screen" alt="" />
+                    </div>
 
                     <div class="user-info">
                         <div class="name"></div>

@@ -1,6 +1,6 @@
 :host {
-    height: 1400px;
-    padding-top: 80px;
+    height: 970px;
+    padding-top: 30px;
     background-image: url("../../../../../assets/images/benefitBackground.png");
     background-size: cover;
     background-position: center;
@@ -24,27 +24,34 @@
     text-align: center;
     color: #ffffff;
     max-width: 880px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .center-image {
+    width: 400px;
+    height: 400px;
     position: absolute;
-    top: 80px;
-    left: 320px;
+    top: 40px;
+    left: 400px;
+
+    & > img {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .subtitle-page {
     font-family: "MuseoSansCyrl-300";
-    font-size: 16px;
+    font-size: 14px;
     line-height: 19px;
     text-align: center;
     color: #ffffff;
     max-width: 455px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .underline-text {
-    font-family: "BerlingskeSerif";
+    font-family: "BerlingskeSerif-Regular";
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
@@ -52,6 +59,7 @@
     text-align: center;
     text-transform: uppercase;
     max-width: 383px;
+    letter-spacing: 1.5px;
 
     /* yellow */
 
@@ -70,8 +78,8 @@
 
 .circular-element {
     position: absolute;
-    width: 190px;
-    height: 190px;
+    width: 160px;
+    height: 120px;
     opacity: 0;
     transition: 0.2s ease-in-out;
 }
@@ -83,19 +91,27 @@
 
 .image-container {
     position: relative;
+    width: inherit;
+    height: inherit;
+
+    & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 }
 
 .number {
     font-family: "BerlingskeSerif";
     font-style: italic;
     font-weight: 800;
-    font-size: 92px;
-    line-height: 110px;
+    font-size: 72px;
+    line-height: 90px;
     text-align: center;
     color: #313131;
     position: absolute;
     top: 0;
-    right: 0;
+    right: -30px;
 }
 
 .image {
@@ -107,7 +123,7 @@
     font-family: "MuseoSansCyrl-300";
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 13px;
+    line-height: 16px;
     color: #ffffff;
 }

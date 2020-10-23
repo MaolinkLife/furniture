@@ -26,44 +26,44 @@ export class BenefitBlockComponent implements OnInit, AfterViewInit, OnChanges {
             caption: 'Обращение к нам, звонок либо заявка',
             image: '../../../../../assets/images/circular-block/icon1.png',
             positionStyle: {
-                top: '0',
-                left: '50px',
+                top: '-50px',
+                left: '200px',
             },
         },
         {
             caption: 'Согласование условий',
             image: '../../../../../assets/images/circular-block/icon2.png',
             positionStyle: {
-                top: '250px',
-                left: '-25px',
+                top: '150px',
+                left: '125px',
             },
         },
         {
-            caption: 'Выезд дизайнера -технолога',
+            caption: 'Выезд дизайнера-технолога',
             image: '../../../../../assets/images/circular-block/icon3.png',
             positionStyle: {
-                top: '450px',
-                left: '50px',
+                top: '325px',
+                left: '170px',
             },
         },
         {
             caption: 'Выбор материала',
             image: '../../../../../assets/images/circular-block/icon4.png',
             positionStyle: {
-                top: '640px',
-                left: '150px',
+                top: '430px',
+                left: '325px',
             },
             numberPosition: {
-                top: '150px',
-                right: '-80px',
+                top: '40px',
+                right: '-25px',
             },
         },
         {
             caption: 'Финальный расчёт в нескольких вариантах',
             image: '../../../../../assets/images/circular-block/icon5.png',
             positionStyle: {
-                top: '810px',
-                left: '550px',
+                top: '485px',
+                left: '515px',
             },
             numberPosition: {
                 top: '50px',
@@ -73,8 +73,8 @@ export class BenefitBlockComponent implements OnInit, AfterViewInit, OnChanges {
             caption: 'Заключение договора',
             image: '../../../../../assets/images/circular-block/icon6.png',
             positionStyle: {
-                top: '720px',
-                left: '850px',
+                top: '435px',
+                left: '755px',
             },
             numberPosition: {
                 top: '50px',
@@ -84,8 +84,8 @@ export class BenefitBlockComponent implements OnInit, AfterViewInit, OnChanges {
             caption: 'Забираем мебель на производство',
             image: '../../../../../assets/images/circular-block/icon7.png',
             positionStyle: {
-                top: '490px',
-                left: '1000px',
+                top: '300px',
+                left: '890px',
             },
             numberPosition: {
                 top: '50px',
@@ -95,8 +95,8 @@ export class BenefitBlockComponent implements OnInit, AfterViewInit, OnChanges {
             caption: 'Осуществляем ремонт в течении 15 дней',
             image: '../../../../../assets/images/circular-block/icon8.png',
             positionStyle: {
-                top: '250px',
-                left: '1050px',
+                top: '120px',
+                left: '935px',
             },
             numberPosition: {
                 top: '50px',
@@ -107,12 +107,12 @@ export class BenefitBlockComponent implements OnInit, AfterViewInit, OnChanges {
             caption: 'Доставка новой мебели',
             image: '../../../../../assets/images/circular-block/icon9.png',
             positionStyle: {
-                top: '0px',
-                left: '850px',
+                top: '-50px',
+                left: '840px',
             },
             numberPosition: {
-                top: '30px',
-                left: '8px',
+                top: '40px',
+                left: '-45px',
             },
         },
     ];
@@ -132,7 +132,7 @@ export class BenefitBlockComponent implements OnInit, AfterViewInit, OnChanges {
     startTimer(): void {
         const items = this.circularItemsTemplate.toArray();
 
-        const t = timer(0, 500).pipe(take(items.length)).subscribe(i => {
+        const t = timer(0, 150).pipe(take(items.length)).subscribe(i => {
             items[i].nativeElement.style.opacity = '1';
         });
     }

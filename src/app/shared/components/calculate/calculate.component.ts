@@ -1,244 +1,56 @@
+import { FURNITURE_TYPE_LIST } from './../../mock/furniture-type-list';
+import { PRICE_LIST } from './../../mock/price-list';
 import { FormControl } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 
-interface FurnitureTypeElementInterface {
-    active: boolean;
-    iconName: string;
-    caption: string;
-    id: string;
+export interface PriceCalculateInterface {
+    /**
+     * Тип мебели
+     */
+    furnitureType: string;
+
+    /**
+     * Размер мебели
+     */
+    furnitureSize: string;
+
+    /**
+     * Общая стоимость рассчетов
+     */
+    totalPrice: number;
+
+    /**
+     * Тип материала
+     */
+    materialType: string;
+
+    /**
+     * Стоимость материала
+     */
+    materialPrice: number;
+
+    /**
+     * Стоимость восстановления наполнителя
+     */
+    fillerRecoveryPrice: number;
+
+    /**
+     * Тип восстановления наполнителя
+     */
+    fillerRecoveryType: string;
+
+    /**
+     * Стоимость работы
+     */
+    workPrice: number;
+
+    /**
+     * Стоимость доставки
+     */
+    deliveryPrice: number;
+
 }
-
-const FIRST = {
-    furnitureTypesList: [
-        {
-            active: false,
-            iconName: 'iconStraigthSofas',
-            caption: 'Диван прямой',
-            id: 'straigthSofas',
-        },
-        {
-            active: false,
-            iconName: 'iconCornerSofas',
-            caption: 'Диван угловой',
-            id: 'cornerSofas',
-        },
-        {
-            active: false,
-            iconName: 'iconKitchen',
-            caption: 'Кухонный уголок',
-            id: 'kitchen',
-        },
-        {
-            active: false,
-            iconName: 'iconArmchair',
-            caption: 'Кресло',
-            id: 'armchair',
-        },
-        {
-            active: false,
-            iconName: 'iconSoftChairs',
-            caption: 'Стул с мягкой спинкой',
-            id: 'softChairs',
-        },
-        {
-            active: false,
-            iconName: 'iconWoodChairs',
-            caption: 'Стул без мягкой спинки',
-            id: 'woodChairs',
-        },
-        {
-            active: false,
-            iconName: 'iconHeadboard',
-            caption: 'Изголовье кровати',
-            id: 'headboard',
-        },
-
-        {
-            active: false,
-            iconName: 'iconPouf',
-            caption: 'Пуф',
-            id: 'pouf',
-        },
-        {
-            active: false,
-            iconName: 'iconBench',
-            caption: 'Банкетка',
-            id: 'bench',
-        },
-    ]
-};
-
-const GLOBAL = {
-    straigthSofas: {
-        sizeList: [
-            {
-                name: 'Малый (2х местный)',
-                workPrice: 13900,
-                materials: {
-                    cloth: 9900,
-                    leather: 19900,
-                    ecoLeather: 9900,
-                    leatherette: 9900,
-                },
-            },
-            {
-                name: 'Средний (3х местный)',
-                workPrice: 15900,
-                materials: {
-                    cloth: 11900,
-                    leather: 21900,
-                    ecoLeather: 11900,
-                    leatherette: 11900,
-                },
-            },
-            {
-                name: 'Большой (4х и более)',
-                workPrice: 18900,
-                materials: {
-                    cloth: 13900,
-                    leather: 33900,
-                    ecoLeather: 13900,
-                    leatherette: 13900,
-                },
-            },
-
-        ],
-    },
-    cornerSofas: {
-        sizeList: [
-            {
-                name: 'Простой',
-                workPrice: 21500,
-                materials: {
-                    cloth: 13500,
-                    leather: 43500,
-                    ecoLeather: 23500,
-                    leatherette: 23500,
-                },
-            },
-            {
-                name: 'Модульный',
-                workPrice: 32500,
-                materials: {
-                    cloth: 25500,
-                    leather: 55500,
-                    ecoLeather: 25500,
-                    leatherette: 25500,
-                },
-            },
-        ],
-    },
-    kitchen: {
-        sizeList: [
-            {
-                name: 'Простой',
-                workPrice: 11500,
-                materials: {
-                    cloth: 5500,
-                    leather: 15500,
-                    ecoLeather: 8500,
-                    leatherette: 8500,
-                },
-            },
-        ],
-    },
-    armchair: {
-        sizeList: [
-            {
-                name: 'Обычное',
-                workPrice: 6500,
-                materials: {
-                    cloth: 3500,
-                    leather: 4500,
-                    ecoLeather: 1500,
-                    leatherette: 1500,
-                },
-            },
-            {
-                name: 'Большое',
-                workPrice: 9500,
-                materials: {
-                    cloth: 4500,
-                    leather: 6500,
-                    ecoLeather: 2500,
-                    leatherette: 2500,
-                },
-            },
-        ],
-    },
-    softChairs: {
-        sizeList: [
-            {
-                name: 'Простые',
-                workPrice: 1800,
-                materials: {
-                    cloth: 800,
-                    leather: 1800,
-                    ecoLeather: 800,
-                    leatherette: 800,
-                },
-            },
-        ],
-    },
-    woodChairs: {
-        sizeList: [
-            {
-                name: 'Простые',
-                workPrice: 900,
-                materials: {
-                    cloth: 400,
-                    leather: 1400,
-                    ecoLeather: 400,
-                    leatherette: 400,
-                },
-            },
-        ],
-    },
-    headboard: {
-        sizeList: [
-            {
-                name: 'Простая',
-                workPrice: 9500,
-                materials: {
-                    cloth: 3500,
-                    leather: 9500,
-                    ecoLeather: 3500,
-                    leatherette: 3500,
-                },
-            },
-        ],
-    },
-    pouf: {
-        sizeList: [
-            {
-                name: 'Простой',
-                workPrice: 2500,
-                materials: {
-                    cloth: 5500,
-                    leather: 15500,
-                    ecoLeather: 8500,
-                    leatherette: 8500,
-                },
-            },
-        ],
-    },
-    bench: {
-        sizeList: [
-            {
-                name: 'Простая',
-                workPrice: 1000,
-                materials: {
-                    cloth: 800,
-                    leather: 1500,
-                    ecoLeather: 800,
-                    leatherette: 800,
-                },
-            },
-        ],
-    },
-};
-
 @Component({
     // tslint:disable-next-line: component-selector
     selector: 'obbey-calculate',
@@ -248,7 +60,13 @@ const GLOBAL = {
 })
 export class CalculateComponent implements OnInit {
 
-    object = {
+    @Input()
+    currentIndex = 0;
+
+    @Input()
+    maxIndex: number;
+
+    public object = {
         type: '',
         size: '',
         material: {
@@ -261,21 +79,25 @@ export class CalculateComponent implements OnInit {
         deliveryPrice: 0,
     };
 
-    firstQuestion = FIRST;
+    public calculatedPrice: PriceCalculateInterface = {
+        furnitureType: '',
+        furnitureSize: '',
+        totalPrice: 0,
+        materialType: '',
+        materialPrice: 0,
+        fillerRecoveryPrice: 0,
+        fillerRecoveryType: '',
+        workPrice: 0,
+        deliveryPrice: 0,
+    };
 
-    items$: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+    public items$: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
 
-    sizeList$: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+    public sizeList$: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
 
-    @Input()
-    currentIndex = 0;
+    public deliveryPrice$: BehaviorSubject<number> = new BehaviorSubject(0);
 
-    @Input()
-    maxIndex: number;
-
-    deliveryPrice$: BehaviorSubject<number> = new BehaviorSubject(0);
-
-    fillerRecoveryList = [
+    public fillerRecoveryList = [
         {
             caption: 'Не требуется',
             active: false,
@@ -293,7 +115,7 @@ export class CalculateComponent implements OnInit {
         },
     ];
 
-    materialList = [
+    public materialList = [
         {
             caption: 'Ткань',
             active: false,
@@ -312,7 +134,7 @@ export class CalculateComponent implements OnInit {
         },
     ];
 
-    deliveryList = [
+    public deliveryList = [
         {
             caption: 'Москва',
             active: false,
@@ -325,7 +147,9 @@ export class CalculateComponent implements OnInit {
         },
     ];
 
-    selectSizeFormControl: FormControl = new FormControl(null);
+    public furnitureTypesList = FURNITURE_TYPE_LIST;
+
+    public selectSizeFormControl: FormControl = new FormControl(null);
 
     get canClickPrev(): boolean {
         return this.currentIndex > 0;
@@ -338,31 +162,37 @@ export class CalculateComponent implements OnInit {
     get totalPrice(): number {
         let totalPrice = 0;
 
-        const sum = this.object.workPrice + this.object.deliveryPrice + this.object.material.price + this.object.fillerRecoveryPrice;
+        const sum =
+            this.calculatedPrice.workPrice +
+            this.calculatedPrice.deliveryPrice +
+            this.calculatedPrice.materialPrice + this.calculatedPrice.fillerRecoveryPrice;
 
         return totalPrice = sum;
+    }
+
+    calculatedWorkPrice(): number {
+        const workPrice = this.calculatedPrice.workPrice;
+
+        return workPrice;
     }
 
     constructor() { }
 
     ngOnInit(): void {
-        this.selectFurnitureType(0);
         this.fillerRecoverySelect(0, this.fillerRecoveryList[0].price);
 
         this.selectSizeFormControl.valueChanges
             .subscribe(value => {
-                const id = this.firstQuestion.furnitureTypesList
-                    .find(el => el.caption === this.object.type).id;
+                const id = this.furnitureTypesList
+                    .find(el => el.caption === this.calculatedPrice.furnitureType).id;
 
-                const workPrice = GLOBAL[id].sizeList
+                const workPrice = PRICE_LIST[id].sizeList
                     .find(el => el.name === value).workPrice;
 
 
-                this.object.size = value;
-                this.object.workPrice = workPrice;
-                this.object.totalPrice = this.totalPrice;
-
-                console.log(this.object);
+                this.calculatedPrice.furnitureSize = value;
+                this.calculatedPrice.workPrice = workPrice;
+                this.calculatedPrice.totalPrice = this.totalPrice;
             });
     }
 
@@ -370,31 +200,62 @@ export class CalculateComponent implements OnInit {
      * Производит выбор типа мебели и на его основании прокидывает данные в дальнейшие шаги
      * @param index - selected item index
      */
-    selectFurnitureType(index: number): void {
-        this.firstQuestion.furnitureTypesList
-            .forEach((furniture: FurnitureTypeElementInterface) => {
+    public selectFurnitureType(index: number): void {
+        this.furnitureTypesList
+            .forEach((furniture) => {
                 furniture.active = false;
             });
-        this.firstQuestion.furnitureTypesList[index].active = true;
+        this.furnitureTypesList[index].active = true;
 
-        this.object.type = this.firstQuestion.furnitureTypesList[index].caption;
+        this.calculatedPrice.furnitureType = this.furnitureTypesList[index].caption;
 
-        const furnitureType = this.firstQuestion.furnitureTypesList
-            .find((element) => element.caption === this.object.type);
+
+        const furnitureType = this.furnitureTypesList
+            .find((element) => element.caption === this.calculatedPrice.furnitureType);
+
         const id = furnitureType.id;
-        const sizeList = GLOBAL[id].sizeList;
+        const sizeList = PRICE_LIST[id].sizeList;
+
+        const currentElement = PRICE_LIST[id];
+
+        console.log(this.calculatedPrice);
+        console.log(currentElement.sizeList[0]);
+
+        const workPrice = 0;
+        const elementPrice = currentElement.sizeList[0].workPrice;
+
+
+
+        this.calculatedPrice.workPrice = workPrice + elementPrice;
+
+
+        console.log(currentElement.sizeList[0]);
+
+
+
+        // this.calculatedPrice.workPrice =  this.
 
         this.getSizeList(sizeList);
         this.selectSizeFormControl.setValue(sizeList[0].name);
+        this.currentIndex++;
     }
 
-    fillerRecoverySelect(index: number, price: number): void {
+
+    /**
+     * Выбор типа восстановления наполнителя
+     * @param index порядкойвый индекс элемента в шаблоне, по которому произведен селект
+     * @param price сумма элемента
+     */
+    public fillerRecoverySelect(index: number, price: number): void {
         this.fillerRecoveryList.forEach(e => e.active = false);
         this.fillerRecoveryList[index].active = true;
-        this.object.fillerRecoveryPrice = price;
+        this.calculatedPrice.fillerRecoveryPrice = price;
     }
 
-    clickNext(): void {
+    /**
+     * Переключает калькулятор на следующую страницу
+     */
+    public clickNext(): void {
         console.log(this.currentIndex);
         if (this.currentIndex === 1) {
             this.materialSelect(0, 'Ткань');
@@ -409,14 +270,20 @@ export class CalculateComponent implements OnInit {
         }
     }
 
-    clickBack(): void {
+    /**
+     * Возвращает страницу на 1 назад
+     */
+    public clickBack(): void {
         if (this.canClickPrev) {
             this.currentIndex--;
         }
     }
 
-
-    getSizeList(currentArray: { name: string }[]): void {
+    /**
+     * Получение списка размеров мебели
+     * @param currentArray
+     */
+    public getSizeList(currentArray: { name: string }[]): void {
         const array = [];
         currentArray.forEach(item => {
             array.push(item.name);
@@ -424,20 +291,24 @@ export class CalculateComponent implements OnInit {
         this.sizeList$.next(array);
     }
 
-
-    materialSelect(index: number, name: string): void {
+    /**
+     * Выбор материала
+     * @param index
+     * @param name
+     */
+    public materialSelect(index: number, name: string): void {
         this.materialList
             .forEach((material) => {
                 material.active = false;
             });
         this.materialList[index].active = true;
 
-        const id = this.firstQuestion.furnitureTypesList
-            .find(el => el.caption === this.object.type).id;
+        const id = this.furnitureTypesList
+            .find(el => el.caption === this.calculatedPrice.furnitureType).id;
 
 
-        const materials = GLOBAL[id].sizeList
-            .find(el => el.name === this.object.size).materials;
+        const materials = PRICE_LIST[id].sizeList
+            .find(el => el.name === this.calculatedPrice.furnitureSize).materials;
 
         let materialPrice = 0;
 
@@ -456,11 +327,15 @@ export class CalculateComponent implements OnInit {
                 break;
         }
 
-        this.object.material.type = name;
-        this.object.material.price = materialPrice;
+        this.calculatedPrice.materialType = name;
+        this.calculatedPrice.materialPrice = materialPrice;
     }
 
-    selectDelivery(price: number, index: number): void {
+
+    /**
+     * Выбор типа доставки
+     */
+    public selectDelivery(price: number, index: number): void {
         this.deliveryList
             .forEach((deliveryItem) => {
                 deliveryItem.active = false;

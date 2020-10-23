@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 
 @Component({
     // tslint:disable-next-line: component-selector
@@ -9,9 +9,16 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class MessagersComponent implements OnInit {
 
+    @Input()
+    scale: number;
+
     constructor() { }
 
     ngOnInit(): void {
+    }
+
+    get scaleElement(): object {
+        return { transform: 'scale' + this.scale + '' };
     }
 
 }

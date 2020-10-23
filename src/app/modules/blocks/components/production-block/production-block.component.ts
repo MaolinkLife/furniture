@@ -49,15 +49,4 @@ export class ProductionBlockComponent implements OnInit {
 
     ngOnInit(): void {
     }
-
-    clickPlay(elementRef: HTMLElement, index: number): void {
-        elementRef.classList.add('hidden');
-        const video: HTMLVideoElement = elementRef.nextSibling as HTMLVideoElement;
-        video.play();
-    }
-
-    videoPause(html: HTMLElement): void {
-        // html.classList.remove('hidden');
-    }
-
 }

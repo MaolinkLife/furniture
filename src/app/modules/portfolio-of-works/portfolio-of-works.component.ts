@@ -12,30 +12,66 @@ export class PortfolioOfWorksComponent implements OnInit {
     straightSofas = [
         {
             first: {
-                image: '../../../assets/images/examples/sofas/example-before1.jpg',
+                image: '../../../assets/images/examples/sofas/expl-b1.jpg',
             },
             second: {
-                image: '../../../assets/images/examples/sofas/example-after1.jpg',
+                image: '../../../assets/images/examples/sofas/expl-a1.jpg',
             },
             third: {
-                image: '../../../assets/images/examples/sofas/example-before2.jpg',
+                image: '../../../assets/images/examples/sofas/expl-b2.jpg',
             },
             four: {
-                image: '../../../assets/images/examples/sofas/example-after2.jpg',
+                image: '../../../assets/images/examples/sofas/expl-a2.jpg',
             },
         },
         {
             first: {
-                image: '../../../assets/images/examples/sofas/example-before3.jpg',
+                image: '../../../assets/images/examples/sofas/expl-b3.jpg',
             },
             second: {
-                image: '../../../assets/images/examples/sofas/example-after3.jpg',
+                image: '../../../assets/images/examples/sofas/expl-a3.jpg',
             },
             third: {
-                image: '../../../assets/images/examples/sofas/example-before4.jpg',
+                image: '../../../assets/images/examples/sofas/expl-b4.jpg',
             },
             four: {
-                image: '../../../assets/images/examples/sofas/example-after4.jpg',
+                image: '../../../assets/images/examples/sofas/expl-a4.jpg',
+            },
+        },
+        {
+            first: {
+                image: '../../../assets/images/examples/sofas/expl-b5.jpg',
+            },
+            second: {
+                image: '../../../assets/images/examples/sofas/expl-a5.jpg',
+            },
+            third: {
+                image: '../../../assets/images/examples/sofas/expl-b6.jpg',
+            },
+            four: {
+                image: '../../../assets/images/examples/sofas/expl-a6.jpg',
+            },
+        },
+        {
+            first: {
+                image: '../../../assets/images/examples/sofas/expl-b7.jpg',
+            },
+            second: {
+                image: '../../../assets/images/examples/sofas/expl-a7.jpg',
+            },
+            third: {
+                image: '../../../assets/images/examples/sofas/expl-b8.jpg',
+            },
+            four: {
+                image: '../../../assets/images/examples/sofas/expl-a8.jpg',
+            },
+        },
+        {
+            first: {
+                image: '../../../assets/images/examples/sofas/expl-b9.jpg',
+            },
+            second: {
+                image: '../../../assets/images/examples/sofas/expl-a9.jpg',
             },
         },
     ];
@@ -43,16 +79,38 @@ export class PortfolioOfWorksComponent implements OnInit {
     cornerSofas = [
         {
             first: {
-                image: '../../../assets/images/examples/corner-sofas/example-before1.jpg',
+                image: '../../../assets/images/examples/corner-sofas/expl-a1.jpg',
             },
             second: {
-                image: '../../../assets/images/examples/corner-sofas/example-after1.jpg',
+                image: '../../../assets/images/examples/corner-sofas/expl-b1.jpg',
             },
             third: {
-                image: '../../../assets/images/examples/corner-sofas/example-before2.jpg',
+                image: '../../../assets/images/examples/corner-sofas/expl-a2.jpg',
             },
             four: {
-                image: '../../../assets/images/examples/corner-sofas/example-after2.jpg',
+                image: '../../../assets/images/examples/corner-sofas/expl-b2.jpg',
+            },
+        },
+        {
+            first: {
+                image: '../../../assets/images/examples/corner-sofas/expl-a3.jpg',
+            },
+            second: {
+                image: '../../../assets/images/examples/corner-sofas/expl-b3.jpg',
+            },
+            third: {
+                image: '../../../assets/images/examples/corner-sofas/expl-a4.jpg',
+            },
+            four: {
+                image: '../../../assets/images/examples/corner-sofas/expl-b4.jpg',
+            },
+        },
+        {
+            first: {
+                image: '../../../assets/images/examples/corner-sofas/expl-a5.jpg',
+            },
+            second: {
+                image: '../../../assets/images/examples/corner-sofas/expl-b5.jpg',
             },
         },
     ];
@@ -60,38 +118,44 @@ export class PortfolioOfWorksComponent implements OnInit {
     armchairs = [
         {
             first: {
-                image: '../../../assets/images/examples/armchairs/example-before6.jpg',
+                image: '../../../assets/images/examples/armchairs/expl-b1.jpg',
             },
             second: {
-                image: '../../../assets/images/examples/armchairs/example-after6.jpg',
+                image: '../../../assets/images/examples/armchairs/expl-a1.jpg',
             },
             third: {
-                image: '../../../assets/images/examples/armchairs/example-before2.jpg',
+                image: '../../../assets/images/examples/armchairs/expl-b2.jpg',
             },
             four: {
-                image: '../../../assets/images/examples/armchairs/example-after2.jpg',
+                image: '../../../assets/images/examples/armchairs/expl-a2.jpg',
             },
         },
         {
             first: {
-                image: '../../../assets/images/examples/armchairs/example-before3.jpg',
+                image: '../../../assets/images/examples/armchairs/expl-b3.jpg',
             },
             second: {
-                image: '../../../assets/images/examples/armchairs/example-after3.jpg',
+                image: '../../../assets/images/examples/armchairs/expl-a3.jpg',
             },
             third: {
-                image: '../../../assets/images/examples/armchairs/example-before4.jpg',
+                image: '../../../assets/images/examples/armchairs/expl-b4.jpg',
             },
             four: {
-                image: '../../../assets/images/examples/armchairs/example-after4.jpg',
+                image: '../../../assets/images/examples/armchairs/expl-a4.jpg',
             },
         },
         {
             first: {
-                image: '../../../assets/images/examples/armchairs/example-before5.jpg',
+                image: '../../../assets/images/examples/armchairs/expl-b5.jpg',
             },
             second: {
-                image: '../../../assets/images/examples/armchairs/example-after5.jpg',
+                image: '../../../assets/images/examples/armchairs/expl-a5.jpg',
+            },
+            third: {
+                image: '../../../assets/images/examples/armchairs/expl-b6.jpg',
+            },
+            four: {
+                image: '../../../assets/images/examples/armchairs/expl-a6.jpg',
             },
         },
     ];
@@ -99,42 +163,86 @@ export class PortfolioOfWorksComponent implements OnInit {
     chairs = [
         {
             first: {
-                image: '../../../assets/images/examples/chairs/expl-b5.jpg',
-            },
-            second: {
                 image: '../../../assets/images/examples/chairs/expl-a5.jpg',
             },
+            second: {
+                image: '../../../assets/images/examples/chairs/expl-b5.jpg',
+            },
             third: {
-                image: '../../../assets/images/examples/chairs/expl-b2.jpg',
+                image: '../../../assets/images/examples/chairs/expl-a2.jpg',
             },
             four: {
-                image: '../../../assets/images/examples/chairs/expl-a2.jpg',
+                image: '../../../assets/images/examples/chairs/expl-b2.jpg',
             },
         },
         {
             first: {
-                image: '../../../assets/images/examples/chairs/expl-b3.jpg',
-            },
-            second: {
                 image: '../../../assets/images/examples/chairs/expl-a3.jpg',
             },
+            second: {
+                image: '../../../assets/images/examples/chairs/expl-b3.jpg',
+            },
             third: {
-                image: '../../../assets/images/examples/chairs/expl-b4.jpg',
+                image: '../../../assets/images/examples/chairs/expl-a4.jpg',
             },
             four: {
-                image: '../../../assets/images/examples/chairs/expl-a4.jpg',
+                image: '../../../assets/images/examples/chairs/expl-b4.jpg',
+            },
+        },
+        {
+            first: {
+                image: '../../../assets/images/examples/chairs/expl-a5.jpg',
+            },
+            second: {
+                image: '../../../assets/images/examples/chairs/expl-b5.jpg',
+            },
+            third: {
+                image: '../../../assets/images/examples/chairs/expl-b6.jpg',
+            },
+            four: {
+                image: '../../../assets/images/examples/chairs/expl-a6.jpg',
+            },
+        },
+        {
+            first: {
+                image: '../../../assets/images/examples/chairs/expl-b7.jpg',
+            },
+            second: {
+                image: '../../../assets/images/examples/chairs/expl-a7.jpg',
             },
         },
     ];
 
-    headboards = [{
-        first: {
-            image: '../../../assets/images/examples/headboards/headboards-before1.jpg',
+    headboards = [
+        {
+            first: {
+                image: '../../../assets/images/examples/headboards/expl-b1.jpg',
+            },
+            second: {
+                image: '../../../assets/images/examples/headboards/expl-a1.jpg',
+            },
+            third: {
+                image: '../../../assets/images/examples/headboards/expl-b2.jpg',
+            },
+            four: {
+                image: '../../../assets/images/examples/headboards/expl-a2.jpg',
+            },
         },
-        second: {
-            image: '../../../assets/images/examples/headboards/headboards-after1.jpg',
+        {
+            first: {
+                image: '../../../assets/images/examples/headboards/expl-b3.jpg',
+            },
+            second: {
+                image: '../../../assets/images/examples/headboards/expl-a3.jpg',
+            },
+            third: {
+                image: '../../../assets/images/examples/headboards/expl-b4.jpg',
+            },
+            four: {
+                image: '../../../assets/images/examples/headboards/expl-a4.jpg',
+            },
         },
-    }];
+    ];
 
     poufsAndBanquets = [
         {

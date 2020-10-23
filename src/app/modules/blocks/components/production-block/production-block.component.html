@@ -9,14 +9,7 @@
             *ngFor="let video of videoList; index as itemIndex"
             class="video-container mui-space_right-5"
         >
-            <div #videoBlank class="video-blank">
-                <div class="play" (click)="clickPlay(videoBlank, itemIndex)">
-                    <app-icon name="iconPlay"></app-icon>
-                </div>
-            </div>
-
             <video
-                (pause)="videoPause(videoBlank)"
                 class="video-content"
                 controls
             >

@@ -109,7 +109,26 @@
         </div>
 
         <div class="button-container">
-            <div class="icon__prev" [ngClass]="{ disabled: !canClickPrev }">
+            <obbey-button
+                size="s"
+                color="primary"
+                uppercase
+                (click)="clickBack()"
+                [disabled]="!canClickPrev"
+            >
+                Назад
+            </obbey-button>
+            <obbey-button
+                size="s"
+                color="primary"
+                uppercase
+                (click)="clickNext()"
+                [disabled]="!canClickNext"
+            >
+                Далее
+            </obbey-button>
+
+            <!-- <div class="icon__prev" [ngClass]="{ disabled: !canClickPrev }">
                 <app-icon
                     name="iconSliderArrowRight"
                     (click)="clickBack()"
@@ -123,7 +142,7 @@
                     (click)="clickNext()"
                     [disabled]="!canClickNext"
                 ></app-icon>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

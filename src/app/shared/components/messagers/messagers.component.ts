@@ -18,7 +18,7 @@ export class MessagersComponent implements OnInit {
     }
 
     get scaleElement(): object {
-        return { transform: 'scale' + this.scale + '' };
+        return { transform: 'scale(' + this.scale + ')' };
     }
 
 }

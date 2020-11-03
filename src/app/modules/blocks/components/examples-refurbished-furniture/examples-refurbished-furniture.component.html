@@ -14,6 +14,7 @@
                         height="100%"
                         [src]="example.first.image"
                         alt=""
+                        (click)="onClickImage(example.first.image)"
                     />
                 </div>
             </div>
@@ -24,9 +25,20 @@
                         width="100%"
                         height="100%"
                         [src]="example.second.image"
+                        (click)="onClickImage(example.second.image)"
                     />
                 </div>
             </div>
         </ng-template>
     </obbey-carousel>
+</div>
+
+<div
+    id="myModal"
+    class="modal"
+    *ngIf="showModal$ | async"
+    (click)="closePopup()"
+>
+    <span (click)="closePopup()" class="close">&times;</span>
+    <img class="modal-content" id="img01" [src]="targetSrc$ | async" />
 </div>

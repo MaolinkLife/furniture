@@ -16,6 +16,11 @@
     justify-content: space-between;
     padding: 16px 32px;
 
+    &[disabled] {
+        opacity: 0.33;
+        cursor: default;
+    }
+
     :host[uppercase] & {
         text-transform: uppercase;
     }
@@ -65,7 +70,7 @@
     }
 }
 
-.button:hover {
+.button:hover:not([disabled]) {
     :host[data-host-color="primary"] & {
         background: linear-gradient(
             180deg,

@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
     selector: 'app-examples-catalog',
@@ -7,6 +8,11 @@ import { Component, OnInit, ChangeDetectionStrategy, Input, OnChanges, SimpleCha
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExamplesCatalogComponent implements OnInit, OnChanges {
+
+
+    showModal$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
+    targetSrc$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
     activeItemIndex = 0;
 
@@ -20,6 +26,16 @@ export class ExamplesCatalogComponent implements OnInit, OnChanges {
 
     ngOnChanges(changes: SimpleChanges): void {
         console.log(changes);
+    }
+
+    onClickImage(src: string): void {
+        this.showModal$.next(true);
+        this.targetSrc$.next(src);
+    }
+
+    closePopup(): void {
+        this.showModal$.next(false);
+        this.targetSrc$.next(null);
     }
 
 }

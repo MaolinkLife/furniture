@@ -66,19 +66,6 @@ export class CalculateComponent implements OnInit {
     @Input()
     maxIndex: number;
 
-    public object = {
-        type: '',
-        size: '',
-        material: {
-            type: '',
-            price: 0,
-        },
-        fillerRecoveryPrice: 0,
-        workPrice: 0,
-        totalPrice: 0,
-        deliveryPrice: 0,
-    };
-
     public calculatedPrice: PriceCalculateInterface = {
         furnitureType: '',
         furnitureSize: '',
@@ -151,11 +138,19 @@ export class CalculateComponent implements OnInit {
 
     public selectSizeFormControl: FormControl = new FormControl(null);
 
+    get hasType(): boolean {
+        return false;
+    }
+
     get canClickPrev(): boolean {
         return this.currentIndex > 0;
     }
 
     get canClickNext(): boolean {
+        if (!this.calculatedPrice.furnitureType) {
+            return false;
+        }
+
         return (this.currentIndex + 1) < 5;
     }
 
@@ -224,17 +219,7 @@ export class CalculateComponent implements OnInit {
         const workPrice = 0;
         const elementPrice = currentElement.sizeList[0].workPrice;
 
-
-
         this.calculatedPrice.workPrice = workPrice + elementPrice;
-
-
-        console.log(currentElement.sizeList[0]);
-
-
-
-        // this.calculatedPrice.workPrice =  this.
-
         this.getSizeList(sizeList);
         this.selectSizeFormControl.setValue(sizeList[0].name);
         this.currentIndex++;
@@ -256,7 +241,10 @@ export class CalculateComponent implements OnInit {
      * Переключает калькулятор на следующую страницу
      */
     public clickNext(): void {
-        console.log(this.currentIndex);
+        if (!this.canClickNext) {
+            return;
+        }
+
         if (this.currentIndex === 1) {
             this.materialSelect(0, 'Ткань');
         }
@@ -265,24 +253,22 @@ export class CalculateComponent implements OnInit {
             this.selectDelivery(this.deliveryList[0].price, 0);
         }
 
-        if (this.canClickNext) {
-            this.currentIndex++;
-        }
+        this.currentIndex++;
     }
 
     /**
      * Возвращает страницу на 1 назад
      */
     public clickBack(): void {
-        if (this.canClickPrev) {
-            this.currentIndex--;
+
+
+        if (!this.canClickPrev) {
+            return;
         }
+
+        this.currentIndex--;
     }
 
-    /**
-     * Получение списка размеров мебели
-     * @param currentArray
-     */
     public getSizeList(currentArray: { name: string }[]): void {
         const array = [];
         currentArray.forEach(item => {
@@ -291,11 +277,6 @@ export class CalculateComponent implements OnInit {
         this.sizeList$.next(array);
     }
 
-    /**
-     * Выбор материала
-     * @param index
-     * @param name
-     */
     public materialSelect(index: number, name: string): void {
         this.materialList
             .forEach((material) => {
@@ -308,7 +289,7 @@ export class CalculateComponent implements OnInit {
 
 
         const materials = PRICE_LIST[id].sizeList
-            .find(el => el.name === this.calculatedPrice.furnitureSize).materials;
+            .find((el: { name: string; }) => el.name === this.calculatedPrice.furnitureSize).materials;
 
         let materialPrice = 0;
 

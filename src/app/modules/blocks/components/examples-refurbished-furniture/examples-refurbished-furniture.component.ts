@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
     // tslint:disable-next-line: component-selector
@@ -20,6 +21,11 @@ export class ExamplesRefurbishedFurnitureComponent implements OnInit, OnChanges 
         }
     }[];
 
+    showModal$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
+    targetSrc$: BehaviorSubject<string> = new BehaviorSubject<string>('');
+
+
     constructor() { }
 
     ngOnInit(): void {
@@ -27,6 +33,17 @@ export class ExamplesRefurbishedFurnitureComponent implements OnInit, OnChanges 
     }
 
     ngOnChanges(changes: SimpleChanges): void {
+    }
+
+
+    onClickImage(src: string): void {
+        this.showModal$.next(true);
+        this.targetSrc$.next(src);
+    }
+
+    closePopup(): void {
+        this.showModal$.next(false);
+        this.targetSrc$.next(null);
     }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
     selector: 'app-examples-block',
@@ -7,6 +8,11 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExamplesBlockComponent implements OnInit {
+
+
+    showModal$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
+    targetSrc$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
 
     items = [
@@ -98,5 +104,15 @@ export class ExamplesBlockComponent implements OnInit {
         //     x[i].style.display = "none";
         // }
         // x[this.slideIndex[no] - 1].style.display = "block";
+    }
+
+    onClickImage(src: string): void {
+        this.showModal$.next(true);
+        this.targetSrc$.next(src);
+    }
+
+    closePopup(): void {
+        this.showModal$.next(false);
+        this.targetSrc$.next(null);
     }
 }

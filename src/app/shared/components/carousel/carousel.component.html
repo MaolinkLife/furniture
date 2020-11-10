@@ -10,13 +10,23 @@
     </div>
 </div>
 
-<a class="arrow-prev" (click)="clickPrev()" [ngStyle]="arrowPositionConfig">
+<a
+    *ngIf="showArrow"
+    class="arrow-prev"
+    (click)="clickPrev()"
+    [ngStyle]="arrowPositionConfig"
+>
     <div class="icon__prev">
         <app-icon name="iconSliderArrowRight"></app-icon>
     </div>
 </a>
 
-<a class="arrow-next" (click)="clickNext()" [ngStyle]="arrowPositionConfig">
+<a
+    *ngIf="showArrow"
+    class="arrow-next"
+    (click)="clickNext()"
+    [ngStyle]="arrowPositionConfig"
+>
     <div class="icon__next">
         <app-icon name="iconSliderArrowRight"></app-icon>
     </div>

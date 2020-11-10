@@ -1,155 +1,18 @@
-:host {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-    background-image: url("../../../../../assets/images/blocks/examples-background.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 800px;
-}
+@project-color-gold: #fad875;
+@project-color-white: #fff;
 
-.block {
-    width: 100%;
-    padding-top: 140px;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    &__title {
-        font-family: "BerlingskeSerif-BoldItalic";
-        font-size: 36px;
-        line-height: 43px;
-        text-align: center;
-        margin-bottom: 50px;
-        color: #ffffff;
-        max-width: 500px;
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
     }
-}
-
-.caption {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    font-family: "BerlingskeSerif-Regular";
-    font-size: 20px;
-    line-height: 24px;
-    /* identical to box height */
-
-    text-align: center;
-    text-transform: uppercase;
-
-    /* yellow */
-
-    color: #fad875;
-}
-
-.slide {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    padding: 0 20px;
-
-    &__left-column,
-    &__right-column {
-        display: flex;
-        flex-direction: column;
-        justify-items: center;
-    }
-}
-
-.image {
-    width: 490px;
-    height: 300px;
-    background: #262b32;
-    border-radius: 6px;
-
-    > img {
-        object-fit: cover;
-        border-radius: 6px;
-        cursor: pointer;
-    }
-}
-
-.image {
-    width: 490px;
-    height: 300px;
-    background: #262b32;
-    border-radius: 6px;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-    cursor: pointer;
-    height: 7px;
-    width: 7px;
-    margin: 0 3px;
-    background: #1c1c1c;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-    transition: 0.2s ease-in-out;
-}
-
-.active,
-.dot:hover {
-    transition: 0.2s ease-in-out;
-    background: linear-gradient(180deg, #feda7a 0%, #e7b055 87.5%);
-}
-
-/* Fading animation */
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-    from {
-        opacity: 0.4;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fade {
-    from {
-        opacity: 0.4;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.icon__next {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-}
-
-.icon__prev {
-    width: 40px;
-    height: 40px;
-    transform: rotate(180deg);
-    display: flex;
-    justify-items: center;
-    align-items: center;
 }
 
 /* The Modal (background) */
 .modal {
     display: block;
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 1000; /* Sit on top */
     padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
@@ -212,9 +75,234 @@
     cursor: pointer;
 }
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px) {
-    .modal-content {
+// MOBILE
+@media screen and (max-width: 375px) {
+    :host {
+        display: block;
+        background-image: url("../../../../../assets/images/blocks/mobile/examples-mobile-background.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 40px 10px;
+    }
+
+    .caption {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        font-family: "BerlingskeSerif-Regular";
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        text-transform: uppercase;
+        color: @project-color-gold;
+    }
+
+    .slide {
         width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .page {
+        &__title {
+            font-family: "BerlingskeSerif-BoldItalic";
+            font-size: 36px;
+            line-height: 43px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: @project-color-white;
+            max-width: 500px;
+        }
+    }
+
+    .grid-panel {
+        display: grid;
+        grid-template-rows: 118px;
+        grid-template-columns: repeat(2, 145px);
+        grid-gap: 10px;
+    }
+
+    .grid-element {
+        & > img {
+            object-fit: cover;
+            height: 88px;
+            width: 145px;
+            border-radius: 6px;
+        }
+    }
+}
+
+// DESKTOP
+@media screen and (min-width: 1440px) {
+    :host {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        background-image: url("../../../../../assets/images/blocks/examples-background.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 800px;
+    }
+
+    .page {
+        width: 100%;
+        padding-top: 140px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__title {
+            font-family: "BerlingskeSerif-BoldItalic";
+            font-size: 36px;
+            line-height: 43px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: @project-color-white;
+            max-width: 500px;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .grid-panel {
+        display: grid;
+        grid-template-rows: 344px;
+        grid-template-columns: repeat(2, 490px);
+        grid-gap: 40px;
+    }
+
+    .grid-element {
+        cursor: pointer;
+
+        & > img {
+            width: 490px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+    }
+
+    .caption {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        font-family: "BerlingskeSerif-Regular";
+        font-size: 20px;
+        line-height: 24px;
+        /* identical to box height */
+
+        text-align: center;
+        text-transform: uppercase;
+
+        /* yellow */
+
+        color: #fad875;
+    }
+
+    .slide {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        padding: 0 20px;
+
+        &__left-column,
+        &__right-column {
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+        }
+    }
+
+    .image {
+        width: 490px;
+        height: 300px;
+        background: #262b32;
+        border-radius: 6px;
+
+        > img {
+            object-fit: cover;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    }
+
+    .image {
+        width: 490px;
+        height: 300px;
+        background: #262b32;
+        border-radius: 6px;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+        cursor: pointer;
+        height: 7px;
+        width: 7px;
+        margin: 0 3px;
+        background: #1c1c1c;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        transition: 0.2s ease-in-out;
+    }
+
+    .active,
+    .dot:hover {
+        transition: 0.2s ease-in-out;
+        background: linear-gradient(180deg, #feda7a 0%, #e7b055 87.5%);
+    }
+
+    /* Fading animation */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: 0.4;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fade {
+        from {
+            opacity: 0.4;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .icon__next {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .icon__prev {
+        width: 40px;
+        height: 40px;
+        transform: rotate(180deg);
+        display: flex;
+        justify-items: center;
+        align-items: center;
     }
 }

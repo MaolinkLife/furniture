@@ -1,44 +1,9 @@
+@project-color-white: #fff;
+@project-color-black: #000;
+
 :host {
     display: block;
-    height: 1050px;
-    background-color: #fff;
-    background-image: url("../../../../../assets/images/calculateBackground.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.block {
-    color: #000000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 130px 0;
-
-    &__title {
-        font-family: "BerlingskeSerif-BoldItalic";
-        font-size: 36px;
-        line-height: 43px;
-        text-align: center;
-        max-width: 900px;
-
-        color: #000000;
-        margin-bottom: 30px;
-    }
-
-    &__subtitle {
-        font-family: "MuseoSansCyrl-100";
-        font-size: 16px;
-        line-height: 19px;
-        text-align: center;
-
-        color: #000000;
-        margin-bottom: 85px;
-    }
-
-    &__content {
-        display: flex;
-    }
+    background-color: @project-color-white;
 }
 
 .right-content {
@@ -48,91 +13,345 @@
     padding: 85px 45px;
     box-sizing: border-box;
     min-height: 600px;
-
-    &__description {
-        font-family: "BerlingskeSerif";
-        font-size: 20px;
-        line-height: 24px;
-        text-align: center;
-        text-transform: uppercase;
-        color: #ffffff;
-        padding: 30px 0;
-    }
 }
 
-.line-primary-color {
-    background: linear-gradient(270deg, #fad875 10.94%, #edbe7d 66.67%);
-    height: 1px;
-    width: 100%;
-}
+@media screen and (max-width: 375px) {
+    .page {
+        color: @project-color-black;
 
-.step {
-    &__content {
-        max-width: 570px;
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+
+        padding: 30px 10px;
+        height: 100%;
+        position: relative;
+
+        &__background {
+            // background-image: url("../../../../../assets/images/blocks/calculate-mobile-background.png");
+            // background-position: center;
+            // background-size: cover;
+            // background-repeat: no-repeat;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            & > img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__title {
+            font-family: "BerlingskeSerif-BoldItalic";
+            font-size: 30px;
+            line-height: 36px;
+            text-align: center;
+            max-width: 300px;
+            // max-width: 900px;
+            margin-bottom: 20px;
+        }
+
+        &__subtitle {
+            font-family: "MuseoSansCyrl-100";
+            font-style: normal;
+            font-weight: 250;
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+            max-width: 300px;
+            margin-bottom: 50px;
+        }
+
+        &__content {
+            width: 100%;
+            max-width: 375px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     }
-}
 
-.chip {
-    width: 270px;
-    min-height: 50px;
-    display: flex;
-    align-items: center;
-    padding: 16px 26px;
-    font-family: "MuseoSansCyrl-300";
-    font-size: 16px;
-    line-height: 19px;
-    color: #000000;
-    border: 1px solid #ececec;
-    box-sizing: border-box;
-    border-radius: 6px;
-    text-transform: none;
-    margin-bottom: 30px;
-}
+    .calculate {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
 
-.radio {
-    display: flex;
-    width: 16px;
-    height: 16px;
-    margin-right: 14px;
-}
+    .right-content {
+        width: 343px;
+        background: linear-gradient(180deg, #262b32 0%, #15171a 100%);
+        border-radius: 6px;
+        padding: 85px 45px;
+        box-sizing: border-box;
+        min-height: 600px;
 
-.caption {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 40px;
-}
+        &__description {
+            font-family: "BerlingskeSerif";
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #ffffff;
+            padding: 30px 0;
+        }
+    }
 
-.mobile-container {
-    font-family: "MuseoSansCyrl-300";
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    color: #ffffff;
-    margin-bottom: 30px;
+    .line-primary-color {
+        background: linear-gradient(270deg, #fad875 10.94%, #edbe7d 66.67%);
+        height: 1px;
+        width: 100%;
+    }
 
-    & > * {
+    .step {
+        &__content {
+            max-width: 570px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+
+    .chip {
+        width: 270px;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 16px 26px;
+        font-family: "MuseoSansCyrl-300";
+        font-size: 16px;
+        line-height: 19px;
+        color: #000000;
+        border: 1px solid #ececec;
+        box-sizing: border-box;
+        border-radius: 6px;
+        text-transform: none;
         margin-bottom: 30px;
     }
+
+    .radio {
+        display: flex;
+        width: 16px;
+        height: 16px;
+        margin-right: 14px;
+    }
+
+    .caption {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+    .mobile-container {
+        font-family: "MuseoSansCyrl-300";
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: 30px;
+
+        & > * {
+            margin-bottom: 30px;
+        }
+    }
+
+    .phone {
+        font-family: "BerlingskeSerif-Regular";
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.055em;
+        color: #fad875;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .desc {
+        font-family: "MuseoSansCyrl-300";
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: 40px;
+    }
+
+    .block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 130px 0;
+
+        &__title {
+            font-family: "BerlingskeSerif-BoldItalic";
+            font-size: 36px;
+            line-height: 43px;
+            text-align: center;
+            max-width: 900px;
+
+            color: #000000;
+            margin-bottom: 30px;
+        }
+
+        &__subtitle {
+            font-family: "MuseoSansCyrl-100";
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+
+            color: #000000;
+            margin-bottom: 85px;
+        }
+
+        &__content {
+            display: flex;
+        }
+    }
 }
 
-.phone {
-    font-family: "BerlingskeSerif-Regular";
-    font-size: 18px;
-    line-height: 22px;
-    letter-spacing: 0.055em;
-    color: #fad875;
-    cursor: pointer;
-    text-decoration: none;
-}
+@media screen and (min-width: 1440px) {
+    :host {
+        min-height: 1050px;
+        background-image: url("../../../../../assets/images/calculateBackground.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
 
-.desc {
-    font-family: "MuseoSansCyrl-300";
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    color: #ffffff;
-    margin-bottom: 40px;
+        color: #000000;
+    }
+
+    .page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 130px 0;
+
+        &__background {
+            display: none;
+        }
+
+        &__title {
+            font-family: "BerlingskeSerif-BoldItalic";
+            font-size: 36px;
+            line-height: 43px;
+            text-align: center;
+            max-width: 900px;
+
+            color: #000000;
+            margin-bottom: 30px;
+        }
+
+        &__subtitle {
+            font-family: "MuseoSansCyrl-100";
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+
+            color: #000000;
+            margin-bottom: 85px;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .right-content {
+        margin-left: 20px;
+
+        &__description {
+            font-family: "BerlingskeSerif";
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #ffffff;
+            padding: 30px 0;
+        }
+    }
+
+    .calculate-container {
+        display: flex;
+    }
+
+    .line-primary-color {
+        background: linear-gradient(270deg, #fad875 10.94%, #edbe7d 66.67%);
+        height: 1px;
+        width: 100%;
+    }
+
+    .step {
+        &__content {
+            max-width: 570px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+
+    .chip {
+        width: 270px;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 16px 26px;
+        font-family: "MuseoSansCyrl-300";
+        font-size: 16px;
+        line-height: 19px;
+        color: #000000;
+        border: 1px solid #ececec;
+        box-sizing: border-box;
+        border-radius: 6px;
+        text-transform: none;
+        margin-bottom: 30px;
+    }
+
+    .radio {
+        display: flex;
+        width: 16px;
+        height: 16px;
+        margin-right: 14px;
+    }
+
+    .caption {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+    .mobile-container {
+        font-family: "MuseoSansCyrl-300";
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: 30px;
+
+        & > * {
+            margin-bottom: 30px;
+        }
+    }
+
+    .phone {
+        font-family: "BerlingskeSerif-Regular";
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.055em;
+        color: #fad875;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .desc {
+        font-family: "MuseoSansCyrl-300";
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: 40px;
+    }
 }

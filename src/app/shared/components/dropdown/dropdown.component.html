@@ -1,0 +1,37 @@
+<ng-content></ng-content>
+
+<div *ngIf="opened" class="dropdown">
+    <div class="menu-list" *ngIf="items">
+        <ng-container *ngFor="let item of items; index as itemIndex">
+            <div *ngIf="!item.hide" class="menu-item">
+                <div
+                    class="menu-list__link"
+                    routerLinkActive="active"
+                    (click)="itemClick(items, item)"
+                >
+                    <div class="item"></div>
+
+                    <a class="link" [routerLink]="[item.routerPath]">
+                        {{ item.caption }}
+                    </a>
+                </div>
+
+                <div *ngIf="item.children?.length" class="menu-subitem-list">
+                    <div
+                        *ngFor="
+                            let subItem of item.children;
+                            index as subItemIndex
+                        "
+                        class="menu-subitem-list__item"
+                        routerLinkActive="active"
+                        (click)="itemClick(item.children, subItem)"
+                    >
+                        <a class="link" [routerLink]="[subItem.routerPath]">
+                            {{ subItem.caption }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

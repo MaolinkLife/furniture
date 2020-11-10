@@ -19,6 +19,9 @@ export class CarouselComponent implements OnInit {
     @Input()
     activeItemIndex = 0;
 
+    @Input()
+    showArrow = true;
+
     @Output()
     activeItemIndexChange: EventEmitter<number> = new EventEmitter<number>(null);
 

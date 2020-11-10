@@ -1,43 +1,54 @@
-<div class="block">
-    <div class="block__title">
-        Рассчитайте приблизительную стоимость ремонта вашей мягкой мебели
+<div class="page">
+    <div *ngIf="mobileVersion" class="page__background">
+        <img
+            src="../../../../../assets/images/blocks/calculate-mobile-background.png"
+            alt=""
+        />
     </div>
 
-    <div class="block__subtitle">
-        Ответьте на 5 вопросов и получите расчет стоимости на почту
-    </div>
+    <div class="page__content">
+        <div class="page__title">
+            Рассчитайте приблизительную стоимость ремонта вашей мягкой мебели
+        </div>
 
-    <div class="block__content">
-        <obbey-calculate> </obbey-calculate>
+        <div class="page__subtitle">
+            Ответьте на 5 вопросов и получите расчет стоимости на почту
+        </div>
 
-        <div class="right-content mui-space_left-5">
-            <div class="caption">
-                <div class="line-primary-color"></div>
-                <div class="right-content__description">
-                    Понравились наши цены ?
+        <div class="calculate-container">
+            <obbey-calculate class="calculate"></obbey-calculate>
+
+            <div class="right-content">
+                <div class="caption">
+                    <div class="line-primary-color"></div>
+                    <div class="right-content__description">
+                        Понравились наши цены ?
+                    </div>
+                    <div class="line-primary-color"></div>
                 </div>
-                <div class="line-primary-color"></div>
+
+                <div class="mobile-container">
+                    <div>Звоните по телефону:</div>
+
+                    <a href="tel:+74952080778" class="phone"
+                        >8(495) 208 07-78</a
+                    >
+                </div>
+
+                <div class="desc">
+                    Или оставьте заявку, чтобы вызвать замерщика и узнать точную
+                    стоимость
+                </div>
+
+                <obbey-button
+                    color="primary"
+                    size="m"
+                    uppercase
+                    (click)="openPopup()"
+                >
+                    Оставить заявку
+                </obbey-button>
             </div>
-
-            <div class="mobile-container">
-                <div>Звоните по телефону:</div>
-
-                <a href="tel:+74952080778" class="phone">8(495) 208 07-78</a>
-            </div>
-
-            <div class="desc">
-                Или оставьте заявку, чтобы вызвать замерщика и узнать точную
-                стоимость
-            </div>
-
-            <obbey-button
-                color="primary"
-                size="m"
-                uppercase
-                (click)="openPopup()"
-            >
-                Оставить заявку
-            </obbey-button>
         </div>
     </div>
 </div>

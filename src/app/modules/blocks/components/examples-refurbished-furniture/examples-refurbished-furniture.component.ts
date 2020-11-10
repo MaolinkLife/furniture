@@ -26,6 +26,13 @@ export class ExamplesRefurbishedFurnitureComponent implements OnInit, OnChanges 
     targetSrc$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
 
+    get mobileVersion(): boolean {
+        const offsetWidth = document.body.offsetWidth;
+
+        return offsetWidth <= 375;
+    }
+
+
     constructor() { }
 
     ngOnInit(): void {

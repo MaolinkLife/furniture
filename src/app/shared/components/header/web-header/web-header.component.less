@@ -1,0 +1,241 @@
+@import "../../../../../assets/styles/global.less";
+@import "../../../../../assets/fonts/MuseoSansCyrl/MuseoSansCyrl.less";
+
+:host {
+    display: flex;
+    min-height: 938px;
+
+    > * {
+        color: #000;
+    }
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+
+    &__header {
+        display: flex;
+
+        &--left {
+            padding: 32px 72px 20px 80px;
+            border-right: 1px solid #404244;
+        }
+
+        &--left > .title {
+            font-family: "BerlingskeSerif";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+            /* identical to box height */
+
+            text-transform: uppercase;
+        }
+
+        &--right {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 32px 72px 20px 80px;
+            background: linear-gradient(
+                90deg,
+                #181d21 0%,
+                rgba(24, 29, 33, 0) 100%
+            );
+        }
+
+        &--right > .title {
+            font-family: "MuseoSansCyrl-300";
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 22px;
+            text-align: justify;
+
+            color: #000;
+        }
+    }
+}
+
+.logo {
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.title-logo {
+    font-family: "BerlingskeSerif";
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+
+    color: #000;
+}
+
+.address {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__icon {
+        color: #ecb85a;
+        width: 24px;
+        height: 24px;
+        max-height: 24px;
+        max-width: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: rgba(252, 217, 119, 0.13);
+        margin-right: 8px;
+    }
+
+    &__description {
+        font-size: 16px;
+        font-family: @project-font-primary-regular;
+        color: #000;
+    }
+}
+
+.mobile {
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.055em;
+    margin-bottom: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "BerlingskeSerif-SemiBold";
+    color: #000;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    max-width: 290px;
+    border-right: 1px solid #404244;
+}
+
+.right-column {
+    // background: linear-gradient(90deg, #181d21 0%, rgba(24, 29, 33, 0) 100%);
+    background: linear-gradient(90deg, #fff 0%, rgba(24, 29, 33, 0) 100%);
+    width: 100%;
+}
+
+.icon {
+    margin-right: 12px;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ecb85a;
+}
+
+.underline-gradient {
+    background: linear-gradient(270deg, #404244 0%, rgba(64, 66, 68, 0) 100%);
+    height: 1px;
+}
+
+.underline-gradient-left {
+    background: linear-gradient(
+        90deg,
+        #404244 77.65%,
+        rgba(64, 66, 68, 0) 101.42%
+    );
+    height: 1px;
+}
+
+.first-block {
+    padding: 32px 72px 20px 80px;
+    height: 115px;
+    box-sizing: border-box;
+    min-height: 115px;
+}
+
+.menu-container {
+    padding: 16px 0 16px 42px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    font-family: "BerlingskeSerif";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.flex {
+    display: flex;
+}
+
+.header-panel {
+    padding: 35px;
+    display: flex;
+    justify-content: space-between;
+    height: 115px;
+    box-sizing: border-box;
+
+    &__left {
+        max-width: 268px;
+        font-family: "MuseoSansCyrl-300";
+        font-size: 16px;
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+
+        & > .title {
+            margin-right: 10px;
+        }
+    }
+}
+
+.link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.menu-panel {
+    padding: 16px 0 16px 35px;
+    height: 56px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    white-space: nowrap;
+    position: relative;
+}
+
+.menu-item {
+    font-family: "MuseoSansCyrl-900";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+    transition: 0.2s ease-in-out;
+}
+
+.menu-item:hover {
+    color: #f4ab2c;
+    transition: 0.2s ease-in-out;
+}
+
+.menu-item:not(:first-child) {
+    margin-left: 70px;
+}
+
+.activeUnderline {
+    width: 134px;
+    height: 2px;
+    background: #fad875;
+    border-radius: 6px;
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+}

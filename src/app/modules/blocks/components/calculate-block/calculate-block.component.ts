@@ -19,4 +19,10 @@ export class CalculateBlockComponent implements OnInit {
         this.popupService.showPopup();
     }
 
+    get mobileVersion(): boolean {
+        const offsetWidth = document.body.offsetWidth;
+
+        return offsetWidth <= 375;
+    }
+
 }

@@ -1,18 +1,18 @@
-:host {
-    height: calc(100% - 173px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-
-    > * {
-        color: #000;
-    }
-}
-
 @project-color-secondary-light-theme: #fff;
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
+    :host {
+        height: calc(100vh - 173px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+
+        > * {
+            color: #000;
+        }
+    }
+
     .frame {
         display: flex;
         flex-direction: column;
@@ -36,6 +36,7 @@
                 text-transform: uppercase;
                 // color: #f4ab2c;
                 margin-bottom: 16px;
+                max-width: 400px;
             }
 
             .title {
@@ -144,7 +145,19 @@
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 414px) {
+    :host {
+        height: calc(100% - 173px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+
+        > * {
+            color: #000;
+        }
+    }
+
     .image-content {
         display: flex;
         justify-content: center;

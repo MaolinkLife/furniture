@@ -22,6 +22,9 @@ import { ResponsibilityBlockComponent } from './components/responsibility-block/
 import { ShieldItemModule } from 'src/app/shared/components/shield-item/shield-item.module';
 import { FurnitureProtectionComponent } from './components/furniture-protection/furniture-protection.component';
 import { CalculateModule } from 'src/app/shared/components/calculate/calculate.module';
+import { QualityBlockComponent } from './components/quality-block/quality-block.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ObbeyInputModule } from 'src/app/shared/components/input/input.module';
 
 @NgModule({
     declarations: [
@@ -35,6 +38,7 @@ import { CalculateModule } from 'src/app/shared/components/calculate/calculate.m
         ProductionBlockComponent,
         ResponsibilityBlockComponent,
         FurnitureProtectionComponent,
+        QualityBlockComponent,
     ],
     imports: [
         CommonModule,
@@ -42,11 +46,14 @@ import { CalculateModule } from 'src/app/shared/components/calculate/calculate.m
         IconsModule,
         ObbeyFlipCardModule,
         ObbeyFormModule,
+        ObbeyInputModule,
         CompanyLogoModule,
         ShieldItemModule,
         CalculateModule,
         CarouselModule,
         MessagersModule,
+        ReactiveFormsModule,
+        FormsModule,
     ],
     exports: [
         ExamplesRefurbishedFurnitureComponent,
@@ -59,6 +66,7 @@ import { CalculateModule } from 'src/app/shared/components/calculate/calculate.m
         ProductionBlockComponent,
         ResponsibilityBlockComponent,
         FurnitureProtectionComponent,
+        QualityBlockComponent,
     ]
 })
 export class BlocksModule { }

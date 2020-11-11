@@ -1,40 +1,74 @@
-:host {
-    background-image: url("../../../../../assets/images/blocks/responsibility-background.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: #000;
-    background-color: #fcfbff;
-}
+@media screen and (min-width: 1200px) {
+    :host {
+        background-image: url("../../../../../assets/images/blocks/responsibility-background.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: #000;
+        background-color: #fcfbff;
+    }
 
-.block {
-    min-height: 749px;
-    display: flex;
-    flex-direction: column;
-    padding: 60px;
-    margin-left: 210px;
-
-    &__content {
+    .block {
+        min-height: 749px;
         display: flex;
         flex-direction: column;
+        padding: 60px;
+        margin-left: 210px;
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .title-page {
+        font-family: "BerlingskeSerif-Italic";
+        font-size: 36px;
+        line-height: 54px;
+        max-width: 957px;
+        text-transform: uppercase;
+        margin-bottom: 96px;
+    }
+
+    .grid-panel {
+        display: grid;
+        grid-template-rows: 94px 94px;
+        grid-template-columns: 283px 283px;
+        grid-gap: 70px;
+        max-width: 790px;
+        margin-bottom: 50px;
     }
 }
 
+@media screen and (max-width: 414px) {
+    :host {
+        color: #000;
+        background-color: #fcfbff;
+    }
 
-.title-page {
-    font-family: "BerlingskeSerif-Italic";
-    font-size: 36px;
-    line-height: 54px;
-    max-width: 957px;
-    text-transform: uppercase;
-    margin-bottom: 96px;
-}
+    .block {
+        display: flex;
+        flex-direction: column;
+        padding: 30px 10px 40px;
 
-.grid-panel {
-    display: grid;
-    grid-template-rows: 94px 94px;
-    grid-template-columns: 283px 283px;
-    grid-gap: 70px;
-    max-width: 790px;
-    margin-bottom: 50px;
+        &__content {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .title-page {
+        font-family: "BerlingskeSerif-Italic";
+        font-size: 26px;
+        line-height: 54px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .grid-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-gap: 20px;
+    }
 }

@@ -1,16 +1,16 @@
-:host {
-    height: calc(100% - 173px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
+@media screen and (min-width: 1200px) {
+    :host {
+        height: calc(100vh - 173px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
 
-    > * {
-        color: #000;
+        > * {
+            color: #000;
+        }
     }
-}
 
-@media screen and (min-width: 1440px) {
     .frame {
         display: flex;
         flex-direction: column;
@@ -149,7 +149,19 @@
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 414px) {
+    :host {
+        height: calc(100% - 173px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+
+        > * {
+            color: #000;
+        }
+    }
+
     .image-content {
         display: flex;
         justify-content: center;

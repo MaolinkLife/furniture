@@ -1,142 +1,293 @@
-:host {
-    height: 1600px;
-    background-color: #fff;
-    display: block;
-    padding-top: 150px;
-}
+@media screen and (max-width: 414px) {
+    :host {
+        background-color: #fff;
+        display: block;
+        padding: 30px 10px 40px;
+    }
 
-.container {
-    max-width: 1200px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-}
-
-.title-page {
-    font-family: "BerlingskeSerif-SemiBold";
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 54px;
-    text-align: center;
-    color: #000000;
-    margin-bottom: 40px;
-}
-
-.subtitle-page {
-    font-family: "MuseoSansCyrl-100";
-    font-size: 16px;
-    line-height: 24px;
-    color: #000000;
-    margin-bottom: 80px;
-}
-
-.content {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.left-column {
-    max-width: 650px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-
-    &__card {
-        background: #ffffff;
-        box-shadow: 0px 4px 27px rgba(0, 0, 0, 0.1);
-        border-radius: 6px;
-        max-width: 390px;
+    .container {
+        max-width: 1200px;
         width: 100%;
-        padding: 16px;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        font-family: "MuseoSansCyrl-300";
-        font-size: 14px;
-        line-height: 24px;
+        margin: 0 auto;
+    }
+
+    .title-page {
+        font-family: "BerlingskeSerif-SemiBold";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 28px;
+        line-height: 40px;
+        text-align: center;
         color: #000000;
-        box-sizing: border-box;
         margin-bottom: 40px;
     }
 
-    &__card:nth-child(even) {
+    .subtitle-page {
+        font-family: "MuseoSansCyrl-100";
+        font-size: 14px;
+        line-height: 24px;
+        color: #000000;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left-column {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        &__card {
+            background: #ffffff;
+            box-shadow: 0px 4px 27px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            width: 100%;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            font-family: "MuseoSansCyrl-300";
+            font-size: 14px;
+            line-height: 24px;
+            color: #000000;
+            box-sizing: border-box;
+            margin-bottom: 40px;
+        }
+
+        &__card:nth-child(even) {
+            align-self: flex-end;
+        }
+
+        &__card:nth-child(odd) {
+            align-self: flex-start;
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .card-title {
+        display: inline-flex;
+        font-family: "BerlingskeSerif-BoldItalic";
+        font-size: 48px;
+        line-height: 58px;
+        margin-left: 30px;
+        margin-right: 14px;
+        background: linear-gradient(to bottom, #e4a94d 0%, #fcd977 100%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .small-text {
+        font-family: "MuseoSansCyrl-300";
+        font-size: 18px;
+        line-height: 24px;
+        display: flex;
         align-self: flex-end;
+        margin-right: 8px;
+        padding-bottom: 10px;
     }
 
-    &__card:nth-child(odd) {
-        align-self: flex-start;
+    .right-column {
+        display: flex;
+        align-items: center;
     }
-}
 
-.card-title {
-    display: inline-flex;
-    font-family: "BerlingskeSerif-BoldItalic";
-    font-size: 48px;
-    line-height: 58px;
-    margin-left: 30px;
-    margin-right: 14px;
-    background: linear-gradient(to bottom, #e4a94d 0%, #fcd977 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+    .icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 30px;
+        transform: scale(1.5);
+    }
 
-.small-text {
-    font-family: "MuseoSansCyrl-300";
-    font-size: 18px;
-    line-height: 24px;
-    display: flex;
-    align-self: flex-end;
-    margin-right: 8px;
-    padding-bottom: 10px;
-}
+    .shield-item {
+        display: flex;
+        flex-direction: column;
+        color: #000000;
+        width: 100%;
+        margin-bottom: 20px;
+        align-items: center;
+        text-align: center;
 
-.right-column {
-    display: flex;
-    align-items: center;
-    margin-left: 40px;
-}
+        &__description {
+            font-family: "MuseoSansCyrl-500";
+            font-size: 14px;
+            line-height: 24px;
+            color: #000000;
+        }
+    }
 
-.icon {
-    width: 40px;
-    height: 40px;
-    margin-right: 30px;
-    transform: scale(1.5);
-}
-
-.shield-item {
-    display: flex;
-    align-items: center;
-    color: #000000;
-    width: 100%;
-    margin-bottom: 40px;
-
-    &__description {
-        font-family: "MuseoSansCyrl-500";
+    .button-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        font-family: "MuseoSansCyrl-100";
         font-size: 16px;
         line-height: 24px;
         color: #000000;
+
+        &__description {
+            width: 100%;
+            text-align: center;
+        }
     }
-}
 
-.button-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: "MuseoSansCyrl-100";
-    font-size: 16px;
-    line-height: 24px;
-    color: #000000;
-
-    &__description {
+    .button {
         width: 100%;
+        margin-bottom: 12px;
     }
 }
 
-.button {
-    width: 100%;
-    max-width: 320px;
-    margin-right: 50px;
+@media screen and (min-width: 1200px) {
+    :host {
+        height: 1600px;
+        background-color: #fff;
+        display: block;
+        padding-top: 150px;
+    }
+
+    .container {
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .title-page {
+        font-family: "BerlingskeSerif-SemiBold";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 36px;
+        line-height: 54px;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 40px;
+    }
+
+    .subtitle-page {
+        font-family: "MuseoSansCyrl-100";
+        font-size: 16px;
+        line-height: 24px;
+        color: #000000;
+        margin-bottom: 80px;
+    }
+
+    .content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .left-column {
+        max-width: 650px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        &__card {
+            background: #ffffff;
+            box-shadow: 0px 4px 27px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            max-width: 390px;
+            width: 100%;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            font-family: "MuseoSansCyrl-300";
+            font-size: 14px;
+            line-height: 24px;
+            color: #000000;
+            box-sizing: border-box;
+            margin-bottom: 40px;
+        }
+
+        &__card:nth-child(even) {
+            align-self: flex-end;
+        }
+
+        &__card:nth-child(odd) {
+            align-self: flex-start;
+        }
+    }
+
+    .card-title {
+        display: inline-flex;
+        font-family: "BerlingskeSerif-BoldItalic";
+        font-size: 48px;
+        line-height: 58px;
+        margin-left: 30px;
+        margin-right: 14px;
+        background: linear-gradient(to bottom, #e4a94d 0%, #fcd977 100%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .small-text {
+        font-family: "MuseoSansCyrl-300";
+        font-size: 18px;
+        line-height: 24px;
+        display: flex;
+        align-self: flex-end;
+        margin-right: 8px;
+        padding-bottom: 10px;
+    }
+
+    .right-column {
+        display: flex;
+        align-items: center;
+        margin-left: 40px;
+    }
+
+    .icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 30px;
+        transform: scale(1.5);
+    }
+
+    .shield-item {
+        display: flex;
+        align-items: center;
+        color: #000000;
+        width: 100%;
+        margin-bottom: 40px;
+
+        &__description {
+            font-family: "MuseoSansCyrl-500";
+            font-size: 16px;
+            line-height: 24px;
+            color: #000000;
+        }
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "MuseoSansCyrl-100";
+        font-size: 16px;
+        line-height: 24px;
+        color: #000000;
+
+        &__description {
+            width: 100%;
+        }
+    }
+
+    .button {
+        width: 100%;
+        max-width: 320px;
+        margin-right: 50px;
+    }
 }

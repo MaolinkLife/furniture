@@ -1,15 +1,3 @@
-:host {
-    height: calc(100% - 173px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-
-    > * {
-        color: #000;
-    }
-}
-
 .project-text-body_m() {
     font-family: "MuseoSansCyrl-100";
     font-size: 14px;
@@ -20,7 +8,19 @@
     .project-text-body_m();
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
+    :host {
+        height: calc(100vh - 173px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+
+        > * {
+            color: #000;
+        }
+    }
+
     .project-text-body_s {
         font-family: "MuseoSansCyrl-100";
         font-size: 14px;
@@ -172,7 +172,19 @@
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 414px) {
+    :host {
+        height: calc(100% - 173px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+
+        > * {
+            color: #000;
+        }
+    }
+
     .image-content {
         & > img {
             width: 100%;

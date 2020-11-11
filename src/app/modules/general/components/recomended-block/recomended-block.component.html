@@ -12,85 +12,93 @@
             *ngFor="let slide of slides; index as itemIndex"
             carouselItem
         >
-            <div class="slide__left-column">
-                <div class="galery">
-                    <div
-                        class="main-image"
-                        [ngStyle]="{
-                            'background-image': 'url(' + slide.main.image + ')'
-                        }"
-                    ></div>
-                    <div class="subimages">
+            <div class="slide-content">
+                <div class="slide__left-column">
+                    <div class="galery">
                         <div
-                            *ngFor="let sub of slide.sub"
-                            class="subimage"
-                            [style]="sub.style"
+                            class="main-image"
+                            [ngStyle]="{
+                                'background-image':
+                                    'url(' + slide.main.image + ')'
+                            }"
                         ></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="slide__right-column">
-                <div class="right-group">
-                    <img
-                        class="number-image"
-                        src="../../../../assets/images/numberIcon.png"
-                        alt=""
-                    />
-                    <div class="icon">
-                        {{ activeItemIndex + 1 }}
-                    </div>
-                    <div class="slider-title">
-                        {{ slide.information.title }}
-                    </div>
-
-                    <div class="group">
-                        <div class="line"></div>
-                        <div class="tab-group">
+                        <div class="subimages">
                             <div
-                                (click)="tabClick($event.currentTarget)"
-                                class="tab"
-                            >
-                                задача
-                            </div>
-                            <div
-                                (click)="tabClick($event.currentTarget)"
-                                class="tab"
-                            >
-                                что сделали
-                            </div>
-                            <div
-                                (click)="tabClick($event.currentTarget)"
-                                class="tab"
-                            >
-                                результат
-                            </div>
+                                *ngFor="let sub of slide.sub"
+                                class="subimage"
+                                [style]="sub.style"
+                            ></div>
                         </div>
-                        <div class="line"></div>
-                    </div>
-
-                    <div class="description">
-                        {{ currentText$ | async }}
                     </div>
                 </div>
 
-                <obbey-button
-                    [hasIcon]="true"
-                    color="primary"
-                    size="m"
-                    class="button"
-                    iconName="iconPlayLarge"
-                    (click)="openPopup()"
-                    uppercase
-                >
-                    посмотреть видео отзыв
-                </obbey-button>
+                <div class="slide__right-column">
+                    <div class="right-group">
+                        <img
+                            class="number-image"
+                            src="../../../../assets/images/numberIcon.png"
+                            alt=""
+                        />
+                        <div class="icon">
+                            {{ activeItemIndex + 1 }}
+                        </div>
+                        <div class="slider-title">
+                            {{ slide.information.title }}
+                        </div>
+
+                        <div class="group">
+                            <div class="line"></div>
+                            <div class="tab-group">
+                                <div
+                                    (click)="tabClick($event.currentTarget)"
+                                    class="tab"
+                                >
+                                    задача
+                                </div>
+                                <div
+                                    (click)="tabClick($event.currentTarget)"
+                                    class="tab"
+                                >
+                                    что сделали
+                                </div>
+                                <div
+                                    (click)="tabClick($event.currentTarget)"
+                                    class="tab"
+                                >
+                                    результат
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="description">
+                            {{ currentText$ | async }}
+                        </div>
+                    </div>
+
+                    <obbey-button
+                        [hasIcon]="true"
+                        color="primary"
+                        size="m"
+                        class="button"
+                        iconName="iconPlayLarge"
+                        (click)="openPopup()"
+                        uppercase
+                    >
+                        посмотреть видео отзыв
+                    </obbey-button>
+                </div>
             </div>
         </ng-template>
     </obbey-carousel>
 </div>
 
-<obbey-popup *ngIf="popupOpened$ | async" (closed)="closePopup()" class="popup" [backgroundConfig]="popupConfig">
+<obbey-popup
+    *ngIf="popupOpened$ | async"
+    (closed)="closePopup()"
+    class="popup"
+    [backgroundConfig]="popupConfig"
+>
     <video width="100%" height="100%" controls>
         <source [src]="slides[activeItemIndex].video.path" />
     </video>

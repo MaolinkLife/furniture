@@ -11,7 +11,6 @@ import { DesignerOrderBlockComponent } from './components/designer-order-block/d
 import { ProgressWorkBlockComponent } from './components/progress-work-block/progress-work-block.component';
 import { ExamplesBlockComponent } from './components/examples-block/examples-block.component';
 import { SocialBlockComponent } from './components/social-block/social-block.component';
-import { QualityBlockComponent } from './components/quality-block/quality-block.component';
 import { RecomendedBlockComponent } from './components/recomended-block/recomended-block.component';
 import { BenefitBlockComponent } from './components/benefit-block/benefit-block.component';
 import { CompanyLogoModule } from 'src/app/shared/components/company-logo/company-logo.module';
@@ -29,7 +28,6 @@ import { PopupModule } from 'src/app/shared/components/popup/popup.module';
         ProgressWorkBlockComponent,
         ExamplesBlockComponent,
         SocialBlockComponent,
-        QualityBlockComponent,
         RecomendedBlockComponent,
         BenefitBlockComponent,
     ],
@@ -55,7 +53,6 @@ import { PopupModule } from 'src/app/shared/components/popup/popup.module';
         ProgressWorkBlockComponent,
         ExamplesBlockComponent,
         SocialBlockComponent,
-        QualityBlockComponent,
         RecomendedBlockComponent,
         BenefitBlockComponent,
     ],

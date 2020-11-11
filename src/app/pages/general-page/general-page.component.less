@@ -2,3 +2,19 @@
     display: flex;
     flex-direction: column;
 }
+
+@media screen and (max-width: 414px) {
+    app-benefit-block,
+    app-social-block,
+    app-bonus-block {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    app-benefit-block,
+    app-social-block,
+    app-bonus-block {
+        display: block;
+    }
+}

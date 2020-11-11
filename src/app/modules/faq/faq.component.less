@@ -1,74 +1,151 @@
-:host {
-    display: block;
-    padding-top: 70px;
-    padding-bottom: 70px;
-    padding-left: 30px;
+@media screen and (max-width: 414px) {
+    :host {
+        display: block;
+        padding: 203px 10px 40px;
 
-    > * {
-        color: #000;
+        > * {
+            color: #000;
+        }
     }
-}
 
-.container {
-    display: flex;
-    flex-direction: column;
-
-    &__title-page {
-        font-family: "BerlingskeSerif";
-        font-style: normal;
-        font-weight: normal;
-        font-size: 38px;
-        line-height: 46px;
-        /* identical to box height */
-
+    .container {
         display: flex;
-        align-items: center;
-        text-align: center;
+        flex-direction: column;
 
-        margin-bottom: 40px;
+        &__title-page {
+            font-family: "BerlingskeSerif";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 38px;
+            line-height: 46px;
+            /* identical to box height */
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+    }
+
+    .accordion {
+        cursor: pointer;
+        padding: 18px 40px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        transition: 0.4s ease-in-out;
+        font-family: "MuseoSansCyrl-700";
+        font-size: 12px;
+        line-height: 14px;
+        text-transform: uppercase;
+        border: 1px solid #34383b;
+        box-sizing: border-box;
+    }
+
+    .active,
+    .accordion:hover {
+        color: #f4ab2c;
+        border-left: 2px solid #f4ab2c;
+    }
+
+    .accordion.active + .panel {
+        padding: 24px;
+    }
+
+    .panel {
+        white-space: pre-wrap;
+        padding: 0 24px;
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.2s ease-out;
+        font-family: "MuseoSansCyrl-100";
+        font-style: normal;
+        font-weight: 250;
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .accordion.active + .panel {
+        // padding: 28px 40px;
+        transition: 0.2s ease-out;
     }
 }
 
-.accordion {
-    cursor: pointer;
-    padding: 18px 40px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    transition: 0.4s ease-in-out;
-    font-family: "MuseoSansCyrl-700";
-    font-size: 12px;
-    line-height: 14px;
-    text-transform: uppercase;
-    border: 1px solid #34383b;
-    box-sizing: border-box;
-}
+@media screen and (min-width: 1200px) {
+    :host {
+        display: block;
+        padding-top: 70px;
+        padding-bottom: 70px;
+        padding-left: 30px;
 
-.active,
-.accordion:hover {
-    color: #f4ab2c;
-    border-left: 2px solid #f4ab2c;
-}
+        > * {
+            color: #000;
+        }
+    }
 
-.accordion.active + .panel {
-    padding: 24px;
-}
+    .container {
+        display: flex;
+        flex-direction: column;
 
-.panel {
-    white-space: pre-wrap;
-    padding: 0 24px;
-    max-height: 0;
-    overflow: hidden;
-    transition: 0.2s ease-out;
-    font-family: "MuseoSansCyrl-100";
-    font-style: normal;
-    font-weight: 250;
-    font-size: 16px;
-    line-height: 19px;
-}
+        &__title-page {
+            font-family: "BerlingskeSerif";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 38px;
+            line-height: 46px;
+            /* identical to box height */
 
-.accordion.active + .panel {
-    // padding: 28px 40px;
-    transition: 0.2s ease-out;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+    }
+
+    .accordion {
+        cursor: pointer;
+        padding: 18px 40px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        transition: 0.4s ease-in-out;
+        font-family: "MuseoSansCyrl-700";
+        font-size: 12px;
+        line-height: 14px;
+        text-transform: uppercase;
+        border: 1px solid #34383b;
+        box-sizing: border-box;
+    }
+
+    .active,
+    .accordion:hover {
+        color: #f4ab2c;
+        border-left: 2px solid #f4ab2c;
+    }
+
+    .accordion.active + .panel {
+        padding: 24px;
+    }
+
+    .panel {
+        white-space: pre-wrap;
+        padding: 0 24px;
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.2s ease-out;
+        font-family: "MuseoSansCyrl-100";
+        font-style: normal;
+        font-weight: 250;
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .accordion.active + .panel {
+        // padding: 28px 40px;
+        transition: 0.2s ease-out;
+    }
 }

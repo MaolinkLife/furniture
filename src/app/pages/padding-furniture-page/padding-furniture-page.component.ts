@@ -326,7 +326,6 @@ const EXAMPLES_LIST = [
     selector: 'padding-furniture-page',
     templateUrl: './padding-furniture-page.template.html',
     styleUrls: ['./padding-furniture-page.style.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PaddingFurniturePageComponent implements OnInit {
 

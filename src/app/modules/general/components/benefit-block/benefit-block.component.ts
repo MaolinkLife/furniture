@@ -7,8 +7,7 @@ import { take } from 'rxjs/operators';
 @Component({
     selector: 'app-benefit-block',
     templateUrl: './benefit-block.component.html',
-    styleUrls: ['./benefit-block.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrls: ['./benefit-block.component.less']
 })
 export class BenefitBlockComponent implements OnInit, AfterViewInit, OnChanges {
 

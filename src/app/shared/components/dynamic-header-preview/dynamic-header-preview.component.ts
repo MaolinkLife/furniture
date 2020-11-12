@@ -8,7 +8,6 @@ import { PreviewComponentClass } from '../../types/preview-component-class.type'
     // tslint:disable-next-line: component-selector
     selector: 'obbey-dynamic-header-preview',
     template: '',
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DynamicHeaderPreviewComponent implements OnChanges {
     @Input()

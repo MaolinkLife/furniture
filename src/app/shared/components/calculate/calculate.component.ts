@@ -56,7 +56,6 @@ export interface PriceCalculateInterface {
     selector: 'obbey-calculate',
     templateUrl: './calculate.component.html',
     styleUrls: ['./calculate.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CalculateComponent implements OnInit {
 

@@ -5,7 +5,6 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
     selector: 'obbey-flip-card',
     templateUrl: './flip-card.component.html',
     styleUrls: ['./flip-card.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ObbeyFlipCardComponent implements OnInit {
 

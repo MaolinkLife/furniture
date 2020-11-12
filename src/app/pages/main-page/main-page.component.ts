@@ -8,7 +8,6 @@ import { Component, OnInit, ChangeDetectionStrategy, OnChanges, HostListener } f
     selector: 'app-main-page',
     templateUrl: './main-page.component.html',
     styleUrls: ['./main-page.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainPageComponent implements OnInit, OnChanges {
 

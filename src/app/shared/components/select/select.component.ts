@@ -11,7 +11,6 @@ import { takeUntil } from 'rxjs/operators';
     selector: 'obbey-select',
     templateUrl: './select.component.html',
     styleUrls: ['./select.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,

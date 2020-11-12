@@ -1,11 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     // tslint:disable-next-line: component-selector
     selector: 'block-hauling-furniture',
     templateUrl: './hauling-furniture-block.component.html',
-    styleUrls: ['./hauling-furniture-block.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrls: ['./hauling-furniture-block.component.less']
 })
 export class HaulingFurnitureBlockComponent implements OnInit {
 

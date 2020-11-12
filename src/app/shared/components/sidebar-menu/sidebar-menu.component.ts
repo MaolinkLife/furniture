@@ -9,7 +9,6 @@ import { SidebarMenuItem } from '../../interfaces/sidebar-menu-item';
     selector: 'obbey-sidebar-menu',
     templateUrl: './sidebar-menu.component.html',
     styleUrls: ['./sidebar-menu.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarMenuComponent implements OnInit {
 

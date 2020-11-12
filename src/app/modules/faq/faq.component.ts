@@ -3,8 +3,7 @@ import { Component, OnInit, ChangeDetectionStrategy, ElementRef } from '@angular
 @Component({
     selector: 'app-faq',
     templateUrl: './faq.component.html',
-    styleUrls: ['./faq.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrls: ['./faq.component.less']
 })
 export class FaqComponent implements OnInit {
 

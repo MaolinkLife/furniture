@@ -1,34 +1,73 @@
-.block {
-    min-height: 876px;
-    background-color: #fff;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #000000;
-    padding-top: 130px;
+@media screen and (min-width: 1200px) {
+    .block {
+        min-height: 876px;
+        background-color: #fff;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #000000;
+        padding-top: 130px;
 
-    &__content {
-        max-width: 1230px;
+        &__content {
+            max-width: 1230px;
 
-        .title {
-            font-family: "BerlingskeSerif-BoldItalic";
-            font-style: italic;
-            font-weight: 600;
-            font-size: 36px;
-            line-height: 43px;
-            text-align: center;
+            .title {
+                font-family: "BerlingskeSerif-BoldItalic";
+                font-style: italic;
+                font-weight: 600;
+                font-size: 36px;
+                line-height: 43px;
+                text-align: center;
 
-            color: #000000;
+                color: #000000;
+            }
+        }
+
+        &__elements {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__elements > .element:not(:first-child) {
+            margin-left: 10px;
         }
     }
+}
 
-    &__elements {
+@media screen and (max-width: 414px) {
+    .block {
+        min-height: 876px;
+        background-color: #fff;
+        width: 100%;
         display: flex;
-        justify-content: space-between;
-    }
+        flex-direction: column;
+        align-items: center;
+        color: #000000;
+        padding-top: 130px;
 
-    &__elements > .element:not(:first-child) {
-        margin-left: 10px;
+        &__content {
+            max-width: 1230px;
+
+            .title {
+                font-family: "BerlingskeSerif-BoldItalic";
+                font-style: italic;
+                font-weight: 600;
+                font-size: 30px;
+                line-height: 36px;
+                text-align: center;
+
+                color: #000000;
+            }
+        }
+
+        &__elements {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__elements > .element:not(:first-child) {
+            margin-left: 10px;
+        }
     }
 }

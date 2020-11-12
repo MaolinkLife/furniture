@@ -134,6 +134,13 @@ const CONTENT = [
 })
 export class RecomendedBlockComponent implements OnInit {
 
+    public tabList = [
+        {
+            displayName: 'задача',
+            description: ''
+        }
+    ];
+
     activeItemIndex = 0;
 
     slides = CONTENT;

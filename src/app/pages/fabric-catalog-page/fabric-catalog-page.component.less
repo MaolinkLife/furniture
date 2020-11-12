@@ -1,104 +1,147 @@
-:host {
-    display: block;
-    height: 800px;
-    width: 100%;
-    background-image: url("../../../assets/images/fabric-catalog/fabric-catalog-background.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+@media screen and (min-width: 1200px) {
+    :host {
+        display: block;
+        height: 800px;
+        width: 100%;
+        background-image: url("../../../assets/images/fabric-catalog/fabric-catalog-background.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-}
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+    }
 
-.form-container {
-    position: absolute;
-    right: 100px;
-    top: 100px;
-}
+    .form-container {
+        position: absolute;
+        right: 100px;
+        top: 100px;
+    }
 
-.form-title {
-    font-family: Berlingske Serif;
-    font-style: italic;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 30px;
-    /* or 150% */
+    .form-title {
+        font-family: Berlingske Serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+        /* or 150% */
 
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #000000;
-    margin-bottom: 8px;
-}
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 8px;
+    }
 
-.text-lighter {
-    font-family: "MuseoSansCyrl-300";
-    font-size: 14px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #939391;
-    margin-bottom: 20px;
-    justify-content: center;
-}
+    .text-lighter {
+        font-family: "MuseoSansCyrl-300";
+        font-size: 14px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #939391;
+        margin-bottom: 20px;
+        justify-content: center;
+    }
 
-.text-upper {
-    font-family: "MuseoSansCyrl-300";
-    font-size: 10px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    text-transform: uppercase;
-    color: #000000;
-    margin-bottom: 8px;
-    justify-content: center;
-}
+    .text-upper {
+        font-family: "MuseoSansCyrl-300";
+        font-size: 10px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 8px;
+        justify-content: center;
+    }
 
-.messagers {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-}
+    .messagers {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
 
-.messager {
-    width: 43px;
-    height: 43px;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-}
+    .messager {
+        width: 43px;
+        height: 43px;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+    }
 
-.text {
-    font-family: "MuseoSansCyrl-300";
-    font-size: 10px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #939391;
-    text-align: center;
-    justify-content: center;
-}
+    .text {
+        font-family: "MuseoSansCyrl-300";
+        font-size: 10px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #939391;
+        text-align: center;
+        justify-content: center;
+    }
 
-.add-image {
-    display: flex;
-    align-items: center;
+    .add-image {
+        display: flex;
+        align-items: center;
 
-    &__icon {
-        width: 40px;
-        height: 40px;
+        &__icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fafafa;
+            border-radius: 6px;
+            margin-right: 20px;
+            clip-path: polygon(
+                98% 0,
+                100% 25%,
+                100% 75%,
+                98% 100%,
+                2% 100%,
+                0 75%,
+                0 25%,
+                2% 0
+            );
+        }
+
+        &__label {
+            font-family: "MuseoSansCyrl-300";
+            font-size: 10px;
+            line-height: 16px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #000000;
+        }
+    }
+
+    .input {
+        padding: 16px 24px;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
+        font-family: "MuseoSansCyrl";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #000000;
         background-color: #fafafa;
-        border-radius: 6px;
-        margin-right: 20px;
+        outline: none;
+        border: none;
         clip-path: polygon(
             98% 0,
             100% 25%,
@@ -111,60 +154,189 @@
         );
     }
 
-    &__label {
+    .underline-text {
+        font-family: "MuseoSansCyrl-300";
+        font-size: 10px;
+        line-height: 16px;
+        display: inline-block;
+        align-items: center;
+        text-align: center;
+        color: #939391;
+        max-width: 196px;
+    }
+
+    .form-action {
+        margin-bottom: 8px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    :host {
+        display: block;
+        width: 100%;
+        background-image: url("../../../assets/images/fabric-catalog/fabric-catalog-background.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 10px 40px;
+    }
+
+    .form-container {
+    }
+
+    .form-title {
+        font-family: Berlingske Serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+        /* or 150% */
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 8px;
+    }
+
+    .text-lighter {
+        font-family: "MuseoSansCyrl-300";
+        font-size: 14px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #939391;
+        margin-bottom: 20px;
+        justify-content: center;
+    }
+
+    .text-upper {
         font-family: "MuseoSansCyrl-300";
         font-size: 10px;
         line-height: 16px;
         display: flex;
         align-items: center;
         text-align: center;
+        text-transform: uppercase;
         color: #000000;
+        margin-bottom: 8px;
+        justify-content: center;
     }
-}
 
-.input {
-    padding: 16px 24px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-family: "MuseoSansCyrl";
-    font-style: normal;
-    font-weight: normal;
-    font-size: 10px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #000000;
-    background-color: #fafafa;
-    outline: none;
-    border: none;
-    clip-path: polygon(
-        98% 0,
-        100% 25%,
-        100% 75%,
-        98% 100%,
-        2% 100%,
-        0 75%,
-        0 25%,
-        2% 0
-    );
-}
+    .messagers {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
 
-.underline-text {
-    font-family: "MuseoSansCyrl-300";
-    font-size: 10px;
-    line-height: 16px;
-    display: inline-block;
-    align-items: center;
-    text-align: center;
-    color: #939391;
-    max-width: 196px;
-}
+    .messager {
+        width: 43px;
+        height: 43px;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+    }
 
-.form-action {
-    margin-bottom: 8px;
-    width: 100%;
+    .text {
+        font-family: "MuseoSansCyrl-300";
+        font-size: 10px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #939391;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .add-image {
+        display: flex;
+        align-items: center;
+
+        &__icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fafafa;
+            border-radius: 6px;
+            margin-right: 20px;
+            clip-path: polygon(
+                98% 0,
+                100% 25%,
+                100% 75%,
+                98% 100%,
+                2% 100%,
+                0 75%,
+                0 25%,
+                2% 0
+            );
+        }
+
+        &__label {
+            font-family: "MuseoSansCyrl-300";
+            font-size: 10px;
+            line-height: 16px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #000000;
+        }
+    }
+
+    .input {
+        padding: 16px 24px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-family: "MuseoSansCyrl";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #000000;
+        background-color: #fafafa;
+        outline: none;
+        border: none;
+        clip-path: polygon(
+            98% 0,
+            100% 25%,
+            100% 75%,
+            98% 100%,
+            2% 100%,
+            0 75%,
+            0 25%,
+            2% 0
+        );
+    }
+
+    .underline-text {
+        font-family: "MuseoSansCyrl-300";
+        font-size: 10px;
+        line-height: 16px;
+        display: inline-block;
+        align-items: center;
+        text-align: center;
+        color: #939391;
+        max-width: 196px;
+    }
+
+    .form-action {
+        margin-bottom: 8px;
+        width: 100%;
+    }
 }

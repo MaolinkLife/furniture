@@ -57,15 +57,15 @@ export class MobileHeaderComponent implements OnInit, OnChanges {
 
     ngOnInit(): void {
         this.menuItems$.subscribe(list => {
-            console.log(list);
+            console.log('list', list);
         })
 
         this.component$ = this.navigationsService.dynamicComponentView$;
-        console.log(this.activatedRoute);
+        console.log('activated route', this.activatedRoute);
     }
 
     ngOnChanges(changes: SimpleChanges): void {
-        console.log(changes);
+        console.log('changes', changes);
     }
 
     menuClick(element: HTMLElement, id?: string) {
@@ -90,10 +90,15 @@ export class MobileHeaderComponent implements OnInit, OnChanges {
      * @param menuItems - все элементы меню
      * @param item - текущий элемент меню, по которому происходит проверка, необходимо или перейти или раскрыть список
      */
-    menuItemClick(value: { menuItems: SidebarMenuItem[], item: SidebarMenuItem} ) {
-        console.log(value)
+    menuItemClick(value: { items: SidebarMenuItem[], item: SidebarMenuItem }) {
+        console.log(value);
 
-        value.menuItems.forEach((link: SidebarMenuItem) => link.active = false);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+
+        value.items.forEach((link: SidebarMenuItem) => link.active = false);
         value.item.active = true;
 
         if (!value.item.children) {
@@ -103,5 +108,7 @@ export class MobileHeaderComponent implements OnInit, OnChanges {
             value.item.children[0].active = true;
             this.router.navigateByUrl(value.item.children[0].routerPath);
         }
+
+
     }
 }

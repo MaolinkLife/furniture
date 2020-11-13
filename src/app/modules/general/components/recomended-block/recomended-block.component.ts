@@ -136,9 +136,17 @@ export class RecomendedBlockComponent implements OnInit {
 
     public tabList = [
         {
-            displayName: 'задача',
-            description: ''
-        }
+            caption: 'Задача',
+            active: true,
+        },
+        {
+            caption: 'Что сделали',
+            active: false,
+        },
+        {
+            caption: 'Результат',
+            active: false,
+        },
     ];
 
     activeItemIndex = 0;
@@ -161,7 +169,7 @@ export class RecomendedBlockComponent implements OnInit {
     constructor() { }
 
     ngOnInit(): void {
-
+        this.tabClick('Задача', this.tabList[0]);
     }
 
     openPopup() {
@@ -172,17 +180,17 @@ export class RecomendedBlockComponent implements OnInit {
         this.popupOpened$.next(false);
     }
 
-    tabClick(html: HTMLElement) {
-        const text = html.innerText;
+    tabClick(name: string, currentTab: { caption: string; active: boolean; }) {
+        // const text = html.innerText.toUpperCase();
 
-        html.parentElement.childNodes
-            .forEach((node: HTMLElement) => {
-                node.classList.remove('_active');
-            });
 
-        html.classList.add('_active');
+        this.tabList.forEach((tab: { caption: string; active: boolean; }) => {
+            tab.active = false;
+        });
 
-        switch (text) {
+        currentTab.active = true;
+
+        switch (name.toUpperCase()) {
             case 'ЧТО СДЕЛАЛИ':
                 this.currentText$.next(this.slides[this.activeItemIndex].information.work);
                 break;
@@ -193,6 +201,10 @@ export class RecomendedBlockComponent implements OnInit {
                 this.currentText$.next(this.slides[this.activeItemIndex].information.result);
                 break;
         }
+    }
+
+    nextSlide(): void {
+        this.tabClick('Задача', this.tabList[0]);
     }
 
 }

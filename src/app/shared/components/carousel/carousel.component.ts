@@ -25,6 +25,12 @@ export class CarouselComponent implements OnInit {
     @Output()
     activeItemIndexChange: EventEmitter<number> = new EventEmitter<number>(null);
 
+    @Output()
+    nextSlideChange: EventEmitter<void> = new EventEmitter<void>();
+
+    @Output()
+    prevSlideChange: EventEmitter<void> = new EventEmitter<void>();
+
     @ContentChildren(ItemConnectorDirective)
     readonly itemConnectors?: QueryList<ItemConnectorDirective>;
 
@@ -49,6 +55,7 @@ export class CarouselComponent implements OnInit {
         }
 
         this.activeItemIndexChange.emit(this.activeItemIndex);
+        this.nextSlideChange.emit();
     }
 
     clickPrev(): void {
@@ -58,6 +65,7 @@ export class CarouselComponent implements OnInit {
         }
 
         this.activeItemIndexChange.emit(this.activeItemIndex);
+        this.prevSlideChange.emit();
     }
 
 }

@@ -1,5 +1,5 @@
 import {
-    Component, OnInit, ChangeDetectionStrategy, Input, QueryList, AfterViewInit, ViewChildren, ElementRef, SimpleChanges, OnChanges
+    Component, OnInit, Input, QueryList, AfterViewInit, ViewChildren, ElementRef, OnChanges
 } from '@angular/core';
 import { timer } from 'rxjs';
 import { take } from 'rxjs/operators';
@@ -129,11 +129,12 @@ export class BenefitBlockComponent implements OnInit, AfterViewInit, OnChanges {
     }
 
     startTimer(): void {
-        const items = this.circularItemsTemplate.toArray();
-
-        const t = timer(0, 150).pipe(take(items.length)).subscribe(i => {
-            items[i].nativeElement.style.opacity = '1';
-        });
+        if (this.circularItemsTemplate) {
+            const items = this.circularItemsTemplate.toArray();
+            timer(0, 150)
+                .pipe(take(items.length)).subscribe(i => {
+                    items[i].nativeElement.style.opacity = '1';
+                });
+        }
     }
-
 }

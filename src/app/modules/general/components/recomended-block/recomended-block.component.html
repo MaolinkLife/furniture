@@ -7,7 +7,11 @@
         Отзывы наших клиентов - лучший показатель нашей работы
     </div>
 
-    <obbey-carousel [(activeItemIndex)]="activeItemIndex">
+    <obbey-carousel
+        [(activeItemIndex)]="activeItemIndex"
+        (nextSlideChange)="nextSlide()"
+        (prevSlideChange)="nextSlide()"
+    >
         <ng-template
             *ngFor="let slide of slides; index as itemIndex"
             carouselItem
@@ -50,22 +54,12 @@
                             <div class="line"></div>
                             <div class="tab-group">
                                 <div
-                                    (click)="tabClick($event.currentTarget)"
+                                    *ngFor="let tab of tabList"
+                                    (click)="tabClick(tab.caption, tab)"
                                     class="tab"
+                                    [ngClass]="{ _active: tab.active }"
                                 >
-                                    задача
-                                </div>
-                                <div
-                                    (click)="tabClick($event.currentTarget)"
-                                    class="tab"
-                                >
-                                    что сделали
-                                </div>
-                                <div
-                                    (click)="tabClick($event.currentTarget)"
-                                    class="tab"
-                                >
-                                    результат
+                                    {{ tab.caption }}
                                 </div>
                             </div>
                             <div class="line"></div>

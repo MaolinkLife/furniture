@@ -2,8 +2,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { NavigationsService } from './../../modules/navigations/navigations.service';
 import { BehaviorSubject } from 'rxjs';
 import { PreviewComponentClass } from './../../types/preview-component-class.type';
-import { Component, OnInit, ChangeDetectionStrategy, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { GeneralPreviewComponentComponent } from 'src/app/modules/general/components/general-preview-component/general-preview-component.component';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 interface HeaderMenuItemInterface {
     caption: string;
@@ -17,7 +16,7 @@ interface HeaderMenuItemInterface {
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.less'],
 })
-export class HeaderComponent implements OnInit, OnChanges {
+export class HeaderComponent implements OnInit {
     @Input()
     showMenu: boolean;
 
@@ -73,27 +72,5 @@ export class HeaderComponent implements OnInit, OnChanges {
 
     ngOnInit(): void {
         this.component$ = this.navigationsService.dynamicComponentView$;
-        console.log(this.activatedRoute);
-    }
-
-    ngOnChanges(changes: SimpleChanges): void {
-        console.log(changes);
-    }
-
-    menuClick(element: HTMLElement, id?: string) {
-        element.classList.toggle('active');
-        this.component$.next(GeneralPreviewComponentComponent);
-
-        this.router.navigateByUrl('');
-
-        setTimeout(() => {
-            if (id) {
-                if (document.getElementById(id)) {
-                    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        }, 100);
-
-
     }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { dashCaseToCamelCase } from '@angular/compiler/src/util';
+import { Component, OnInit, ChangeDetectionStrategy, Input, HostListener } from '@angular/core';
 
 @Component({
     // tslint:disable-next-line: component-selector
@@ -17,6 +18,7 @@ export class ObbeyFlipCardComponent implements OnInit {
     @Input()
     caption: string;
 
+    hovered = false;
 
     @Input()
     outsideText: string;
@@ -24,6 +26,23 @@ export class ObbeyFlipCardComponent implements OnInit {
     constructor() { }
 
     ngOnInit(): void {
+    }
+
+
+
+    @HostListener('mouseenter')
+    onFocus() {
+        this.hovered = true;
+    }
+
+    @HostListener('click')
+    onClick() {
+        this.hovered = true;
+    }
+
+    @HostListener('mouseleave')
+    onBlur() {
+        this.hovered = false;
     }
 
 }

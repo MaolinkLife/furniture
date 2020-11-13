@@ -1,5 +1,5 @@
 <div class="flip-card">
-    <div class="flip-card-inner">
+    <div class="flip-card-inner" [ngClass]="{ _hovered: hovered }">
         <div class="flip-card-back">
             <img *ngIf="image" [src]="image" class="image" />
 

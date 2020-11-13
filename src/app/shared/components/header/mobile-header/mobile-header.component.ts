@@ -58,7 +58,7 @@ export class MobileHeaderComponent implements OnInit, OnChanges {
     ngOnInit(): void {
         this.menuItems$.subscribe(list => {
             console.log('list', list);
-        })
+        });
 
         this.component$ = this.navigationsService.dynamicComponentView$;
         console.log('activated route', this.activatedRoute);

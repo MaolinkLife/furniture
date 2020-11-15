@@ -357,7 +357,7 @@
         font-family: "BerlingskeSerif-Italic";
         font-size: 30px;
         line-height: 54px;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         text-align: center;
     }
 
@@ -367,28 +367,7 @@
         line-height: 19px;
         text-align: center;
         color: #ffffff;
-        margin-bottom: 40px;
-    }
-
-    .block {
-        width: 100%;
-        padding-top: 360px;
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        &__title {
-            font-family: "BerlingskeSerif-BoldItalic";
-            font-size: 36px;
-            line-height: 43px;
-            text-align: center;
-            margin-bottom: 50px;
-            color: #ffffff;
-            max-width: 442px;
-        }
+        margin-bottom: 20px;
     }
 
     .slide-content {
@@ -397,52 +376,11 @@
         width: 100%;
     }
 
-    .slider {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-
-        &__prev {
-            left: 0;
-        }
-
-        &__next {
-            right: 0;
-        }
-
-        &__next,
-        &__prev {
-            cursor: pointer;
-            position: absolute;
-            width: auto;
-            top: 45%;
-            margin-top: -22px;
-            padding: 16px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-        }
-
-        &__container {
-            max-width: 1080px;
-            width: 100%;
-        }
-
-        &__dots {
-            margin-top: 30px;
-        }
-    }
-
     .caption {
         display: flex;
         justify-content: center;
         margin-bottom: 20px;
-        font-family: Berlingske Serif;
-        font-style: normal;
-        font-weight: 600;
+        font-family: 'BerlingskeSerif-Regular';
         font-size: 20px;
         line-height: 24px;
         /* identical to box height */
@@ -456,17 +394,10 @@
     }
 
     .slide {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 40px;
-        height: 500px;
-
         &__left-column,
         &__right-column {
             display: flex;
             flex-direction: column;
-            height: 100%;
         }
 
         &__right-column {
@@ -646,8 +577,6 @@
     .slider-title {
         margin-bottom: 22px;
         font-family: "BerlingskeSerif-Regular";
-        font-style: normal;
-        font-weight: 500;
         font-size: 20px;
         line-height: 24px;
         text-align: center;
@@ -662,11 +591,11 @@
         text-align: center;
         margin-bottom: 36px;
         color: #ffffff;
-        display: block;
+        display: flex;
     }
 
     .button {
-        margin-top: 12px;
+        padding-top: 12px;
         width: 100%;
     }
 

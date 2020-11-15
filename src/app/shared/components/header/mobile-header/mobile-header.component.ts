@@ -79,6 +79,11 @@ export class MobileHeaderComponent implements OnInit, OnChanges {
                 if (document.getElementById(id)) {
                     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
                 }
+            } else {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth',
+                });
             }
         }, 100);
 
@@ -91,8 +96,6 @@ export class MobileHeaderComponent implements OnInit, OnChanges {
      * @param item - текущий элемент меню, по которому происходит проверка, необходимо или перейти или раскрыть список
      */
     menuItemClick(value: { items: SidebarMenuItem[], item: SidebarMenuItem }) {
-        console.log(value);
-
         window.scrollTo({
             top: 0,
             behavior: 'smooth',
@@ -103,10 +106,17 @@ export class MobileHeaderComponent implements OnInit, OnChanges {
 
         if (!value.item.children) {
             this.router.navigateByUrl(value.item.routerPath);
+            this.opened = !this.opened;
         } else {
             value.item.children.forEach((link: SidebarMenuItem) => link.active = false);
-            value.item.children[0].active = true;
-            this.router.navigateByUrl(value.item.children[0].routerPath);
+
+            if (document.body.offsetWidth <= 414) {
+                value.item.active = true;
+            } else {
+                value.item.children[0].active = true;
+                this.router.navigateByUrl(value.item.children[0].routerPath);
+                this.opened = !this.opened;
+            }
         }
 
 

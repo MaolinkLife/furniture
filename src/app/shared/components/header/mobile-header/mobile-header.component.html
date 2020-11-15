@@ -2,7 +2,12 @@
     <div class="fixed-container">
         <div class="header-panel">
             <div class="title-block">
-                <a (click)="menuClick($event.currentTarget)">
+                <a
+                    (click)="
+                        menuClick($event.currentTarget);
+                        $event.stopPropagation()
+                    "
+                >
                     <!-- OBBEY -->
                     <app-company-logo type="MOBILE"></app-company-logo>
                 </a>
@@ -24,13 +29,15 @@
         <div class="underline-gradient-left"></div>
 
         <app-dropdown
-            (click)="opened = !opened"
             [items]="menuItems$ | async"
             [opened]="opened"
             (itemSelected)="menuItemClick($event)"
         >
             <div class="menu-container">
-                <div class="menu-panel">
+                <div
+                    class="menu-panel"
+                    (click)="opened = !opened; $event.stopPropagation()"
+                >
                     <app-icon name="iconLeftMenuBurger" class="icon"></app-icon>
 
                     <div class="menu-text">Меню</div>

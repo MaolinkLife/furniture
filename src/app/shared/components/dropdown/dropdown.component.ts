@@ -22,7 +22,7 @@ export class DropdownComponent {
     valueChange = new EventEmitter<string>();
 
     @Output()
-    itemSelected = new EventEmitter<{ items: any[]; item: any;}>();
+    itemSelected = new EventEmitter<{ items: any[]; item: any; }>();
 
     @HostBinding('class._opened')
     @Input()
@@ -100,5 +100,9 @@ export class DropdownComponent {
                 item,
             }
         );
+    }
+
+    toggleActive(html: HTMLElement): void {
+        html.classList.toggle('active');
     }
 }

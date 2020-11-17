@@ -107,7 +107,7 @@ export class MobileHeaderComponent implements OnInit, OnChanges {
         } else {
             value.item.children.forEach((link: SidebarMenuItem) => link.active = false);
 
-            if (document.body.offsetWidth <= 414) {
+            if (document.body.offsetWidth <= 768) {
                 value.item.active = true;
             } else {
                 value.item.children[0].active = true;

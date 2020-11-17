@@ -337,8 +337,6 @@ export class PaddingFurniturePageComponent implements OnInit {
     ngOnInit(): void {
         const id = this.activatedRoute.snapshot.data.mark;
 
-        console.log('init');
-
         setTimeout(() => {
 
             const scrollPos = window.pageYOffset ||

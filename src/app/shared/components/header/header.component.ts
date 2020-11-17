@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
             id: 'general',
         },
         {
-            caption: 'Расчитать стоимость',
+            caption: 'Рассчитать стоимость',
             routerLink: '',
             active: true,
             id: 'payment',

@@ -313,7 +313,6 @@ export class FabricCatalogComponent implements OnInit {
             this.currentFabric$.next(null);
         }
 
-        console.log(targetFabric);
 
         this.examples$.next(targetFabric.examples);
     }

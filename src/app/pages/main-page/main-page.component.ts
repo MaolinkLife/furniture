@@ -34,7 +34,7 @@ export class MainPageComponent implements OnInit, OnChanges {
 
     @HostListener('window:scroll', ['$event'])
     toggleScroll(): void {
-        this.showButton = window.pageYOffset > 100;
+        this.showButton = window.pageYOffset <= 768;
     }
 
     ngOnInit(): void {

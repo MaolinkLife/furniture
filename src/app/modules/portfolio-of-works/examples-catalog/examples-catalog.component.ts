@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
     styleUrls: ['./examples-catalog.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExamplesCatalogComponent implements OnInit, OnChanges {
+export class ExamplesCatalogComponent implements OnInit{
 
 
     showModal$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -24,9 +24,6 @@ export class ExamplesCatalogComponent implements OnInit, OnChanges {
     ngOnInit(): void {
     }
 
-    ngOnChanges(changes: SimpleChanges): void {
-        console.log(changes);
-    }
 
     onClickImage(src: string): void {
         this.showModal$.next(true);

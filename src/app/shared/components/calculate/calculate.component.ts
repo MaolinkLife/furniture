@@ -212,8 +212,6 @@ export class CalculateComponent implements OnInit {
 
         const currentElement = PRICE_LIST[id];
 
-        console.log(this.calculatedPrice);
-        console.log(currentElement.sizeList[0]);
 
         const workPrice = 0;
         const elementPrice = currentElement.sizeList[0].workPrice;

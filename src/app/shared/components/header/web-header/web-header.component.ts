@@ -18,7 +18,7 @@ interface HeaderMenuItemInterface {
     styleUrls: ['./web-header.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WebHeaderComponent implements OnInit, OnChanges {
+export class WebHeaderComponent implements OnInit {
 
     @Input()
     showMenu: boolean;
@@ -34,7 +34,7 @@ export class WebHeaderComponent implements OnInit, OnChanges {
             id: 'general',
         },
         {
-            caption: 'Расчитать стоимость',
+            caption: 'Рассчитать стоимость',
             routerLink: '',
             active: true,
             id: 'payment',
@@ -75,11 +75,6 @@ export class WebHeaderComponent implements OnInit, OnChanges {
 
     ngOnInit(): void {
         this.component$ = this.navigationsService.dynamicComponentView$;
-        console.log(this.activatedRoute);
-    }
-
-    ngOnChanges(changes: SimpleChanges): void {
-        console.log(changes);
     }
 
     menuClick(element: HTMLElement, id?: string) {

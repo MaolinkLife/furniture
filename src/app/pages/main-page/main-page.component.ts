@@ -34,7 +34,7 @@ export class MainPageComponent implements OnInit, OnChanges {
 
     @HostListener('window:scroll', ['$event'])
     toggleScroll(): void {
-        if (document.body.offsetWidth <= 414) {
+        if (document.body.offsetWidth <= 768) {
             return;
         }
 

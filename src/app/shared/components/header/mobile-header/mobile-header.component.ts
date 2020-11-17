@@ -12,7 +12,7 @@ import { PreviewComponentClass } from 'src/app/shared/types/preview-component-cl
     styleUrls: ['./mobile-header.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MobileHeaderComponent implements OnInit, OnChanges {
+export class MobileHeaderComponent implements OnInit {
 
 
     @Output()
@@ -23,27 +23,6 @@ export class MobileHeaderComponent implements OnInit, OnChanges {
 
     public component$: BehaviorSubject<PreviewComponentClass<Component>> | any =
         new BehaviorSubject<PreviewComponentClass<Component>>(null);
-
-
-    // public dropdownList = [
-    //     {
-    //         caption: 'ПЕРЕТЯЖКА МЯГКОЙ МЕБЕЛИ',
-    //         routerLink: '/',
-    //         active: false,
-    //         children: [
-    //             {
-    //                 caption: 'Перетяжка прямых диванов',
-    //                 routerLink: '/',
-    //                 active: false,
-    //             },
-    //             {
-    //                 caption: 'Перетяжка угловых диванов',
-    //                 routerLink: '/',
-    //                 active: false,
-    //             }
-    //         ]
-    //     }
-    // ];
 
     public opened = false;
 
@@ -56,19 +35,12 @@ export class MobileHeaderComponent implements OnInit, OnChanges {
     }
 
     ngOnInit(): void {
-        this.menuItems$.subscribe(list => {
-        });
-
         this.component$ = this.navigationsService.dynamicComponentView$;
-    }
-
-    ngOnChanges(changes: SimpleChanges): void {
     }
 
     menuClick(element: HTMLElement, id?: string) {
         element.classList.toggle('active');
         this.component$.next(GeneralPreviewComponentComponent);
-
         this.router.navigateByUrl('');
 
         setTimeout(() => {
@@ -93,11 +65,6 @@ export class MobileHeaderComponent implements OnInit, OnChanges {
      * @param item - текущий элемент меню, по которому происходит проверка, необходимо или перейти или раскрыть список
      */
     menuItemClick(value: { items: SidebarMenuItem[], item: SidebarMenuItem }) {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
-
         value.items.forEach((link: SidebarMenuItem) => link.active = false);
         value.item.active = true;
 
@@ -105,6 +72,11 @@ export class MobileHeaderComponent implements OnInit, OnChanges {
             this.router.navigateByUrl(value.item.routerPath);
             this.opened = !this.opened;
         } else {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+
             value.item.children.forEach((link: SidebarMenuItem) => link.active = false);
 
             if (document.body.offsetWidth <= 768) {
